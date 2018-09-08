@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FBCross.AgendaListView">
+    
+    <ListView x:Name="GroupedAgendaView"
+            ItemsSource="{Binding Items}"
+            IsGroupingEnabled="True"
+            GroupDisplayBinding="{Binding Date}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement">
+
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout StyleClass="agendaHeader">
+                        <Label Text="{Binding Date}"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+
+        <!--Custom View Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" StyleClass="agendaCell">
+                        <StackLayout StyleClass="agendaTimeCell">
+                            <Label Text="{Binding StartTime}" 
+                    StyleClass="smallTime"/>
+                            <Label Text="{Binding EndTime}" 
+                    StyleClass="smallTime" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding Title}" 
+                   StyleClass="agendaTitle" />
+                            <Label Text="{Binding Employee}" 
+                   StyleClass="agendaEmployee" />
+                        </StackLayout>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

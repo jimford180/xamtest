@@ -11,11 +11,10 @@
             CachingStrategy="RecycleElement">
 
         <ListView.GroupHeaderTemplate>
+            
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout StyleClass="agendaHeader">
-                        <Label Text="{Binding Date}"></Label>
-                    </StackLayout>
+                    <Label Text="{Binding Date}" StyleClass="agendaHeader"></Label>
                 </ViewCell>
             </DataTemplate>
         </ListView.GroupHeaderTemplate>

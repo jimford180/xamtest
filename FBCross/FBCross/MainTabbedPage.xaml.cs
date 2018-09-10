@@ -16,7 +16,7 @@ namespace FBCross
         {
             InitializeComponent();
             this.Children.Add(new AgendaListView() { Title = "Agenda" });
-            this.Children.Add(new ActivityListView() { Title = "Activity" });
+            this.Children.Add(new ActivityListView() { Title = "Activity", Icon = "imgActivity.png" });
         }
     }
 }

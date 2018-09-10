@@ -11,7 +11,8 @@ namespace FBCross
 		{
 			InitializeComponent();
 
-			MainPage = new MainTabbedPage();
+            MainPage = new MainMasterDetail();
+
 		}
 
 		protected override void OnStart ()

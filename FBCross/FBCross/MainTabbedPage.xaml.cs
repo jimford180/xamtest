@@ -10,13 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace FBCross
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainTabbedPage : TabbedPage
+    public partial class MainTabbedPage
     {
         public MainTabbedPage ()
         {
             InitializeComponent();
-            this.Children.Add(new AgendaListView() { Title = "Agenda" });
-            this.Children.Add(new ActivityListView() { Title = "Activity", Icon = "imgActivity.png" });
+            this.Children.Add(new MonthView() { Title = "Month", Icon = Device.RuntimePlatform == Device.iOS ? "imgCalendar.png" : null });
+            this.Children.Add(new AgendaListView() { Title = "Agenda", Icon = Device.RuntimePlatform == Device.iOS ? "imgToday.png" : null });
+            this.Children.Add(new ActivityListView() { Title = "Activity", Icon = Device.RuntimePlatform == Device.iOS ? "imgActivity.png" : null });
+
+            this.CurrentPage = this.Children[1];
         }
     }
 }

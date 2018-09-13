@@ -21,5 +21,10 @@ namespace FBCross
 
             this.CurrentPage = this.Children[1];
         }
+
+        internal void GoToDayView()
+        {
+            CurrentPage = Children[1];
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 namespace FBCross.ViewModels
 {
@@ -22,8 +23,12 @@ namespace FBCross.ViewModels
             {
                 if (Days.Any(s => s.Day == value))
                 {
-                    Days.Where(s => s.Day != value).ToList().ForEach(s => s.IsSelected = false);
-                    Days.Single(s => s.Day == value).IsSelected = true;
+                    var day = Days.Single(s => s.Day == value);
+                    if (day.IsAvailable)
+                    {
+                        Days.Where(s => s.Day != value).ToList().ForEach(s => s.IsSelected = false);
+                        day.IsSelected = true;
+                    }
                 }
             }
         }
@@ -72,12 +77,12 @@ namespace FBCross.ViewModels
             SeedDays();
         }
     }
-    public class CalendarDay
+    public class CalendarDay : BindableObject
     {
         public int Day { get; set; }
         public bool IsSelected { get; set; }
-            public int ColumnNumber { get; set; }
-            public int RowNumber { get; set; }
-
+        public int ColumnNumber { get; set; }
+        public int RowNumber { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

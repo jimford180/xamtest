@@ -1,44 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FBCross.AgendaListView">
-    <ListView x:Name="GroupedAgendaView"
+             x:Class="FBCross.AgendaListView" x:Name="agendaPage">
+    <Grid>
+        <ActivityIndicator IsVisible="{Binding Source={x:Reference agendaPage}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference agendaPage}, Path=IsBusy}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+        <ListView x:Name="GroupedAgendaView"
             ItemsSource="{Binding Items}"
             IsGroupingEnabled="True"
             GroupDisplayBinding="{Binding Date}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
 
-        <ListView.GroupHeaderTemplate>
-            
-            <DataTemplate>
-                <ViewCell>
-                    <Label Text="{Binding Date}" StyleClass="agendaHeader"></Label>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.GroupHeaderTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Date}" StyleClass="agendaHeader"></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
 
-        <!--Custom View Cells-->
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" StyleClass="agendaCell">
-                        <StackLayout StyleClass="agendaTimeCell">
-                            <Label Text="{Binding StartTime}" 
+            <!--Custom View Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" StyleClass="agendaCell">
+                            <StackLayout StyleClass="agendaTimeCell">
+                                <Label Text="{Binding StartTime}" 
                     StyleClass="smallTime"/>
-                            <Label Text="{Binding EndTime}" 
+                                <Label Text="{Binding EndTime}" 
                     StyleClass="smallTime" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Label Text="{Binding Title}" 
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="{Binding Title}" 
                    StyleClass="agendaTitle" />
-                            <Label Text="{Binding Employee}" 
-                   StyleClass="agendaEmployee" />
-                        </StackLayout>
+                            </StackLayout>
 
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+
 </ContentPage>

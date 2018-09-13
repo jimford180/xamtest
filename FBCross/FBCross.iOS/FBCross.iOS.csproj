@@ -141,6 +141,9 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\image-2018-09-10.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Activity.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -166,6 +169,15 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgCalendar.imageset\Calendar@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\logo.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\logo@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\logo@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgNext.imageset\Contents.json">

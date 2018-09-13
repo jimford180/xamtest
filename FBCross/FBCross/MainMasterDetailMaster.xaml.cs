@@ -27,6 +27,17 @@ namespace FBCross
             
         }
 
+        protected override async void OnAppearing()
+        {
+            var allTokens = await App.Database.Sessions.GetEntitiesAsync();
+            if (!allTokens.Any())
+            {
+                await Navigation.PushModalAsync(new LoginPage());
+            }
+            
+
+        }
+
         class MainMasterDetailMasterViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<MainMasterDetailMenuItem> MenuItems { get; set; }
@@ -37,7 +48,7 @@ namespace FBCross
                 {
                     new MainMasterDetailMenuItem { Id = 0, Title = "Home", TargetType=typeof(MainTabbedPage) },
                     new MainMasterDetailMenuItem { Id = 1, Title = "New Appointment", TargetType=typeof(NewAppointment) },
-                    
+                    new MainMasterDetailMenuItem { Id = 1, Title = "Logout", TargetType=typeof(Logout) },
                 });
             }
             

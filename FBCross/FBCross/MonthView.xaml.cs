@@ -1,4 +1,5 @@
-﻿using FBCross.ViewModels;
+﻿using FBCross.Rest;
+using FBCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ using Xamarin.Forms.Xaml;
 
 namespace FBCross
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MonthView : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MonthView : ContentPage
+    {
         CalendarMonth _month;
-		public MonthView ()
+        public MonthView()
         {
             InitializeComponent();
             _month = new CalendarMonth();
@@ -25,13 +26,16 @@ namespace FBCross
         {
             InsertHeaderChildren();
             PopulateWithDays();
+            UpdateWithAvailability();
         }
+
+
 
         private void PopulateWithDays()
         {
             foreach (var day in _month.Days)
             {
-                var btn = new Button { Text = day.Day.ToString(), FontSize = 11, CornerRadius = 25 };
+                var btn = new Button { Text = day.Day.ToString() + (day.IsAvailable ? Environment.NewLine + "." : ""), FontSize = 11, CornerRadius = 25 };
                 btn.Clicked += SelectDate;
                 if (day.IsSelected)
                 {
@@ -61,14 +65,14 @@ namespace FBCross
 
             var previousTapEvent = new TapGestureRecognizer();
             previousTapEvent.Tapped += PreviousMonth;
-            
+
             previousMonthButton.GestureRecognizers.Add(previousTapEvent);
             var nextTapEvent = new TapGestureRecognizer();
             nextTapEvent.Tapped += NextMonth;
             nextMonthButton.GestureRecognizers.Add(nextTapEvent);
 
-            
-            
+
+
             calendarGrid.Children.Add(previousMonthButton, 0, 0);
             var monthLabel = new Label { Text = _month.MonthName, HorizontalOptions = LayoutOptions.CenterAndExpand, VerticalOptions = LayoutOptions.CenterAndExpand };
             calendarGrid.Children.Add(monthLabel, 1, 0);
@@ -98,8 +102,14 @@ namespace FBCross
         private void SelectDate(object sender, EventArgs e)
         {
             var button = (sender as Button);
-            _month.SelectedDay = Convert.ToInt32(button.Text);
-            ReselectDay();
+            var day = Convert.ToInt32(button.Text);
+            _month.SelectedDay = day;
+            if (_month.SelectedDay == day)
+            {
+                ReselectDay();
+                App.SelectedDate = _month.StartOfMonth.AddDays(_month.SelectedDay - 1);
+                ((MainTabbedPage)this.Parent).GoToDayView();
+            }
         }
 
         private void ReselectDay()
@@ -121,6 +131,41 @@ namespace FBCross
                     }
                 }
             }
+        }
+        private async void UpdateWithAvailability()
+        {
+            IsBusy = true;
+            var start = _month.StartOfMonth;
+            var end = start.AddMonths(1);
+            var tokens = await App.GetSessionTokenAndMerchantGuid();
+            var calFeed = new CalendarFeed();
+            var availability = await calFeed.Get(tokens.MerchantGuid, tokens.SessionToken, start, end);
+            IsBusy = false;
+            if (availability.IsSuccessful && availability.Data != null)
+            {
+                var availableDays = availability.Data.GroupBy(a => a.start.Day);
+                foreach (var day in _month.Days)
+                {
+                    day.IsAvailable = availableDays.FirstOrDefault(g => g.Key == day.Day) != null;
+                }
+
+                foreach (var child in calendarGrid.Children)
+                {
+                    int day;
+                    if (child is Button && Int32.TryParse(((Button)child).Text, out day))
+                    {
+                        if (availableDays.FirstOrDefault(g => g.Key == day) != null)
+                        {
+                            ((Button)child).FontAttributes = FontAttributes.Bold;
+                        }
+                        else
+                        {
+                            ((Button)child).FontAttributes = FontAttributes.None;
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

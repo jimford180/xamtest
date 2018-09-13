@@ -73,6 +73,7 @@ namespace FBCross
             if (agendaItem.Url.StartsWith("#instance/"))
             {
                 App.SelectedInstance = agendaItem.Url.Replace("#instance/", string.Empty);
+                
             }
 
             //Deselect Item

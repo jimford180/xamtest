@@ -30,6 +30,7 @@ namespace FBCross
         }
 
         public static DateTime SelectedDate { get; internal set; }
+        public static string SelectedInstance { get; internal set; }
 
         public App ()
 		{

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -100,8 +100,14 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\Font Awesome 5 Brands-Regular-400.otf" />
+    <BundleResource Include="Resources\Font Awesome 5 Free-Regular-400.otf" />
+    <BundleResource Include="Resources\Font Awesome 5 Free-Solid-900.otf" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-20.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -144,14 +150,12 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-84@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\image-2018-09-10.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\Contents.json">
+    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Activity.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -177,6 +181,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgCalendar.imageset\Calendar@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgLogo.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgLogo.imageset\logo.png">
@@ -215,6 +222,9 @@
     <ImageAsset Include="Assets.xcassets\imgPrev.imageset\prev@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\search.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgToday.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -237,7 +247,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

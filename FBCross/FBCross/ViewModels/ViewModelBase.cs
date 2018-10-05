@@ -8,31 +8,9 @@ namespace FBCross.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        DateTime dateTime;
         public ViewModelBase()
         {
-            this.DateTime = DateTime.Now;
 
-        }
-        
-        public DateTime DateTime
-        {
-            set
-            {
-                if (dateTime != value)
-                {
-                    dateTime = value;
-
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("DateTime"));
-                    }
-                }
-            }
-            get
-            {
-                return dateTime;
-            }
         }
 
         private bool _isBusy;
@@ -42,13 +20,17 @@ namespace FBCross.ViewModels
             set
             {
                 _isBusy = value;
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs("IsBusy"));
-                }
+                TriggerChange("IsBusy");
             }
         }
 
+        protected void TriggerChange(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainMasterDetailMenuItem.cs">
+    <Compile Update="ViewModels\MainMasterDetailMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,9 +33,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MainMasterDetail.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MainMasterDetailDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MainMasterDetailMaster.xaml">

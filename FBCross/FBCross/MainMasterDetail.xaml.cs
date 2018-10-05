@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FBCross.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace FBCross
         public MainMasterDetail()
         {
             InitializeComponent();
+            this.Title = "All Staff";
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 

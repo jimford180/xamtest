@@ -1,20 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using FBCross.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace FBCross
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class InstanceDetails : ContentPage
 	{
-		public InstanceDetails ()
+        private string _instanceId;
+        InstanceDetailsViewModel model;
+		public InstanceDetails (string instanceId)
 		{
 			InitializeComponent ();
-		}
-	}
+            model = new InstanceDetailsViewModel();
+            BindingContext = model;
+            _instanceId = instanceId;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            model.Load(_instanceId);
+        }
+    }
 }

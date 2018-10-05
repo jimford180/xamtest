@@ -18,7 +18,7 @@ namespace FBCross
             this.Children.Add(new MonthView() { Title = "Month", Icon = Device.RuntimePlatform == Device.iOS ? "imgCalendar.png" : null });
             this.Children.Add(new AgendaListView() { Title = "Agenda", Icon = Device.RuntimePlatform == Device.iOS ? "imgToday.png" : null });
             this.Children.Add(new ActivityListView() { Title = "Activity", Icon = Device.RuntimePlatform == Device.iOS ? "imgActivity.png" : null });
-
+            this.Title = "Calendar";
             this.CurrentPage = this.Children[1];
         }
 

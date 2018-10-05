@@ -64,7 +64,7 @@ namespace FBCross
             IsBusy = false;
         }
 
-        public void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        public async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null || !(e.Item is AgendaItem))
                 return;
@@ -72,8 +72,7 @@ namespace FBCross
             var agendaItem = (AgendaItem)e.Item;
             if (agendaItem.Url.StartsWith("#instance/"))
             {
-                App.SelectedInstance = agendaItem.Url.Replace("#instance/", string.Empty);
-                
+                await Navigation.PushAsync(new InstanceDetails(agendaItem.Url.Replace("#instance/", string.Empty)));
             }
 
             //Deselect Item

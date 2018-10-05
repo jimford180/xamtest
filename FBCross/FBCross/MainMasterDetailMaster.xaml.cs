@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FBCross.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -48,7 +49,7 @@ namespace FBCross
                 {
                     new MainMasterDetailMenuItem { Id = 0, Title = "Home", TargetType=typeof(MainTabbedPage) },
                     new MainMasterDetailMenuItem { Id = 1, Title = "New Appointment", TargetType=typeof(NewAppointment) },
-                    new MainMasterDetailMenuItem { Id = 1, Title = "Logout", TargetType=typeof(Logout) },
+                    new MainMasterDetailMenuItem { Id = 2, Title = "Logout", TargetType=typeof(Logout) },
                 });
             }
             

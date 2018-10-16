@@ -5,46 +5,54 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RestSharp" Version="106.3.1" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.2.0" />
+    <PackageReference Include="RestSharp" Version="106.4.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.561731" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ViewModels\MainMasterDetailMenuItem.cs">
-      <SubType>Code</SubType>
+    <Reference Include="Syncfusion.Licensing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\pcl\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCalendar.XForms">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\pcl\Syncfusion.SfCalendar.XForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="FormsApp.xaml.cs">
+      <DependentUpon>FormsApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Activity.xaml.cs">
+      <DependentUpon>Activity.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ActivityListView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="AgendaListView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="InstanceDetails.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Logout.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MainMasterDetail.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="MainMasterDetailMaster.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MainTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MonthView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="NewAppointment.xaml">
+    <EmbeddedResource Update="Pages\Agenda.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\InstanceDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LeftMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Month.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\RootPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

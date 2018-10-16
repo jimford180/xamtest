@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FBCross.Rest
 {
 
-    public class CalendarFeed : RestBase
+    public class CalendarFeed : RestBase, ICalendarFeed
     {
         public Task<IRestResponse<IEnumerable<CalendarEvent>>> Get(Guid merchantGuid, string sessionToken, DateTime start, DateTime end)
         {

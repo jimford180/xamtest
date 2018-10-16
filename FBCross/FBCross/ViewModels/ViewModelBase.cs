@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmCross.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -6,31 +7,22 @@ using Xamarin.Forms;
 
 namespace FBCross.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : MvxViewModel
     {
         public ViewModelBase()
         {
 
         }
 
-        private bool _isBusy;
-        public bool IsBusy
+        private bool _loading { get; set; }
+        public  bool Loading
         {
-            get { return _isBusy; }
+            get => _loading;
             set
             {
-                _isBusy = value;
-                TriggerChange("IsBusy");
+                _loading = value;
+                RaisePropertyChanged(() => Loading);
             }
         }
-
-        protected void TriggerChange(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

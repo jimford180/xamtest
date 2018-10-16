@@ -23,7 +23,7 @@ namespace FBCross.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new FormsApp());
 
             return base.FinishedLaunching(app, options);
         }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:MonthViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Month;assembly=FBCross"
+    x:Class="FBCross.Pages.Month">
+    <ContentPage.Content>
+        <syncfusion:SfCalendar x:Name="calendar" SelectedDate="{Binding SelectedDate}">
+            <!--<syncfusion:SfCalendar.HeaderView>
+                <Label Text="Custom Header View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </syncfusion:SfCalendar.HeaderView>-->
+        </syncfusion:SfCalendar>
+    </ContentPage.Content>
+    </views:MvxContentPage>

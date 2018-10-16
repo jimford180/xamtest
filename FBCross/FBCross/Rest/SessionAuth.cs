@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FBCross.Rest
 {
 
-    public class SessionAuth : RestBase
+    public class SessionAuth : RestBase, ISessionAuth
     {
         public Task<IRestResponse<IEnumerable<SessionMerchant>>> Get(string email, string password)
         {

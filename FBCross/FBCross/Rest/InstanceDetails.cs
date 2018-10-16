@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FBCross.Rest
 {
 
-    public class InstanceDetails : RestBase
+    public class InstanceDetails : RestBase, IInstanceDetails
     {
         public Task<IRestResponse<ClassInstanceDetail>> Get(Guid merchantGuid, string sessionToken, string id)
         {

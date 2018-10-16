@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FBCross.Rest
 {
 
-    public class MerchantState : RestBase
+    public class MerchantState : RestBase, IMerchantState
     {
         public Task<IRestResponse<Dto.MerchantState>> Get(Guid merchantGuid, string sessionToken)
         {

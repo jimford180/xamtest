@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using Syncfusion.SfCalendar.XForms.iOS;
+using Syncfusion.SfPicker.XForms.iOS;
 
 namespace FBCross.iOS
 {
@@ -23,6 +25,8 @@ namespace FBCross.iOS
         //
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
+            new SfCalendarRenderer();
+            new SfPickerRenderer();
             var result = base.FinishedLaunching(uiApplication, launchOptions);
             return result;
         }

@@ -23,6 +23,10 @@ namespace FBCross.Data
         {
             return _database.InsertAsync(entity);
         }
+        public Task<int> UpdateEntityAsync(T entity)
+        {
+            return _database.UpdateAsync(entity);
+        }
         public Task<int> CreateManyAsync(IEnumerable<T> entities)
         {
             return _database.InsertAllAsync(entities);

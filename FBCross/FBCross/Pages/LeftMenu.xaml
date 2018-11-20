@@ -11,7 +11,7 @@
             <StackLayout Padding="10" BackgroundColor="#0D82DB">
                 <Image Source="imgLogo.png" HorizontalOptions="Fill"></Image>
             </StackLayout>
-            <views:MvxListView 
+            <views:MvxListView Margin="10,0,0,0"
             ItemsSource="{mvx:MvxBind Items}"
             ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}">
                 <ListView.ItemTemplate>

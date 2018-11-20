@@ -50,9 +50,9 @@ namespace FBCross.ViewModels.Agenda
             return  _navigationService.Navigate<InstanceDetailsViewModel>();
         }
 
-        public override async void Start()
+        public override async void ViewAppearing()
         {
-            base.Start();
+            base.ViewAppearing();
             await LoadData();
         }
 

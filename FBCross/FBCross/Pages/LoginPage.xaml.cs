@@ -15,7 +15,7 @@ using Xamarin.Forms.Xaml;
 namespace FBCross.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxContentPagePresentation(WrapInNavigationPage =false)]
+    [MvxContentPagePresentation(WrapInNavigationPage = false, NoHistory =true, Title ="Sign In")]
     public partial class LoginPage : MvxContentPage<LoginViewModel>
 	{
 		public LoginPage ()
@@ -24,6 +24,8 @@ namespace FBCross.Pages
             this.Resources.Add(StyleSheet.FromAssemblyResource(IntrospectionExtensions.GetTypeInfo(typeof(LoginPage)).Assembly,
             "FBCross.Styles.global.css"));
             BackgroundColor = Color.FromRgb(13, 130, 219);
+            
+
         }
         protected override void OnAppearing()
         {

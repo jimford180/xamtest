@@ -1,4 +1,5 @@
-﻿using FBCross.ViewModels.Authentication;
+﻿using FBCross.ViewModels.Appointment;
+using FBCross.ViewModels.Authentication;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -7,25 +8,23 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace FBCross.ViewModels.Navigation
 {
     public class MenuViewModel : MvxViewModel
     {
 
-        public MenuViewModel()
+        private readonly IMvxNavigationService _navigationService;
+        public MenuViewModel(IMvxNavigationService navigationService)
         {
+            _navigationService = navigationService;
             Items = new ObservableCollection<MenuItem>
             {
                 new MenuItem{ Name = "Home", PageType=PageType.Home },
                 new MenuItem{ Name = "New Appointment", PageType=PageType.NewAppointment },
                 new MenuItem{ Name = "Logout", PageType=PageType.Logout }
             };
-        }
-        private readonly IMvxNavigationService _navigationService;
-        public MenuViewModel(IMvxNavigationService navigationService)
-        {
-            _navigationService = navigationService;
         }
 
         private ObservableCollection<MenuItem> _items { get; set; }
@@ -41,23 +40,29 @@ namespace FBCross.ViewModels.Navigation
 
         public IMvxAsyncCommand<MenuItem> ItemSelectedCommand => new MvxAsyncCommand<MenuItem>(ItemSelected);
 
-        private  Task ItemSelected(MenuItem item)
+        private async Task ItemSelected(MenuItem item)
         {
-            Task task = null;
             switch (item.PageType)
             {
                 case PageType.Home:
-                    task = _navigationService.Navigate<TabbedHomeViewModel>();
+                    await _navigationService.Navigate<TabbedHomeViewModel>();
                     break;
                 case PageType.NewAppointment:
-                    task = _navigationService.Navigate<TabbedHomeViewModel>();
+                    await _navigationService.Navigate<AppointmentViewModel>();
                     break;
                 case PageType.Logout:
-                    var t2 = FormsApp.Database.Sessions.RemoveAll();
-                    task = t2.ContinueWith(a => _navigationService.Navigate<LoginViewModel>());
+                    await FormsApp.Logout();
+                    await _navigationService.Navigate<LoginViewModel>();
                     break;
             }
-            return task;
+            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            {
+                masterDetailPage.IsPresented = false;
+            }
+            else if (Application.Current.MainPage is NavigationPage navigationPage && navigationPage.CurrentPage is MasterDetailPage nestedMasterDetail)
+            {
+                nestedMasterDetail.IsPresented = false;
+            }
         }
 
     }

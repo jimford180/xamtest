@@ -38,11 +38,19 @@ namespace FBCross.ViewModels.Authentication
             Loading = false;
             if (loginResult.IsSuccessful && loginResult.Data.Any())
             {
+                await FormsApp.Database.Sessions.RemoveAll();
                 foreach (var session in loginResult.Data)
                 {
                     await FormsApp.Database.Sessions.CreateEntityAsync(session);
                 }
-                await _navigationService.Navigate<RootViewModel>();
+                if (loginResult.Data.Count() > 1)
+                {
+                    await _navigationService.Navigate<MerchantChoiceViewModel>();
+                }
+                else
+                {
+                    await _navigationService.Navigate<RootViewModel>();
+                }
             }
             else
             {

@@ -28,7 +28,12 @@ namespace FBCross
                 return database;
             }
         }
-
+        public async static Task Logout()
+        {
+            await Database.Sessions.RemoveAll();
+            _merchantGuid = Guid.Empty;
+            _sessionToken = null;
+        }
         public static DateTime SelectedDate { get; internal set; }
         public static string CurrentInstanceId { get; internal set; }
 
@@ -43,10 +48,10 @@ namespace FBCross
             var allTokens = await Database.Sessions.GetEntitiesAsync();
             if (_merchantGuid == null || _sessionToken == null)
             {
-                if (allTokens.Any())
+                if (allTokens.Any() && (allTokens.Any(t => t.IsCurrent) || allTokens.Count == 1))
                 {
-                    _merchantGuid = allTokens.First().MerchantGuid;
-                    _sessionToken = allTokens.First().SessionToken;
+                    _merchantGuid = allTokens.OrderByDescending(t => t.IsCurrent).First().MerchantGuid;
+                    _sessionToken = allTokens.OrderByDescending(t => t.IsCurrent).First().SessionToken;
                 }
             }
             var info = new SessionInformation { MerchantGuid = _merchantGuid, SessionToken = _sessionToken };

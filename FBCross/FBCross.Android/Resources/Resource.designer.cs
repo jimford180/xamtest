@@ -4021,6 +4021,61 @@ namespace FBCross.Droid
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.Drawable.Icon = global::FBCross.Droid.Resource.Drawable.Icon;
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.String.sfcalendar_inlineviewalldaytext = global::FBCross.Droid.Resource.String.sfcalendar_inlineviewalldaytext;
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.String.sfcalendar_inlineviewnoappointmenttext = global::FBCross.Droid.Resource.String.sfcalendar_inlineviewnoappointmenttext;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBackgroundColor = global::FBCross.Droid.Resource.Attribute.pickerBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBorderColor = global::FBCross.Droid.Resource.Attribute.pickerBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderBackgroundColor = global::FBCross.Droid.Resource.Attribute.pickerColumnHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderHeight = global::FBCross.Droid.Resource.Attribute.pickerColumnHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderTextColor = global::FBCross.Droid.Resource.Attribute.pickerColumnHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderTextSize = global::FBCross.Droid.Resource.Attribute.pickerColumnHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerEnableLooping = global::FBCross.Droid.Resource.Attribute.pickerEnableLooping;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerFooterHeight = global::FBCross.Droid.Resource.Attribute.pickerFooterHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderBackgroundColor = global::FBCross.Droid.Resource.Attribute.pickerHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderHeight = global::FBCross.Droid.Resource.Attribute.pickerHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderText = global::FBCross.Droid.Resource.Attribute.pickerHeaderText;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderTextColor = global::FBCross.Droid.Resource.Attribute.pickerHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeaderTextSize = global::FBCross.Droid.Resource.Attribute.pickerHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerHeight = global::FBCross.Droid.Resource.Attribute.pickerHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerIsOpen = global::FBCross.Droid.Resource.Attribute.pickerIsOpen;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerItemHeight = global::FBCross.Droid.Resource.Attribute.pickerItemHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerMode = global::FBCross.Droid.Resource.Attribute.pickerMode;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectedItemTextSize = global::FBCross.Droid.Resource.Attribute.pickerSelectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectedItemTextcolor = global::FBCross.Droid.Resource.Attribute.pickerSelectedItemTextcolor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerSelectionBorderColor = global::FBCross.Droid.Resource.Attribute.pickerSelectionBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowColumnHeader = global::FBCross.Droid.Resource.Attribute.pickerShowColumnHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowFooter = global::FBCross.Droid.Resource.Attribute.pickerShowFooter;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerShowHeader = global::FBCross.Droid.Resource.Attribute.pickerShowHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerUnselectedItemTextColor = global::FBCross.Droid.Resource.Attribute.pickerUnselectedItemTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerUnselectedItemTextSize = global::FBCross.Droid.Resource.Attribute.pickerUnselectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerWidth = global::FBCross.Droid.Resource.Attribute.pickerWidth;
+			global::Com.Syncfusion.SfPicker.Resource.Id.Default = global::FBCross.Droid.Resource.Id.Default;
+			global::Com.Syncfusion.SfPicker.Resource.Id.Dialog = global::FBCross.Droid.Resource.Id.Dialog;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker = global::FBCross.Droid.Resource.Styleable.SfPicker;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerBackgroundColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerBorderColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderBackgroundColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderHeight = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderTextColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerColumnHeaderTextSize = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerColumnHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerEnableLooping = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerEnableLooping;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerFooterHeight = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerFooterHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderBackgroundColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeaderBackgroundColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderHeight = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeaderHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderText = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeaderText;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderTextColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeaderTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeaderTextSize = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeaderTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerHeight = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerIsOpen = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerIsOpen;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerItemHeight = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerItemHeight;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerMode = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerMode;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectedItemTextSize = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerSelectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectedItemTextcolor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerSelectedItemTextcolor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerSelectionBorderColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerSelectionBorderColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowColumnHeader = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerShowColumnHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowFooter = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerShowFooter;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerShowHeader = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerShowHeader;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextColor;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerUnselectedItemTextSize;
+			global::Com.Syncfusion.SfPicker.Resource.Styleable.SfPicker_pickerWidth = global::FBCross.Droid.Resource.Styleable.SfPicker_pickerWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FBCross.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -4104,23 +4159,23 @@ namespace FBCross.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010183
-			public const int MvxBind = 2130772355;
+			// aapt resource value: 0x7f01019d
+			public const int MvxBind = 2130772381;
 			
-			// aapt resource value: 0x7f010187
-			public const int MvxDropDownItemTemplate = 2130772359;
+			// aapt resource value: 0x7f0101a1
+			public const int MvxDropDownItemTemplate = 2130772385;
 			
-			// aapt resource value: 0x7f010188
-			public const int MvxGroupItemTemplate = 2130772360;
+			// aapt resource value: 0x7f0101a2
+			public const int MvxGroupItemTemplate = 2130772386;
 			
-			// aapt resource value: 0x7f010186
-			public const int MvxItemTemplate = 2130772358;
+			// aapt resource value: 0x7f0101a0
+			public const int MvxItemTemplate = 2130772384;
 			
-			// aapt resource value: 0x7f010184
-			public const int MvxLang = 2130772356;
+			// aapt resource value: 0x7f01019e
+			public const int MvxLang = 2130772382;
 			
-			// aapt resource value: 0x7f010185
-			public const int MvxTemplate = 2130772357;
+			// aapt resource value: 0x7f01019f
+			public const int MvxTemplate = 2130772383;
 			
 			// aapt resource value: 0x7f01006b
 			public const int actionBarDivider = 2130772075;
@@ -4224,8 +4279,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f01008e
 			public const int activityChooserViewStyle = 2130772110;
 			
-			// aapt resource value: 0x7f010177
-			public const int agendaViewHeight = 2130772343;
+			// aapt resource value: 0x7f010191
+			public const int agendaViewHeight = 2130772369;
 			
 			// aapt resource value: 0x7f0100b3
 			public const int alertDialogButtonGroupStyle = 2130772147;
@@ -4350,11 +4405,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0100ce
 			public const int buttonTintMode = 2130772174;
 			
-			// aapt resource value: 0x7f010176
-			public const int calendarFirstDayOfWeek = 2130772342;
+			// aapt resource value: 0x7f010190
+			public const int calendarFirstDayOfWeek = 2130772368;
 			
-			// aapt resource value: 0x7f010175
-			public const int calendarSelectionMode = 2130772341;
+			// aapt resource value: 0x7f01018f
+			public const int calendarSelectionMode = 2130772367;
 			
 			// aapt resource value: 0x7f010017
 			public const int cardBackgroundColor = 2130771991;
@@ -4539,8 +4594,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f01003e
 			public const int elevation = 2130772030;
 			
-			// aapt resource value: 0x7f010182
-			public const int enableDatesInPast = 2130772354;
+			// aapt resource value: 0x7f01019c
+			public const int enableDatesInPast = 2130772380;
 			
 			// aapt resource value: 0x7f01015e
 			public const int errorEnabled = 2130772318;
@@ -4680,8 +4735,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f010041
 			public const int initialActivityCount = 2130772033;
 			
-			// aapt resource value: 0x7f010174
-			public const int inlineViewMode = 2130772340;
+			// aapt resource value: 0x7f01018e
+			public const int inlineViewMode = 2130772366;
 			
 			// aapt resource value: 0x7f010149
 			public const int insetForeground = 2130772297;
@@ -4788,8 +4843,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f01010a
 			public const int maxButtonHeight = 2130772234;
 			
-			// aapt resource value: 0x7f01017e
-			public const int maximumEventIndicatorCount = 2130772350;
+			// aapt resource value: 0x7f010198
+			public const int maximumEventIndicatorCount = 2130772376;
 			
 			// aapt resource value: 0x7f0100d7
 			public const int measureWithLargestChild = 2130772183;
@@ -4839,23 +4894,23 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f010045
 			public const int multiChoiceItemLayout = 2130772037;
 			
-			// aapt resource value: 0x7f01017b
-			public const int navigateToMonthOnInActiveDatesSelection = 2130772347;
+			// aapt resource value: 0x7f010195
+			public const int navigateToMonthOnInActiveDatesSelection = 2130772373;
 			
-			// aapt resource value: 0x7f010181
-			public const int navigationArrowThickness = 2130772353;
+			// aapt resource value: 0x7f01019b
+			public const int navigationArrowThickness = 2130772379;
 			
-			// aapt resource value: 0x7f01017f
-			public const int navigationButtonHeight = 2130772351;
+			// aapt resource value: 0x7f010199
+			public const int navigationButtonHeight = 2130772377;
 			
-			// aapt resource value: 0x7f010180
-			public const int navigationButtonWidth = 2130772352;
+			// aapt resource value: 0x7f01019a
+			public const int navigationButtonWidth = 2130772378;
 			
 			// aapt resource value: 0x7f01010f
 			public const int navigationContentDescription = 2130772239;
 			
-			// aapt resource value: 0x7f010179
-			public const int navigationEnable = 2130772345;
+			// aapt resource value: 0x7f010193
+			public const int navigationEnable = 2130772371;
 			
 			// aapt resource value: 0x7f01010e
 			public const int navigationIcon = 2130772238;
@@ -4904,6 +4959,84 @@ namespace FBCross.Droid
 			
 			// aapt resource value: 0x7f010169
 			public const int passwordToggleTintMode = 2130772329;
+			
+			// aapt resource value: 0x7f010174
+			public const int pickerBackgroundColor = 2130772340;
+			
+			// aapt resource value: 0x7f010184
+			public const int pickerBorderColor = 2130772356;
+			
+			// aapt resource value: 0x7f010181
+			public const int pickerColumnHeaderBackgroundColor = 2130772353;
+			
+			// aapt resource value: 0x7f01017d
+			public const int pickerColumnHeaderHeight = 2130772349;
+			
+			// aapt resource value: 0x7f01018c
+			public const int pickerColumnHeaderTextColor = 2130772364;
+			
+			// aapt resource value: 0x7f010188
+			public const int pickerColumnHeaderTextSize = 2130772360;
+			
+			// aapt resource value: 0x7f010179
+			public const int pickerEnableLooping = 2130772345;
+			
+			// aapt resource value: 0x7f010176
+			public const int pickerFooterHeight = 2130772342;
+			
+			// aapt resource value: 0x7f010180
+			public const int pickerHeaderBackgroundColor = 2130772352;
+			
+			// aapt resource value: 0x7f010175
+			public const int pickerHeaderHeight = 2130772341;
+			
+			// aapt resource value: 0x7f010185
+			public const int pickerHeaderText = 2130772357;
+			
+			// aapt resource value: 0x7f01018b
+			public const int pickerHeaderTextColor = 2130772363;
+			
+			// aapt resource value: 0x7f010187
+			public const int pickerHeaderTextSize = 2130772359;
+			
+			// aapt resource value: 0x7f010177
+			public const int pickerHeight = 2130772343;
+			
+			// aapt resource value: 0x7f010178
+			public const int pickerIsOpen = 2130772344;
+			
+			// aapt resource value: 0x7f01017e
+			public const int pickerItemHeight = 2130772350;
+			
+			// aapt resource value: 0x7f010173
+			public const int pickerMode = 2130772339;
+			
+			// aapt resource value: 0x7f01018a
+			public const int pickerSelectedItemTextSize = 2130772362;
+			
+			// aapt resource value: 0x7f01017f
+			public const int pickerSelectedItemTextcolor = 2130772351;
+			
+			// aapt resource value: 0x7f010183
+			public const int pickerSelectionBorderColor = 2130772355;
+			
+			// aapt resource value: 0x7f01017c
+			public const int pickerShowColumnHeader = 2130772348;
+			
+			// aapt resource value: 0x7f01017b
+			public const int pickerShowFooter = 2130772347;
+			
+			// aapt resource value: 0x7f01017a
+			public const int pickerShowHeader = 2130772346;
+			
+			// aapt resource value: 0x7f010182
+			public const int pickerUnselectedItemTextColor = 2130772354;
+			
+			// aapt resource value: 0x7f010189
+			public const int pickerUnselectedItemTextSize = 2130772361;
+			
+			// aapt resource value: 0x7f010186
+			public const int pickerWidth = 2130772358;
 			
 			// aapt resource value: 0x7f010091
 			public const int popupMenuStyle = 2130772113;
@@ -4980,11 +5113,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0100d8
 			public const int showDividers = 2130772184;
 			
-			// aapt resource value: 0x7f010178
-			public const int showEventsInline = 2130772344;
+			// aapt resource value: 0x7f010192
+			public const int showEventsInline = 2130772370;
 			
-			// aapt resource value: 0x7f01017a
-			public const int showNavigationButtons = 2130772346;
+			// aapt resource value: 0x7f010194
+			public const int showNavigationButtons = 2130772372;
 			
 			// aapt resource value: 0x7f010101
 			public const int showText = 2130772225;
@@ -4992,8 +5125,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f010048
 			public const int showTitle = 2130772040;
 			
-			// aapt resource value: 0x7f01017d
-			public const int showYearView = 2130772349;
+			// aapt resource value: 0x7f010197
+			public const int showYearView = 2130772375;
 			
 			// aapt resource value: 0x7f010046
 			public const int singleChoiceItemLayout = 2130772038;
@@ -5214,8 +5347,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f010029
 			public const int titleTextStyle = 2130772009;
 			
-			// aapt resource value: 0x7f01017c
-			public const int toggleDaySelection = 2130772348;
+			// aapt resource value: 0x7f010196
+			public const int toggleDaySelection = 2130772374;
 			
 			// aapt resource value: 0x7f010129
 			public const int toolbarId = 2130772265;
@@ -5247,8 +5380,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f010140
 			public const int useCompatPadding = 2130772288;
 			
-			// aapt resource value: 0x7f010173
-			public const int viewMode = 2130772339;
+			// aapt resource value: 0x7f01018d
+			public const int viewMode = 2130772365;
 			
 			// aapt resource value: 0x7f0100f2
 			public const int voiceIcon = 2130772210;
@@ -6427,26 +6560,26 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020135
-			public const int avd_hide_password_1 = 2130837813;
-			
-			// aapt resource value: 0x7f020136
-			public const int avd_hide_password_2 = 2130837814;
-			
 			// aapt resource value: 0x7f020137
-			public const int avd_hide_password_3 = 2130837815;
+			public const int avd_hide_password_1 = 2130837815;
+			
+			// aapt resource value: 0x7f020138
+			public const int avd_hide_password_2 = 2130837816;
+			
+			// aapt resource value: 0x7f020139
+			public const int avd_hide_password_3 = 2130837817;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020138
-			public const int avd_show_password_1 = 2130837816;
-			
-			// aapt resource value: 0x7f020139
-			public const int avd_show_password_2 = 2130837817;
-			
 			// aapt resource value: 0x7f02013a
-			public const int avd_show_password_3 = 2130837818;
+			public const int avd_show_password_1 = 2130837818;
+			
+			// aapt resource value: 0x7f02013b
+			public const int avd_show_password_2 = 2130837819;
+			
+			// aapt resource value: 0x7f02013c
+			public const int avd_show_password_3 = 2130837820;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -7010,115 +7143,121 @@ namespace FBCross.Droid
 			public const int imgNext = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int imgPrev = 2130837776;
+			public const int imgPlus = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int imgSearch = 2130837777;
+			public const int imgPrev = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int mr_button_connected_dark = 2130837778;
+			public const int imgSearch = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int mr_button_connected_light = 2130837779;
+			public const int imgTrash = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int mr_button_connecting_dark = 2130837780;
+			public const int mr_button_connected_dark = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int mr_button_connecting_light = 2130837781;
+			public const int mr_button_connected_light = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int mr_button_dark = 2130837782;
+			public const int mr_button_connecting_dark = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int mr_button_light = 2130837783;
+			public const int mr_button_connecting_light = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int mr_dialog_close_dark = 2130837784;
+			public const int mr_button_dark = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int mr_dialog_close_light = 2130837785;
+			public const int mr_button_light = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int mr_dialog_material_background_dark = 2130837786;
+			public const int mr_dialog_close_dark = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mr_dialog_material_background_light = 2130837787;
+			public const int mr_dialog_close_light = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_group_collapse = 2130837788;
+			public const int mr_dialog_material_background_dark = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_group_expand = 2130837789;
+			public const int mr_dialog_material_background_light = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_media_pause_dark = 2130837790;
+			public const int mr_group_collapse = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_media_pause_light = 2130837791;
+			public const int mr_group_expand = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_media_play_dark = 2130837792;
+			public const int mr_media_pause_dark = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_media_play_light = 2130837793;
+			public const int mr_media_pause_light = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mr_media_stop_dark = 2130837794;
+			public const int mr_media_play_dark = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mr_media_stop_light = 2130837795;
+			public const int mr_media_play_light = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mr_vol_type_audiotrack_dark = 2130837796;
+			public const int mr_media_stop_dark = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int mr_vol_type_audiotrack_light = 2130837797;
+			public const int mr_media_stop_light = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int navigation_empty_icon = 2130837798;
+			public const int mr_vol_type_audiotrack_dark = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int notification_action_background = 2130837799;
+			public const int mr_vol_type_audiotrack_light = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int notification_bg = 2130837800;
+			public const int navigation_empty_icon = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int notification_bg_low = 2130837801;
+			public const int notification_action_background = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int notification_bg_low_normal = 2130837802;
+			public const int notification_bg = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int notification_bg_low_pressed = 2130837803;
+			public const int notification_bg_low = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int notification_bg_normal = 2130837804;
+			public const int notification_bg_low_normal = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int notification_bg_normal_pressed = 2130837805;
+			public const int notification_bg_low_pressed = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int notification_icon_background = 2130837806;
-			
-			// aapt resource value: 0x7f020133
-			public const int notification_template_icon_bg = 2130837811;
-			
-			// aapt resource value: 0x7f020134
-			public const int notification_template_icon_low_bg = 2130837812;
+			public const int notification_bg_normal = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int notification_tile_bg = 2130837807;
+			public const int notification_bg_normal_pressed = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int notify_panel_notification_icon_bg = 2130837808;
+			public const int notification_icon_background = 2130837808;
+			
+			// aapt resource value: 0x7f020135
+			public const int notification_template_icon_bg = 2130837813;
+			
+			// aapt resource value: 0x7f020136
+			public const int notification_template_icon_low_bg = 2130837814;
 			
 			// aapt resource value: 0x7f020131
-			public const int tooltip_frame_dark = 2130837809;
+			public const int notification_tile_bg = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int tooltip_frame_light = 2130837810;
+			public const int notify_panel_notification_icon_bg = 2130837810;
+			
+			// aapt resource value: 0x7f020133
+			public const int tooltip_frame_dark = 2130837811;
+			
+			// aapt resource value: 0x7f020134
+			public const int tooltip_frame_light = 2130837812;
 			
 			static Drawable()
 			{
@@ -7139,6 +7278,12 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0035
 			public const int CTRL = 2131361845;
 			
+			// aapt resource value: 0x7f0a005c
+			public const int Default = 2131361884;
+			
+			// aapt resource value: 0x7f0a005d
+			public const int Dialog = 2131361885;
+			
 			// aapt resource value: 0x7f0a0036
 			public const int FUNCTION = 2131361846;
 			
@@ -7157,41 +7302,41 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0039
 			public const int SYM = 2131361849;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int action0 = 2131361984;
+			// aapt resource value: 0x7f0a00c2
+			public const int action0 = 2131361986;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int action_bar = 2131361926;
+			// aapt resource value: 0x7f0a0088
+			public const int action_bar = 2131361928;
 			
 			// aapt resource value: 0x7f0a0001
 			public const int action_bar_activity_content = 2131361793;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int action_bar_container = 2131361925;
+			// aapt resource value: 0x7f0a0087
+			public const int action_bar_container = 2131361927;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int action_bar_root = 2131361921;
+			// aapt resource value: 0x7f0a0083
+			public const int action_bar_root = 2131361923;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int action_bar_spinner = 2131361794;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int action_bar_subtitle = 2131361893;
+			// aapt resource value: 0x7f0a0067
+			public const int action_bar_subtitle = 2131361895;
 			
-			// aapt resource value: 0x7f0a0064
-			public const int action_bar_title = 2131361892;
+			// aapt resource value: 0x7f0a0066
+			public const int action_bar_title = 2131361894;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int action_container = 2131361981;
+			// aapt resource value: 0x7f0a00bf
+			public const int action_container = 2131361983;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int action_context_bar = 2131361927;
+			// aapt resource value: 0x7f0a0089
+			public const int action_context_bar = 2131361929;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int action_divider = 2131361988;
+			// aapt resource value: 0x7f0a00c6
+			public const int action_divider = 2131361990;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int action_image = 2131361982;
+			// aapt resource value: 0x7f0a00c0
+			public const int action_image = 2131361984;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -7199,32 +7344,32 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0004
 			public const int action_menu_presenter = 2131361796;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int action_mode_bar = 2131361923;
+			// aapt resource value: 0x7f0a0085
+			public const int action_mode_bar = 2131361925;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int action_mode_bar_stub = 2131361922;
+			// aapt resource value: 0x7f0a0084
+			public const int action_mode_bar_stub = 2131361924;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int action_mode_close_button = 2131361894;
+			// aapt resource value: 0x7f0a0068
+			public const int action_mode_close_button = 2131361896;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int action_text = 2131361983;
+			// aapt resource value: 0x7f0a00c1
+			public const int action_text = 2131361985;
 			
-			// aapt resource value: 0x7f0a00cd
-			public const int actions = 2131361997;
+			// aapt resource value: 0x7f0a00cf
+			public const int actions = 2131361999;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int activity_chooser_view_content = 2131361895;
+			// aapt resource value: 0x7f0a0069
+			public const int activity_chooser_view_content = 2131361897;
 			
 			// aapt resource value: 0x7f0a0029
 			public const int add = 2131361833;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int agenda = 2131361886;
+			// aapt resource value: 0x7f0a0060
+			public const int agenda = 2131361888;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int alertTitle = 2131361914;
+			// aapt resource value: 0x7f0a007c
+			public const int alertTitle = 2131361916;
 			
 			// aapt resource value: 0x7f0a0054
 			public const int all = 2131361876;
@@ -7247,11 +7392,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a003f
 			public const int bottom = 2131361855;
 			
-			// aapt resource value: 0x7f0a006d
-			public const int buttonPanel = 2131361901;
+			// aapt resource value: 0x7f0a006f
+			public const int buttonPanel = 2131361903;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int cancel_action = 2131361985;
+			// aapt resource value: 0x7f0a00c3
+			public const int cancel_action = 2131361987;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int center = 2131361863;
@@ -7262,11 +7407,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0049
 			public const int center_vertical = 2131361865;
 			
-			// aapt resource value: 0x7f0a007d
-			public const int checkbox = 2131361917;
+			// aapt resource value: 0x7f0a007f
+			public const int checkbox = 2131361919;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int chronometer = 2131361993;
+			// aapt resource value: 0x7f0a00cb
+			public const int chronometer = 2131361995;
 			
 			// aapt resource value: 0x7f0a0050
 			public const int clip_horizontal = 2131361872;
@@ -7277,53 +7422,53 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a003b
 			public const int collapseActionView = 2131361851;
 			
-			// aapt resource value: 0x7f0a0097
-			public const int container = 2131361943;
+			// aapt resource value: 0x7f0a0099
+			public const int container = 2131361945;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int contentPanel = 2131361904;
-			
-			// aapt resource value: 0x7f0a0098
-			public const int coordinator = 2131361944;
-			
-			// aapt resource value: 0x7f0a0077
-			public const int custom = 2131361911;
-			
-			// aapt resource value: 0x7f0a0076
-			public const int customPanel = 2131361910;
-			
-			// aapt resource value: 0x7f0a0084
-			public const int decor_content_parent = 2131361924;
-			
-			// aapt resource value: 0x7f0a006a
-			public const int default_activity_button = 2131361898;
+			// aapt resource value: 0x7f0a0072
+			public const int contentPanel = 2131361906;
 			
 			// aapt resource value: 0x7f0a009a
-			public const int design_bottom_sheet = 2131361946;
+			public const int coordinator = 2131361946;
+			
+			// aapt resource value: 0x7f0a0079
+			public const int custom = 2131361913;
+			
+			// aapt resource value: 0x7f0a0078
+			public const int customPanel = 2131361912;
+			
+			// aapt resource value: 0x7f0a0086
+			public const int decor_content_parent = 2131361926;
+			
+			// aapt resource value: 0x7f0a006c
+			public const int default_activity_button = 2131361900;
+			
+			// aapt resource value: 0x7f0a009c
+			public const int design_bottom_sheet = 2131361948;
+			
+			// aapt resource value: 0x7f0a00a3
+			public const int design_menu_item_action_area = 2131361955;
+			
+			// aapt resource value: 0x7f0a00a2
+			public const int design_menu_item_action_area_stub = 2131361954;
 			
 			// aapt resource value: 0x7f0a00a1
-			public const int design_menu_item_action_area = 2131361953;
+			public const int design_menu_item_text = 2131361953;
 			
 			// aapt resource value: 0x7f0a00a0
-			public const int design_menu_item_action_area_stub = 2131361952;
-			
-			// aapt resource value: 0x7f0a009f
-			public const int design_menu_item_text = 2131361951;
-			
-			// aapt resource value: 0x7f0a009e
-			public const int design_navigation_view = 2131361950;
+			public const int design_navigation_view = 2131361952;
 			
 			// aapt resource value: 0x7f0a0022
 			public const int disableHome = 2131361826;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int edit_query = 2131361928;
+			// aapt resource value: 0x7f0a008a
+			public const int edit_query = 2131361930;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int end = 2131361842;
 			
-			// aapt resource value: 0x7f0a00cf
-			public const int end_padder = 2131361999;
+			// aapt resource value: 0x7f0a00d1
+			public const int end_padder = 2131362001;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int enterAlways = 2131361857;
@@ -7334,11 +7479,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0043
 			public const int exitUntilCollapsed = 2131361859;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int expand_activities_button = 2131361896;
+			// aapt resource value: 0x7f0a006a
+			public const int expand_activities_button = 2131361898;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int expanded_menu = 2131361916;
+			// aapt resource value: 0x7f0a007e
+			public const int expanded_menu = 2131361918;
 			
 			// aapt resource value: 0x7f0a0052
 			public const int fill = 2131361874;
@@ -7364,23 +7509,23 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0023
 			public const int homeAsUp = 2131361827;
 			
-			// aapt resource value: 0x7f0a006c
-			public const int icon = 2131361900;
+			// aapt resource value: 0x7f0a006e
+			public const int icon = 2131361902;
 			
-			// aapt resource value: 0x7f0a00ce
-			public const int icon_group = 2131361998;
+			// aapt resource value: 0x7f0a00d0
+			public const int icon_group = 2131362000;
 			
 			// aapt resource value: 0x7f0a003c
 			public const int ifRoom = 2131361852;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int image = 2131361897;
+			// aapt resource value: 0x7f0a006b
+			public const int image = 2131361899;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int info = 2131361994;
+			// aapt resource value: 0x7f0a00cc
+			public const int info = 2131361996;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int inline = 2131361887;
+			// aapt resource value: 0x7f0a0061
+			public const int inline = 2131361889;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int italic = 2131361883;
@@ -7388,8 +7533,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
 			
-			// aapt resource value: 0x7f0a0096
-			public const int largeLabel = 2131361942;
+			// aapt resource value: 0x7f0a0098
+			public const int largeLabel = 2131361944;
 			
 			// aapt resource value: 0x7f0a004b
 			public const int left = 2131361867;
@@ -7403,17 +7548,17 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a001f
 			public const int listMode = 2131361823;
 			
-			// aapt resource value: 0x7f0a006b
-			public const int list_item = 2131361899;
+			// aapt resource value: 0x7f0a006d
+			public const int list_item = 2131361901;
+			
+			// aapt resource value: 0x7f0a00d6
+			public const int masked = 2131362006;
+			
+			// aapt resource value: 0x7f0a00c5
+			public const int media_actions = 2131361989;
 			
 			// aapt resource value: 0x7f0a00d4
-			public const int masked = 2131362004;
-			
-			// aapt resource value: 0x7f0a00c3
-			public const int media_actions = 2131361987;
-			
-			// aapt resource value: 0x7f0a00d2
-			public const int message = 2131362002;
+			public const int message = 2131362004;
 			
 			// aapt resource value: 0x7f0a0033
 			public const int middle = 2131361843;
@@ -7421,95 +7566,95 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0055
 			public const int mini = 2131361877;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int monthView = 2131361884;
-			
-			// aapt resource value: 0x7f0a00af
-			public const int mr_art = 2131361967;
-			
-			// aapt resource value: 0x7f0a00a4
-			public const int mr_chooser_list = 2131361956;
-			
-			// aapt resource value: 0x7f0a00a7
-			public const int mr_chooser_route_desc = 2131361959;
-			
-			// aapt resource value: 0x7f0a00a5
-			public const int mr_chooser_route_icon = 2131361957;
-			
-			// aapt resource value: 0x7f0a00a6
-			public const int mr_chooser_route_name = 2131361958;
-			
-			// aapt resource value: 0x7f0a00a3
-			public const int mr_chooser_title = 2131361955;
-			
-			// aapt resource value: 0x7f0a00ac
-			public const int mr_close = 2131361964;
-			
-			// aapt resource value: 0x7f0a00b2
-			public const int mr_control_divider = 2131361970;
-			
-			// aapt resource value: 0x7f0a00b8
-			public const int mr_control_playback_ctrl = 2131361976;
-			
-			// aapt resource value: 0x7f0a00bb
-			public const int mr_control_subtitle = 2131361979;
-			
-			// aapt resource value: 0x7f0a00ba
-			public const int mr_control_title = 2131361978;
-			
-			// aapt resource value: 0x7f0a00b9
-			public const int mr_control_title_container = 2131361977;
-			
-			// aapt resource value: 0x7f0a00ad
-			public const int mr_custom_control = 2131361965;
-			
-			// aapt resource value: 0x7f0a00ae
-			public const int mr_default_control = 2131361966;
-			
-			// aapt resource value: 0x7f0a00a9
-			public const int mr_dialog_area = 2131361961;
-			
-			// aapt resource value: 0x7f0a00a8
-			public const int mr_expandable_area = 2131361960;
-			
-			// aapt resource value: 0x7f0a00bc
-			public const int mr_group_expand_collapse = 2131361980;
-			
-			// aapt resource value: 0x7f0a00b0
-			public const int mr_media_main_control = 2131361968;
-			
-			// aapt resource value: 0x7f0a00ab
-			public const int mr_name = 2131361963;
+			// aapt resource value: 0x7f0a005e
+			public const int monthView = 2131361886;
 			
 			// aapt resource value: 0x7f0a00b1
-			public const int mr_playback_control = 2131361969;
+			public const int mr_art = 2131361969;
 			
-			// aapt resource value: 0x7f0a00aa
-			public const int mr_title_bar = 2131361962;
+			// aapt resource value: 0x7f0a00a6
+			public const int mr_chooser_list = 2131361958;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int mr_volume_control = 2131361971;
+			// aapt resource value: 0x7f0a00a9
+			public const int mr_chooser_route_desc = 2131361961;
+			
+			// aapt resource value: 0x7f0a00a7
+			public const int mr_chooser_route_icon = 2131361959;
+			
+			// aapt resource value: 0x7f0a00a8
+			public const int mr_chooser_route_name = 2131361960;
+			
+			// aapt resource value: 0x7f0a00a5
+			public const int mr_chooser_title = 2131361957;
+			
+			// aapt resource value: 0x7f0a00ae
+			public const int mr_close = 2131361966;
 			
 			// aapt resource value: 0x7f0a00b4
-			public const int mr_volume_group_list = 2131361972;
+			public const int mr_control_divider = 2131361972;
+			
+			// aapt resource value: 0x7f0a00ba
+			public const int mr_control_playback_ctrl = 2131361978;
+			
+			// aapt resource value: 0x7f0a00bd
+			public const int mr_control_subtitle = 2131361981;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int mr_control_title = 2131361980;
+			
+			// aapt resource value: 0x7f0a00bb
+			public const int mr_control_title_container = 2131361979;
+			
+			// aapt resource value: 0x7f0a00af
+			public const int mr_custom_control = 2131361967;
+			
+			// aapt resource value: 0x7f0a00b0
+			public const int mr_default_control = 2131361968;
+			
+			// aapt resource value: 0x7f0a00ab
+			public const int mr_dialog_area = 2131361963;
+			
+			// aapt resource value: 0x7f0a00aa
+			public const int mr_expandable_area = 2131361962;
+			
+			// aapt resource value: 0x7f0a00be
+			public const int mr_group_expand_collapse = 2131361982;
+			
+			// aapt resource value: 0x7f0a00b2
+			public const int mr_media_main_control = 2131361970;
+			
+			// aapt resource value: 0x7f0a00ad
+			public const int mr_name = 2131361965;
+			
+			// aapt resource value: 0x7f0a00b3
+			public const int mr_playback_control = 2131361971;
+			
+			// aapt resource value: 0x7f0a00ac
+			public const int mr_title_bar = 2131361964;
+			
+			// aapt resource value: 0x7f0a00b5
+			public const int mr_volume_control = 2131361973;
 			
 			// aapt resource value: 0x7f0a00b6
-			public const int mr_volume_item_icon = 2131361974;
+			public const int mr_volume_group_list = 2131361974;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int mr_volume_slider = 2131361975;
+			// aapt resource value: 0x7f0a00b8
+			public const int mr_volume_item_icon = 2131361976;
 			
-			// aapt resource value: 0x7f0a0060
-			public const int multiRangeSelection = 2131361888;
+			// aapt resource value: 0x7f0a00b9
+			public const int mr_volume_slider = 2131361977;
 			
-			// aapt resource value: 0x7f0a0061
-			public const int multiSelection = 2131361889;
+			// aapt resource value: 0x7f0a0062
+			public const int multiRangeSelection = 2131361890;
+			
+			// aapt resource value: 0x7f0a0063
+			public const int multiSelection = 2131361891;
 			
 			// aapt resource value: 0x7f0a002a
 			public const int multiply = 2131361834;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int navigation_header_container = 2131361949;
+			// aapt resource value: 0x7f0a009f
+			public const int navigation_header_container = 2131361951;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int never = 2131361853;
@@ -7520,20 +7665,20 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0020
 			public const int normal = 2131361824;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int notification_background = 2131361996;
+			// aapt resource value: 0x7f0a00ce
+			public const int notification_background = 2131361998;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int notification_main_column = 2131361990;
+			// aapt resource value: 0x7f0a00c8
+			public const int notification_main_column = 2131361992;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int notification_main_column_container = 2131361989;
+			// aapt resource value: 0x7f0a00c7
+			public const int notification_main_column_container = 2131361991;
 			
 			// aapt resource value: 0x7f0a004e
 			public const int parallax = 2131361870;
 			
-			// aapt resource value: 0x7f0a006f
-			public const int parentPanel = 2131361903;
+			// aapt resource value: 0x7f0a0071
+			public const int parentPanel = 2131361905;
 			
 			// aapt resource value: 0x7f0a000b
 			public const int parent_matrix = 2131361803;
@@ -7547,20 +7692,20 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0007
 			public const int progress_horizontal = 2131361799;
 			
-			// aapt resource value: 0x7f0a007f
-			public const int radio = 2131361919;
+			// aapt resource value: 0x7f0a0081
+			public const int radio = 2131361921;
 			
-			// aapt resource value: 0x7f0a0062
-			public const int rangeSelection = 2131361890;
+			// aapt resource value: 0x7f0a0064
+			public const int rangeSelection = 2131361892;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int right = 2131361868;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int right_icon = 2131361995;
+			// aapt resource value: 0x7f0a00cd
+			public const int right_icon = 2131361997;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int right_side = 2131361991;
+			// aapt resource value: 0x7f0a00c9
+			public const int right_side = 2131361993;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -7577,53 +7722,53 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0044
 			public const int scroll = 2131361860;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int scrollIndicatorDown = 2131361909;
+			// aapt resource value: 0x7f0a0077
+			public const int scrollIndicatorDown = 2131361911;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int scrollIndicatorUp = 2131361905;
+			// aapt resource value: 0x7f0a0073
+			public const int scrollIndicatorUp = 2131361907;
 			
-			// aapt resource value: 0x7f0a0072
-			public const int scrollView = 2131361906;
+			// aapt resource value: 0x7f0a0074
+			public const int scrollView = 2131361908;
 			
 			// aapt resource value: 0x7f0a0057
 			public const int scrollable = 2131361879;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int search_badge = 2131361930;
-			
-			// aapt resource value: 0x7f0a0089
-			public const int search_bar = 2131361929;
+			// aapt resource value: 0x7f0a008c
+			public const int search_badge = 2131361932;
 			
 			// aapt resource value: 0x7f0a008b
-			public const int search_button = 2131361931;
-			
-			// aapt resource value: 0x7f0a0090
-			public const int search_close_btn = 2131361936;
-			
-			// aapt resource value: 0x7f0a008c
-			public const int search_edit_frame = 2131361932;
-			
-			// aapt resource value: 0x7f0a0092
-			public const int search_go_btn = 2131361938;
+			public const int search_bar = 2131361931;
 			
 			// aapt resource value: 0x7f0a008d
-			public const int search_mag_icon = 2131361933;
+			public const int search_button = 2131361933;
+			
+			// aapt resource value: 0x7f0a0092
+			public const int search_close_btn = 2131361938;
 			
 			// aapt resource value: 0x7f0a008e
-			public const int search_plate = 2131361934;
-			
-			// aapt resource value: 0x7f0a008f
-			public const int search_src_text = 2131361935;
-			
-			// aapt resource value: 0x7f0a0093
-			public const int search_voice_btn = 2131361939;
+			public const int search_edit_frame = 2131361934;
 			
 			// aapt resource value: 0x7f0a0094
-			public const int select_dialog_listview = 2131361940;
+			public const int search_go_btn = 2131361940;
 			
-			// aapt resource value: 0x7f0a007e
-			public const int shortcut = 2131361918;
+			// aapt resource value: 0x7f0a008f
+			public const int search_mag_icon = 2131361935;
+			
+			// aapt resource value: 0x7f0a0090
+			public const int search_plate = 2131361936;
+			
+			// aapt resource value: 0x7f0a0091
+			public const int search_src_text = 2131361937;
+			
+			// aapt resource value: 0x7f0a0095
+			public const int search_voice_btn = 2131361941;
+			
+			// aapt resource value: 0x7f0a0096
+			public const int select_dialog_listview = 2131361942;
+			
+			// aapt resource value: 0x7f0a0080
+			public const int shortcut = 2131361920;
 			
 			// aapt resource value: 0x7f0a0025
 			public const int showCustom = 2131361829;
@@ -7634,26 +7779,26 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0027
 			public const int showTitle = 2131361831;
 			
-			// aapt resource value: 0x7f0a0063
-			public const int singleSelection = 2131361891;
+			// aapt resource value: 0x7f0a0065
+			public const int singleSelection = 2131361893;
 			
-			// aapt resource value: 0x7f0a00d0
-			public const int sliding_tabs = 2131362000;
+			// aapt resource value: 0x7f0a00d2
+			public const int sliding_tabs = 2131362002;
 			
-			// aapt resource value: 0x7f0a0095
-			public const int smallLabel = 2131361941;
+			// aapt resource value: 0x7f0a0097
+			public const int smallLabel = 2131361943;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int snackbar_action = 2131361948;
+			// aapt resource value: 0x7f0a009e
+			public const int snackbar_action = 2131361950;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int snackbar_text = 2131361947;
+			// aapt resource value: 0x7f0a009d
+			public const int snackbar_text = 2131361949;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int snap = 2131361861;
 			
-			// aapt resource value: 0x7f0a006e
-			public const int spacer = 2131361902;
+			// aapt resource value: 0x7f0a0070
+			public const int spacer = 2131361904;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int split_action_bar = 2131361800;
@@ -7670,14 +7815,14 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a004d
 			public const int start = 2131361869;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int status_bar_latest_event_content = 2131361986;
+			// aapt resource value: 0x7f0a00c4
+			public const int status_bar_latest_event_content = 2131361988;
 			
-			// aapt resource value: 0x7f0a0080
-			public const int submenuarrow = 2131361920;
+			// aapt resource value: 0x7f0a0082
+			public const int submenuarrow = 2131361922;
 			
-			// aapt resource value: 0x7f0a0091
-			public const int submit_area = 2131361937;
+			// aapt resource value: 0x7f0a0093
+			public const int submit_area = 2131361939;
 			
 			// aapt resource value: 0x7f0a0021
 			public const int tabMode = 2131361825;
@@ -7691,14 +7836,14 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a001b
 			public const int text2 = 2131361819;
 			
-			// aapt resource value: 0x7f0a0074
-			public const int textSpacerNoButtons = 2131361908;
+			// aapt resource value: 0x7f0a0076
+			public const int textSpacerNoButtons = 2131361910;
 			
-			// aapt resource value: 0x7f0a0073
-			public const int textSpacerNoTitle = 2131361907;
+			// aapt resource value: 0x7f0a0075
+			public const int textSpacerNoTitle = 2131361909;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int text_input_password_toggle = 2131361954;
+			// aapt resource value: 0x7f0a00a4
+			public const int text_input_password_toggle = 2131361956;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int textinput_counter = 2131361812;
@@ -7706,29 +7851,29 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0015
 			public const int textinput_error = 2131361813;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int time = 2131361992;
+			// aapt resource value: 0x7f0a00ca
+			public const int time = 2131361994;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int title = 2131361820;
 			
+			// aapt resource value: 0x7f0a007d
+			public const int titleDividerNoCustom = 2131361917;
+			
 			// aapt resource value: 0x7f0a007b
-			public const int titleDividerNoCustom = 2131361915;
+			public const int title_template = 2131361915;
 			
-			// aapt resource value: 0x7f0a0079
-			public const int title_template = 2131361913;
-			
-			// aapt resource value: 0x7f0a00d1
-			public const int toolbar = 2131362001;
+			// aapt resource value: 0x7f0a00d3
+			public const int toolbar = 2131362003;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int top = 2131361856;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int topPanel = 2131361912;
+			// aapt resource value: 0x7f0a007a
+			public const int topPanel = 2131361914;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int touch_outside = 2131361945;
+			// aapt resource value: 0x7f0a009b
+			public const int touch_outside = 2131361947;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int transition_current_scene = 2131361807;
@@ -7757,11 +7902,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00d3
-			public const int visible = 2131362003;
+			// aapt resource value: 0x7f0a00d5
+			public const int visible = 2131362005;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int volume_item_container = 2131361973;
+			// aapt resource value: 0x7f0a00b7
+			public const int volume_item_container = 2131361975;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int withText = 2131361854;
@@ -7769,8 +7914,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0030
 			public const int wrap_content = 2131361840;
 			
-			// aapt resource value: 0x7f0a005d
-			public const int yearView = 2131361885;
+			// aapt resource value: 0x7f0a005f
+			public const int yearView = 2131361887;
 			
 			static Id()
 			{
@@ -10990,8 +11135,8 @@ namespace FBCross.Droid
 			public const int MenuView_subMenuArrow = 8;
 			
 			public static int[] MvxBinding = new int[] {
-					2130772355,
-					2130772356};
+					2130772381,
+					2130772382};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -11000,20 +11145,20 @@ namespace FBCross.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130772357};
+					2130772383};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130772360};
+					2130772386};
 			
 			// aapt resource value: 0
 			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130772358,
-					2130772359};
+					2130772384,
+					2130772385};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;
@@ -11222,22 +11367,22 @@ namespace FBCross.Droid
 			public const int SearchView_voiceIcon = 12;
 			
 			public static int[] SfCalendar = new int[] {
-					2130772339,
-					2130772340,
-					2130772341,
-					2130772342,
-					2130772343,
-					2130772344,
-					2130772345,
-					2130772346,
-					2130772347,
-					2130772348,
-					2130772349,
-					2130772350,
-					2130772351,
-					2130772352,
-					2130772353,
-					2130772354};
+					2130772365,
+					2130772366,
+					2130772367,
+					2130772368,
+					2130772369,
+					2130772370,
+					2130772371,
+					2130772372,
+					2130772373,
+					2130772374,
+					2130772375,
+					2130772376,
+					2130772377,
+					2130772378,
+					2130772379,
+					2130772380};
 			
 			// aapt resource value: 4
 			public const int SfCalendar_agendaViewHeight = 4;
@@ -11286,6 +11431,112 @@ namespace FBCross.Droid
 			
 			// aapt resource value: 0
 			public const int SfCalendar_viewMode = 0;
+			
+			public static int[] SfPicker = new int[] {
+					2130772339,
+					2130772340,
+					2130772341,
+					2130772342,
+					2130772343,
+					2130772344,
+					2130772345,
+					2130772346,
+					2130772347,
+					2130772348,
+					2130772349,
+					2130772350,
+					2130772351,
+					2130772352,
+					2130772353,
+					2130772354,
+					2130772355,
+					2130772356,
+					2130772357,
+					2130772358,
+					2130772359,
+					2130772360,
+					2130772361,
+					2130772362,
+					2130772363,
+					2130772364};
+			
+			// aapt resource value: 1
+			public const int SfPicker_pickerBackgroundColor = 1;
+			
+			// aapt resource value: 17
+			public const int SfPicker_pickerBorderColor = 17;
+			
+			// aapt resource value: 14
+			public const int SfPicker_pickerColumnHeaderBackgroundColor = 14;
+			
+			// aapt resource value: 10
+			public const int SfPicker_pickerColumnHeaderHeight = 10;
+			
+			// aapt resource value: 25
+			public const int SfPicker_pickerColumnHeaderTextColor = 25;
+			
+			// aapt resource value: 21
+			public const int SfPicker_pickerColumnHeaderTextSize = 21;
+			
+			// aapt resource value: 6
+			public const int SfPicker_pickerEnableLooping = 6;
+			
+			// aapt resource value: 3
+			public const int SfPicker_pickerFooterHeight = 3;
+			
+			// aapt resource value: 13
+			public const int SfPicker_pickerHeaderBackgroundColor = 13;
+			
+			// aapt resource value: 2
+			public const int SfPicker_pickerHeaderHeight = 2;
+			
+			// aapt resource value: 18
+			public const int SfPicker_pickerHeaderText = 18;
+			
+			// aapt resource value: 24
+			public const int SfPicker_pickerHeaderTextColor = 24;
+			
+			// aapt resource value: 20
+			public const int SfPicker_pickerHeaderTextSize = 20;
+			
+			// aapt resource value: 4
+			public const int SfPicker_pickerHeight = 4;
+			
+			// aapt resource value: 5
+			public const int SfPicker_pickerIsOpen = 5;
+			
+			// aapt resource value: 11
+			public const int SfPicker_pickerItemHeight = 11;
+			
+			// aapt resource value: 0
+			public const int SfPicker_pickerMode = 0;
+			
+			// aapt resource value: 23
+			public const int SfPicker_pickerSelectedItemTextSize = 23;
+			
+			// aapt resource value: 12
+			public const int SfPicker_pickerSelectedItemTextcolor = 12;
+			
+			// aapt resource value: 16
+			public const int SfPicker_pickerSelectionBorderColor = 16;
+			
+			// aapt resource value: 9
+			public const int SfPicker_pickerShowColumnHeader = 9;
+			
+			// aapt resource value: 8
+			public const int SfPicker_pickerShowFooter = 8;
+			
+			// aapt resource value: 7
+			public const int SfPicker_pickerShowHeader = 7;
+			
+			// aapt resource value: 15
+			public const int SfPicker_pickerUnselectedItemTextColor = 15;
+			
+			// aapt resource value: 22
+			public const int SfPicker_pickerUnselectedItemTextSize = 22;
+			
+			// aapt resource value: 19
+			public const int SfPicker_pickerWidth = 19;
 			
 			public static int[] SnackbarLayout = new int[] {
 					16843039,

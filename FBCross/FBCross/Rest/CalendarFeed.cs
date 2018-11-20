@@ -18,6 +18,8 @@ namespace FBCross.Rest
             request.AddQueryParameter("sessionToken", sessionToken);
             request.AddQueryParameter("start", start.ToShortDateString());
             request.AddQueryParameter("end", end.ToShortDateString());
+            request.AddQueryParameter("showUnavailableTimes", "true");
+            request.AddQueryParameter("showBlocks", "true");
             request.RequestFormat = DataFormat.Json;
             return Client.ExecuteTaskAsync<IEnumerable<CalendarEvent>>(request);
         }

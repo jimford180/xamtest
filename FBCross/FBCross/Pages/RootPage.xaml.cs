@@ -19,11 +19,17 @@ namespace FBCross.Pages
         {
             InitializeComponent();
             Title = "Root Page";
+            
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+        }
+        protected override void OnChildAdded(Element child)
+        {
+            base.OnChildAdded(child);
+            
         }
     }
 }

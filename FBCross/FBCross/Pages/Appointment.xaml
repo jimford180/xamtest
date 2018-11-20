@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentPage x:TypeArguments="viewModels:AppointmentViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Appointment;assembly=FBCross"
+    x:Class="FBCross.Pages.Appointment" Title="Create Appointment">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="SaveAppointment" Order="Primary" Text="Save" Command="{Binding SaveAppointmentCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChooseServiceCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Label StyleClass="fieldTextValue" Text="{Binding ServiceName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                            <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                            <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="DATE AND TIME">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeDateTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Label StyleClass="fieldTextValue" Text="{Binding Date}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                            <Label StyleClass="fieldTextValue" Text="{Binding Time}" HorizontalOptions="EndAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Customer">
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="StartAndExpand"></Label>
+                            <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                            <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                            <Label StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <SwitchCell On="{Binding RemindByEmail}" Text="Remind By Email"></SwitchCell>
+                    <SwitchCell On="{Binding RemindBySms}" Text="Remind By Sms"></SwitchCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</views:MvxContentPage>

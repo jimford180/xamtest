@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:ChooseDateTimeViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+   xmlns:local="clr-namespace:FBCross.Controls"
+    xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Appointment;assembly=FBCross"
+    x:Class="FBCross.Pages.SelectAppointmentDateTime" Title="Choose Appointment Time">
+    <ContentPage.Content>
+        <StackLayout>
+            <local:CustomDatePicker x:Name="date" ColumnHeaderHeight="50" ItemHeight="45" PickerMode="Default" PickerWidth="300" SelectedItem="{Binding SelectedDate}" />
+            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+            <Label IsVisible="{Binding ShowAvailabilityResultMessage}" Text="{Binding AvailabilityResultMessage}" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+            <views:MvxListView x:Name="GroupedAgendaView"
+            ItemsSource="{mvx:MvxBind AvailableTimes}"
+            ItemClick="{mvx:MvxBind TimeSelectedCommand}" SelectedItem="{mvx:MvxBind TimeSelectedCommand}" IsVisible="{Binding !Loading}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Time}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </views:MvxListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    </views:MvxContentPage>

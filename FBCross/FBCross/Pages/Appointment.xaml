@@ -50,8 +50,36 @@
                                 <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                             </StackLayout.GestureRecognizers>
                             <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="StartAndExpand"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
                             <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
                             <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout.GestureRecognizers
+                                <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                            
                             <Label StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
                         </StackLayout>
                     </ViewCell>

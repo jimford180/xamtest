@@ -44,20 +44,6 @@
   <ItemGroup>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Syncfusion.Licensing, Version=16.3.0.21, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\android\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.Android">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\android\Syncfusion.SfCalendar.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.XForms, Version=16.3451.0.21, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\android\Syncfusion.SfCalendar.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfCalendar.XForms.Android">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Syncfusion\Essential Studio\Xamarin\16.3.0.21\Xamarin\lib\android\Syncfusion.SfCalendar.XForms.Android.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,13 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
-      <Version>6.2.0</Version>
+      <Version>6.2.2</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
-      <Version>6.2.0</Version>
+      <Version>6.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar.Android">
+      <Version>16.3.0.29</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPicker.Android">
-      <Version>16.3.0.21</Version>
+      <Version>16.3.0.29</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />

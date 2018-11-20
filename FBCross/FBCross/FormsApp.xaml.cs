@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FBCross.Pages;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace FBCross
@@ -40,7 +41,7 @@ namespace FBCross
         public FormsApp ()
 		{
 			//InitializeComponent();
-            //MainPage = new MainMasterDetail();
+            //MainPage = new RootPage();
 		}
 
         public async static Task<SessionInformation> GetSessionTokenAndMerchantGuid()

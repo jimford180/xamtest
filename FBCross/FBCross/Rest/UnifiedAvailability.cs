@@ -18,10 +18,7 @@ namespace FBCross.Rest
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
             request.AddQueryParameter("csvServiceIds", string.Join(",", serviceIds));
-            if (employeeId.HasValue)
-            {
-                request.AddQueryParameter("employeeId", employeeId.Value.ToString());
-            }
+            request.AddQueryParameter("employeeId", employeeId.GetValueOrDefault(0).ToString());
             request.AddQueryParameter("startDate", startDate.ToString());
             request.AddQueryParameter("endDate", endDate.ToString());
             request.RequestFormat = DataFormat.Json;

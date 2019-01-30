@@ -16,11 +16,19 @@ namespace FBCross.ViewModels.Instance
     {
         private readonly IInstanceDetails _instanceDetailsService;
         private readonly IMvxNavigationService _navigationService;
+        private Rest.ICustomer _customerService { get; }
+        private Rest.IScheduleBooking _scheduleBookingService { get; }
+        private Rest.IFixedTimeBooking _fixedTimeBookingService { get; }
+        private readonly Rest.IUnifiedAvailability _unifiedAvailability;
 
-        public InstanceDetailsViewModel(IInstanceDetails instanceDetailsService, IMvxNavigationService navigationService)
+        public InstanceDetailsViewModel(IInstanceDetails instanceDetailsService, IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService)
         {
             _instanceDetailsService = instanceDetailsService;
             _navigationService = navigationService;
+            _unifiedAvailability = unifiedAvailability;
+            _customerService = customerService;
+            _scheduleBookingService = scheduleBookingService;
+            _fixedTimeBookingService = fixedTimeBookingService;
         }
         public string ServiceName
         {
@@ -31,8 +39,9 @@ namespace FBCross.ViewModels.Instance
                 RaisePropertyChanged(() => ServiceName);
             }
         }
+        public string Id { get => _id; set { _id = value; RaisePropertyChanged(() => Id); } }
         public string DateTime { get => _dateTime; set { _dateTime = value; RaisePropertyChanged(() => DateTime); } }
-        public int SpotsTaken { get => _spotsTaken; set { _spotsTaken = value; RaisePropertyChanged(() => SpotsTaken); } }
+        public int SpotsTaken { get => _spotsTaken; set { _spotsTaken = value; RaisePropertyChanged(() => SpotsTaken); RaisePropertyChanged(() => SpotsTakenText); } }
         public string SpotsTakenText { get { return string.Format("{0} / ", _spotsTaken); } }
         public int TotalSpots { get => _totalSpots; set { _totalSpots = value; RaisePropertyChanged(() => TotalSpots); } }
         public bool RequiresPayment { get => _requiresPayment; set { _requiresPayment = value; RaisePropertyChanged(() => RequiresPayment); } }
@@ -54,7 +63,7 @@ namespace FBCross.ViewModels.Instance
 
         private void GoToCurrentBookings()
         {
-            var bookingsViewModel = new FixedTimeBookingsViewModel(CurrentBookings);
+            var bookingsViewModel = new FixedTimeBookingsViewModel(this, CurrentBookings, _navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService);
             _navigationService.Navigate(bookingsViewModel);
 
         }
@@ -85,7 +94,7 @@ namespace FBCross.ViewModels.Instance
                 Loading = false;
             }
         }
-
+        private string _id;
         private string _serviceName;
         private string _dateTime;
         private int _spotsTaken;
@@ -120,6 +129,7 @@ namespace FBCross.ViewModels.Instance
                 Price = response.Data.Price;
                 CurrentBookings = response.Data.Bookings;
                 WaitListBookings = response.Data.WaitListParties;
+                Id = response.Data.Id;
             }
 
             Loading = false;

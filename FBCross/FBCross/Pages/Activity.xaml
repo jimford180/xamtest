@@ -7,33 +7,17 @@
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Activity;assembly=FBCross"
     x:Class="FBCross.Pages.Activity">
     <ContentPage.Content>
-        <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-            CachingStrategy="RecycleElement">
-
-            <!--Built in Cells-->
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding ActionText}" Detail="{Binding Description}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-            <!--Custom View Cells-->
-            <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-        </ListView>
+        <Grid>
+            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+            <views:MvxListView x:Name="MyListView"
+            ItemsSource="{mvx:MvxBind Items}"
+            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ActionText}" Detail="{Binding Description}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </views:MvxListView>
+        </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

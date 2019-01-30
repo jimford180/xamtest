@@ -21,7 +21,16 @@ namespace FBCross.ViewModels.Appointment
         private async Task ServiceSelected(ServiceViewModel arg)
         {
             _appointment.Service = arg;
-            await _navigationService.Navigate(_appointment);
+            var schedules = await FormsApp.Database.MasterSchedules.GetEntitiesAsync();
+            if (schedules == null || !schedules.Any(s => s.ServiceIds.Contains(arg.Id.ToString())))
+            {
+                _appointment.IsFixedTimeAppointment = true;
+            }
+            else
+            {
+                _appointment.IsFixedTimeAppointment = false;
+            }
+            await _navigationService.Close(this);
         }
         
         public ChooseServiceViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService)

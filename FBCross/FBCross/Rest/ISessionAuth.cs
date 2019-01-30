@@ -8,5 +8,6 @@ namespace FBCross.Rest
     public interface ISessionAuth
     {
         Task<IRestResponse<IEnumerable<SessionMerchant>>> Get(string email, string password);
+        Task<IRestResponse<IEnumerable<SessionMerchant>>> Get(string sessionToken);
     }
 }

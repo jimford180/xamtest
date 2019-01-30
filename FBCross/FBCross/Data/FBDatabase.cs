@@ -14,6 +14,8 @@ namespace FBCross.Data
             database.CreateTableAsync<SessionMerchant>().Wait();
             database.CreateTableAsync<Employee>().Wait();
             database.CreateTableAsync<Service>().Wait();
+            database.CreateTableAsync<MasterClass>().Wait();
+            database.CreateTableAsync<MasterSchedule>().Wait();
         }
 
         private Repository<SessionMerchant> _sessions;
@@ -45,6 +47,26 @@ namespace FBCross.Data
                 if (_services == null)
                     _services = new Repository<Service>(database);
                 return _services;
+            }
+        }
+        private Repository<MasterClass> _masterClasses;
+        public Repository<MasterClass> MasterClasses
+        {
+            get
+            {
+                if (_masterClasses == null)
+                    _masterClasses = new Repository<MasterClass>(database);
+                return _masterClasses;
+            }
+        }
+        private Repository<MasterSchedule> _masterSchedules;
+        public Repository<MasterSchedule> MasterSchedules
+        {
+            get
+            {
+                if (_masterSchedules == null)
+                    _masterSchedules = new Repository<MasterSchedule>(database);
+                return _masterSchedules;
             }
         }
 

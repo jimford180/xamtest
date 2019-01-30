@@ -36,7 +36,6 @@
                                     <Label Text="{mvx:MvxBind Title}" 
                    StyleClass="agendaTitle" />
                                 </StackLayout>
-
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

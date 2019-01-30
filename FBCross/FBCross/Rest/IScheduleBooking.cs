@@ -10,5 +10,6 @@ namespace FBCross.Rest
         Task<IRestResponse<BookingCancellationResponse>> Delete(Guid id, Guid merchantGuid, string sessionToken, bool refundPayment, string reason);
         Task<IRestResponse<ScheduleBookingResponse>> Post(ScheduleBookingRequest bookingRequest, string sessionToken, Guid merchantGuid);
         Task<IRestResponse<BookingResponse>> Put(ScheduleBookingRequest update, string sessionToken, Guid merchantGuid);
+        Task<IRestResponse<ScheduleBookingInfo>> Get(Guid guid);
     }
 }

@@ -16,7 +16,7 @@ namespace FBCross.Rest
             var request = new RestRequest("booking");
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
-            request.AddBody(bookingRequest);
+            request.AddJsonBody(bookingRequest);
             request.RequestFormat = DataFormat.Json;
             request.Method = Method.POST;
             return Client.ExecuteTaskAsync<BookingResponse>(request);
@@ -24,9 +24,10 @@ namespace FBCross.Rest
         public Task<IRestResponse<BookingResponse>> Put(BookingDetail update, string sessionToken, Guid merchantGuid)
         {
             var request = new RestRequest("booking");
+            request.AddQueryParameter("id", update.BookingId);
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
-            request.AddBody(update);
+            request.AddJsonBody(update);
             request.RequestFormat = DataFormat.Json;
             request.Method = Method.PUT;
             return Client.ExecuteTaskAsync<BookingResponse>(request);

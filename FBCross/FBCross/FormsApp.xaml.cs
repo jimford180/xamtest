@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FBCross.Pages;
+using FBCross.Rest.Dto;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace FBCross
@@ -35,8 +36,10 @@ namespace FBCross
             _merchantGuid = Guid.Empty;
             _sessionToken = null;
         }
-        public static DateTime SelectedDate { get; internal set; }
-        public static string CurrentInstanceId { get; internal set; }
+        public static DateTime SelectedDate { get; set; }
+        public static string CurrentInstanceId { get; set; }
+        public static string CurrentScheduleBookingId { get; set; }
+        public static BookingDetail CurrentFixedTimeBooking { get; set; }
 
         public FormsApp ()
 		{

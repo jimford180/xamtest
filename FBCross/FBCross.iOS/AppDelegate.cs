@@ -7,6 +7,7 @@ using UIKit;
 using MvvmCross.Forms.Platforms.Ios.Core;
 using Syncfusion.SfCalendar.XForms.iOS;
 using Syncfusion.SfPicker.XForms.iOS;
+using Syncfusion.XForms.iOS.Buttons;
 
 namespace FBCross.iOS
 {
@@ -27,6 +28,7 @@ namespace FBCross.iOS
         {
             new SfCalendarRenderer();
             new SfPickerRenderer();
+            SfCheckBoxRenderer.Init();
             var result = base.FinishedLaunching(uiApplication, launchOptions);
             return result;
         }

@@ -2,6 +2,7 @@
 {
     public class FixedTimeBookingViewModel : ViewModelBase
     {
+        public string BookingId { get => _bookingId; set { _bookingId = value; RaisePropertyChanged(() => BookingId); } }
         public string FirstName { get => _firstName; set { _firstName = value; RaisePropertyChanged(() => FirstName); } }
         public string LastName { get => _lastName; set { _lastName = value; RaisePropertyChanged(() => LastName); } }
         public string Email { get => _email; set { _email = value; RaisePropertyChanged(() => Email); } }
@@ -10,6 +11,7 @@
         public string TopLineText { get => string.Format("{0} {1}", _firstName, _lastName); }
         public string BottomLineText { get => string.Format("{0} | {1}", _email, _phone); }
 
+        private string _bookingId;
         private string _firstName;
         private string _lastName;
         private string _email;

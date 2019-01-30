@@ -10,6 +10,8 @@ using MvvmCross.Navigation;
 using FBCross.Rest;
 using AutoMapper;
 using FBCross.ViewModels.Navigation;
+using Xamarin.Forms;
+using System.Linq;
 
 namespace FBCross.ViewModels.Appointment
 {
@@ -25,6 +27,9 @@ namespace FBCross.ViewModels.Appointment
         private string _notes;
         private Guid _merchantGuid;
         private Guid? _guid;
+        private string _timeZone;
+        private string _classInstanceSlug;
+        private bool _lockedForFixedTime;
         private readonly IMvxNavigationService _navigationService;
         private readonly IUnifiedAvailability _unifiedAvailability;
         private readonly ICustomer _customerService;
@@ -77,53 +82,120 @@ namespace FBCross.ViewModels.Appointment
         public Guid Guid
         {
             get { return _guid.HasValue ? _guid.Value : Guid.Empty; }
+            set { _guid = value; RaisePropertyChanged(() => Guid); }
         }
+        public string ClassInstanceSlug { get => _classInstanceSlug; set { _classInstanceSlug = value; RaisePropertyChanged(() => ClassInstanceSlug); } }
 
         public bool RemindByEmail { get => _remindByEmail; set { _remindByEmail = value; RaisePropertyChanged(() => RemindByEmail); } }
         public bool RemindBySms { get => _remindBySms; set { _remindBySms = value; RaisePropertyChanged(() => RemindBySms); } }
         public string Notes { get => _notes; set { _notes = value; RaisePropertyChanged(() => Notes); } }
         public bool IsFixedTimeAppointment { get => _isFixedTimeAppointment; set { _isFixedTimeAppointment = value; RaisePropertyChanged(() => IsFixedTimeAppointment); } }
+        public string TimeZone { get => _timeZone; set => _timeZone = value; }
 
         public IMvxAsyncCommand ChooseServiceCommand => new MvxAsyncCommand(GoToServiceChoice);
         public IMvxAsyncCommand ChooseEmployeeCommand => new MvxAsyncCommand(GoToEmployeeChoice);
         public IMvxAsyncCommand ChangeCustomerCommand => new MvxAsyncCommand(GoToCustomerChoice);
         public IMvxAsyncCommand ChangeDateTimeCommand => new MvxAsyncCommand(GoToDateTimeChoice);
         public IMvxAsyncCommand SaveAppointmentCommand => new MvxAsyncCommand(SaveAppointment);
+        public IMvxAsyncCommand CancelAppointmentCommand => new MvxAsyncCommand(CancelAppointment);
 
-        private async Task SaveAppointment()
+        private async Task CancelAppointment()
         {
-            var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
-            _merchantGuid = sessionInfo.MerchantGuid;
-            if (_isFixedTimeAppointment)
+            if (_guid.HasValue)
             {
-                var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingRequest>(this);
-                var response = await _fixedTimeBookingService.Post(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                if (response.IsSuccessful)
+                var confirm = await FormsApp.Current.MainPage.DisplayAlert("Cancel Appointment", "Are you sure you want to cancel this appointment?", "Yes", "No");
+                if (confirm)
                 {
-                    await _navigationService.Navigate<TabbedHomeViewModel>();
+                    Loading = true;
+                    var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
+                    var response = await _scheduleBookingService.Delete(_guid.Value, sessionInfo.MerchantGuid, sessionInfo.SessionToken, true, string.Empty);
+                    if (response.IsSuccessful)
+                    {
+                        await _navigationService.Navigate<RootViewModel>();
+                    }
                 }
             }
             else
             {
-                var scheduleBookingRequest = Mapper.Map<Rest.Dto.ScheduleBookingRequest>(this);
-                var response = await _scheduleBookingService.Post(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                if (response.IsSuccessful)
+                var confirm = await FormsApp.Current.MainPage.DisplayAlert("Cancel Appointment", "Are you sure you want to stop making this appointment?", "Yes", "No");
+                if (confirm)
                 {
                     await _navigationService.Navigate<RootViewModel>();
                 }
             }
         }
 
+        private async Task SaveAppointment()
+        {
+            Loading = true;
+            var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
+            _merchantGuid = sessionInfo.MerchantGuid;
+            if (_isFixedTimeAppointment)
+            {
+                
+                if (_guid.HasValue)
+                {
+                    var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingDetail>(this);
+                    var response = await _fixedTimeBookingService.Put(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                    if (response.IsSuccessful)
+                    {
+                        await _navigationService.Navigate<TabbedHomeViewModel>();
+                    }
+                }
+                else
+                {
+                    var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingRequest>(this);
+                    var response = await _fixedTimeBookingService.Post(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                    if (response.IsSuccessful)
+                    {
+                        await _navigationService.Navigate<TabbedHomeViewModel>();
+                    }
+                }
+                
+            }
+            else
+            {
+                var scheduleBookingRequest = Mapper.Map<Rest.Dto.ScheduleBookingRequest>(this);
+                if (!string.IsNullOrWhiteSpace(scheduleBookingRequest.TimeZone))
+                    scheduleBookingRequest.TimeZoneNET = true;
+                if (_guid.HasValue)
+                {
+                    var response = await _scheduleBookingService.Put(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                    if (response.IsSuccessful)
+                    {
+                        FormsApp.CurrentScheduleBookingId = null;
+                        await _navigationService.Navigate<RootViewModel>();
+                    }
+                }
+                else
+                {
+                    var response = await _scheduleBookingService.Post(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                    if (response.IsSuccessful)
+                    {
+                        FormsApp.CurrentFixedTimeBooking = null;
+                        await _navigationService.Navigate<RootViewModel>();
+                    }
+                }
+            }
+            Loading = false;
+        }
+
         private async Task GoToServiceChoice()
         {
-            var serviceChoice = new ChooseServiceViewModel(this, _navigationService);
-            await _navigationService.Navigate(serviceChoice);
+            if (!_lockedForFixedTime)
+            {
+                var serviceChoice = new ChooseServiceViewModel(this, _navigationService);
+                await _navigationService.Navigate(serviceChoice);
+            }
         }
 
         private async Task GoToEmployeeChoice()
         {
-            var employeeChoice = new ChooseEmployeeViewModel(this, _navigationService);
-            await _navigationService.Navigate(employeeChoice);
+            if (!_lockedForFixedTime)
+            {
+                var employeeChoice = new ChooseEmployeeViewModel(this, _navigationService);
+                await _navigationService.Navigate(employeeChoice);
+            }
         }
         private async Task GoToCustomerChoice()
         {
@@ -132,9 +204,20 @@ namespace FBCross.ViewModels.Appointment
         }
         private async Task GoToDateTimeChoice()
         {
-            var dateTimeChoice = new ChooseDateTimeViewModel(this, _navigationService, _unifiedAvailability);
-            await _navigationService.Navigate(dateTimeChoice);
+            if (!_lockedForFixedTime)
+            {
+                if (_service != null && (IsFixedTimeAppointment || _employee != null))
+                {
+                    var dateTimeChoice = new ChooseDateTimeViewModel(this, _navigationService, _unifiedAvailability);
+                    await _navigationService.Navigate(dateTimeChoice);
+                }
+                else
+                {
+                    MessagingCenter.Send<AppointmentViewModel>(this, "FailGoToDateTimeChoice");
+                }
+            }
         }
+        public bool LockedForFixedTime { get => _lockedForFixedTime; set => _lockedForFixedTime = value; }
 
         public AppointmentViewModel(IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService)
         {
@@ -143,6 +226,33 @@ namespace FBCross.ViewModels.Appointment
             _customerService = customerService;
             _scheduleBookingService = scheduleBookingService;
             _fixedTimeBookingService = fixedTimeBookingService;
+        }
+        public override async void Start()
+        {
+            Guid scheduleBookingGuid;
+            if (FormsApp.CurrentScheduleBookingId != null && Guid.TryParse(FormsApp.CurrentScheduleBookingId, out scheduleBookingGuid))
+            {
+                Loading = true;
+                var request = _scheduleBookingService.Get(scheduleBookingGuid);
+                var response = await request;
+                if (response.IsSuccessful)
+                {
+                    var booking = response.Data;
+                    _guid = scheduleBookingGuid;
+                    IsFixedTimeAppointment = false;
+                    DateTime = booking.SessionDateTime;
+                    TimeZone = booking.TimeZone;
+                    Customer = Mapper.Map<Customer.Customer>(booking);
+                    var services = await FormsApp.Database.Services.GetEntitiesAsync();
+                    Service = Mapper.Map<ServiceViewModel>(services.First(s => booking.ServiceIds.Contains(s.Id)));
+                    var employees = await FormsApp.Database.Employees.GetEntitiesAsync();
+                    Employee = Mapper.Map<EmployeeViewModel>(employees.First(s => s.Id == booking.EmployeeId));
+                    RemindByEmail = booking.RemindByEmail;
+                    RemindBySms = booking.RemindBySms;
+                }
+                Loading = false;
+            }
+
         }
     }
 }

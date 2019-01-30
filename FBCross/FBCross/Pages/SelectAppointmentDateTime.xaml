@@ -12,7 +12,7 @@
         <StackLayout>
             <local:CustomDatePicker x:Name="date" ColumnHeaderHeight="50" ItemHeight="45" PickerMode="Default" PickerWidth="300" SelectedItem="{Binding SelectedDate}" />
             <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
-            <Label IsVisible="{Binding ShowAvailabilityResultMessage}" Text="{Binding AvailabilityResultMessage}" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+            <Label IsVisible="{Binding ShowAvailabilityResultMessage}" Text="{Binding AvailabilityResultMessage}" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="0,10,0,10"></Label>
             <views:MvxListView x:Name="GroupedAgendaView"
             ItemsSource="{mvx:MvxBind AvailableTimes}"
             ItemClick="{mvx:MvxBind TimeSelectedCommand}" SelectedItem="{mvx:MvxBind TimeSelectedCommand}" IsVisible="{Binding !Loading}">
@@ -22,7 +22,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </views:MvxListView>
-            
         </StackLayout>
     </ContentPage.Content>
     </views:MvxContentPage>

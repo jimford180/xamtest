@@ -5,10 +5,82 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Appointment;assembly=FBCross"
-    x:Class="FBCross.Pages.SelectAppointmentCustomer" Title="Choose Customer">
+    xmlns:local="clr-namespace:FBCross.Components.Customer;assembly=FBCross"
+    xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+    xmlns:syncfusioncheck="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    x:Class="FBCross.Pages.SelectAppointmentCustomer" Title="Choose Customer"
+    xmlns:localControls="clr-namespace:FBCross.Controls">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="stringFieldTemplate">
+                <ViewCell>
+                    <Entry Text="{Binding Value}" Placeholder="{Binding Label}" Keyboard="{Binding Keyboard}"></Entry>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="numberFieldTemplate">
+                <ViewCell>
+                    <Entry Text="{Binding Value}" Placeholder="Number" Keyboard="Numeric"></Entry>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="dateFieldTemplate">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding LabelValue}" Margin="5,10" FontSize="18" TextColor="{Binding LabelColor}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenPickerCommand}"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <localControls:CustomDatePicker x:Name="date" ColumnHeaderHeight="50" ItemHeight="45" PickerMode="Dialog" IsOpen="{Binding IsPickerOpen,Mode=TwoWay}" PickerWidth="300" SelectedItem="{Binding SelectedDate}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="dropdownFieldTemplate">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding LabelValue}" Margin="5,10" FontSize="18" TextColor="{Binding LabelColor}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OpenPickerCommand}"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <syncfusion:SfPicker x:Name="picker" ItemsSource="{Binding DropdownOptions}" SelectedItem="{Binding Value}" HeaderText="Choose one" PickerMode="Dialog" PickerWidth="300" PickerHeight="300" IsOpen="{Binding IsPickerOpen,Mode=TwoWay}" IsEnabled="{Binding IsPickerOpen}" ShowFooter="True" />
+                    </StackLayout>
+                    
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="largeTextFieldTemplate">
+                <ViewCell>
+                    <Entry Text="{Binding Value}" Placeholder="{Binding Label}" Keyboard="Default"></Entry>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="multiCheckboxFieldTemplate">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Label}"></Label>
+                        <views:MvxListView x:Name="CheckBoxList"
+                ItemsSource="{Binding CheckBoxItems}" VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <syncfusioncheck:SfCheckBox x:Name="check" IsChecked="{Binding Checked}" Text="{Binding Text}" CheckedColor="Blue"></syncfusioncheck:SfCheckBox>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </views:MvxListView>
+                    </StackLayout>
+                    
+                </ViewCell>
+            </DataTemplate>
+            <local:CustomFieldTemplateSelector x:Key="customFieldTemplateSelector" StringFieldTemplate="{StaticResource stringFieldTemplate}" 
+                                               NumberFieldTemplate="{StaticResource numberFieldTemplate}" LargeTextFieldTemplate="{StaticResource largeTextFieldTemplate}"
+                                               MultiCheckboxTemplate="{StaticResource multiCheckboxFieldTemplate}" DropDownTemplate="{StaticResource dropdownFieldTemplate}"
+                                               DateFieldTemplate="{StaticResource dateFieldTemplate}">
+            </local:CustomFieldTemplateSelector>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Grid HorizontalOptions="FillAndExpand">
+            <Grid HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowSearchForm}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
@@ -24,9 +96,9 @@
                 </Image>
             </Grid>
             
-            <Button Command="AddCustomerCommand" Text="Add New Customer" HorizontalOptions="Fill" HeightRequest="44" IsVisible="{Binding ShowAddButton}"></Button>
+            <Button Command="{Binding AddCustomerCommand}" Text="Add New Customer" HorizontalOptions="Fill" HeightRequest="44" IsVisible="{Binding ShowAddButton}"></Button>
             <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HorizontalOptions="Center"  />
-            <views:MvxListView x:Name="MyListView"
+            <views:MvxListView x:Name="MyListView" IsVisible="{Binding ShowSearchForm}"
                 ItemsSource="{Binding Customers}"
                 ItemClick="{mvx:MvxBind CustomerSelectedCommand}" SelectedItem="{mvx:MvxBind CustomerSelectedCommand}">
                 <ListView.ItemTemplate>
@@ -36,6 +108,11 @@
                 </ListView.ItemTemplate>
             </views:MvxListView>
             <Label Text="No customers found. Use the Add Customer button above to add a new customer record." IsVisible="{Binding ShowNoCustomerWarning}" />
+
+            <views:MvxListView x:Name="FieldsList" IsVisible="{Binding ShowCustomerForm}"
+                ItemsSource="{Binding Fields}" ItemTemplate="{StaticResource customFieldTemplateSelector}" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+               
+            </views:MvxListView>
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

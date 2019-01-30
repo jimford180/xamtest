@@ -21,7 +21,7 @@ namespace FBCross.ViewModels.Appointment
         private async Task EmployeeSelected(EmployeeViewModel arg)
         {
             _appointment.Employee = arg;
-            await _navigationService.Navigate(_appointment);
+            await _navigationService.Close(this);
         }
         
         public ChooseEmployeeViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService)

@@ -26,7 +26,8 @@ namespace FBCross.Rest
             var request = new RestRequest("scheduleBooking");
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
-            request.AddBody(update);
+            request.AddQueryParameter("guid", update.Guid.ToString());
+            request.AddJsonBody(update);
             request.RequestFormat = DataFormat.Json;
             request.Method = Method.PUT;
             return Client.ExecuteTaskAsync<BookingResponse>(request);
@@ -37,11 +38,21 @@ namespace FBCross.Rest
             var request = new RestRequest("scheduleBooking");
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
-            request.AddQueryParameter("id", id.ToString());
+            request.AddQueryParameter("guid", id.ToString());
             request.AddQueryParameter("reason", reason);
+            request.AddQueryParameter("deleteEntireSeries", "false");
             request.RequestFormat = DataFormat.Json;
             request.Method = Method.DELETE;
             return Client.ExecuteTaskAsync<BookingCancellationResponse>(request);
+        }
+
+        public Task<IRestResponse<ScheduleBookingInfo>> Get(Guid guid)
+        {
+            var request = new RestRequest("scheduleBooking");
+            request.AddQueryParameter("guid", guid.ToString());
+            request.RequestFormat = DataFormat.Json;
+            request.Method = Method.GET;
+            return Client.ExecuteTaskAsync<ScheduleBookingInfo>(request);
         }
     }
 }

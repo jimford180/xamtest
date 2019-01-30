@@ -38,7 +38,7 @@ namespace FBCross.ViewModels.Authentication
             Loading = false;
             if (loginResult.IsSuccessful && loginResult.Data.Any())
             {
-                await FormsApp.Database.Sessions.RemoveAll();
+                await FormsApp.Logout();
                 foreach (var session in loginResult.Data)
                 {
                     await FormsApp.Database.Sessions.CreateEntityAsync(session);

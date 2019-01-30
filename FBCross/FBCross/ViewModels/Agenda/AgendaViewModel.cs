@@ -1,4 +1,5 @@
 ﻿using FBCross.Rest;
+using FBCross.ViewModels.Appointment;
 using FBCross.ViewModels.Instance;
 using FBCross.ViewModels.Month;
 using MvvmCross.Commands;
@@ -46,8 +47,16 @@ namespace FBCross.ViewModels.Agenda
 
         private Task ItemSelected(AgendaItem item)
         {
-            FormsApp.CurrentInstanceId = item.Url.Replace("#instance/", string.Empty);
-            return  _navigationService.Navigate<InstanceDetailsViewModel>();
+            if (item.Url.StartsWith("#instance"))
+            {
+                FormsApp.CurrentInstanceId = item.Url.Replace("#instance/", string.Empty);
+                return _navigationService.Navigate<InstanceDetailsViewModel>();
+            }
+            else
+            {
+                FormsApp.CurrentScheduleBookingId = item.Url.Replace("#booking/", string.Empty);
+                return _navigationService.Navigate<AppointmentViewModel>();
+            }
         }
 
         public override async void ViewAppearing()

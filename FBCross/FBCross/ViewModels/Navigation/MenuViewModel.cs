@@ -48,6 +48,7 @@ namespace FBCross.ViewModels.Navigation
                     await _navigationService.Navigate<TabbedHomeViewModel>();
                     break;
                 case PageType.NewAppointment:
+                    FormsApp.CurrentScheduleBookingId = null;
                     await _navigationService.Navigate<AppointmentViewModel>();
                     break;
                 case PageType.Logout:

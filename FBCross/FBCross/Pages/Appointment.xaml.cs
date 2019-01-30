@@ -22,6 +22,15 @@ namespace FBCross.Pages
             "FBCross.Styles.global.css"));
 
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Subscribe<AppointmentViewModel>(this, "FailGoToDateTimeChoice", ShowAlert);
+        }
 
+        private void ShowAlert(AppointmentViewModel obj)
+        {
+            DisplayAlert("Cannot Choose Date/Time", "Please choose a service and employee before choosing a time.", "OK");
+        }
     }
 }

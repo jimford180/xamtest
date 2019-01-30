@@ -26,7 +26,8 @@ namespace FBCross.ViewModels.Appointment
         private async Task TimeSelected(AvailableTimeViewModel item)
         {
             _appointment.DateTime = item.DateTime;
-            await _navigationService.Navigate(_appointment);
+            _appointment.ClassInstanceSlug = item.ClassInstanceSlug;
+            await _navigationService.Close(this);
         }
 
         private ObservableCollection<object> _selectedDate;
@@ -62,6 +63,10 @@ namespace FBCross.ViewModels.Appointment
             AvailableTimes = new List<AvailableTimeViewModel>();
             if (availabilityResponse.IsSuccessful)
             {
+                if (availabilityResponse.Data.AvailableTimes != null)
+                {
+                    availabilityResponse.Data.AvailableTimes = availabilityResponse.Data.AvailableTimes.Where(t => t.DateTime >= startDate && t.DateTime < endDate).ToList();
+                }
                 if (availabilityResponse.Data.ScheduleType == Rest.Dto.ScheduleType.None)
                 {
                     AvailabilityResultMessage = _appointment.Employee == null ? string.Format("There are no schedules set up for {0}.", _appointment.Service.Name) : string.Format("{0} has no schedules set up for {1}", _appointment.Employee.Name, _appointment.Service.Name);
@@ -76,7 +81,7 @@ namespace FBCross.ViewModels.Appointment
                     }
                     else
                     {
-                        AvailabilityResultMessage = string.Format("No available times found on {0}", Date.ToString("g"));
+                        AvailabilityResultMessage = string.Format("No available times found on {0}", Date.ToString("D"));
                     }
                 }
             }
@@ -93,19 +98,20 @@ namespace FBCross.ViewModels.Appointment
 
         public ChooseDateTimeViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability)
         {
+            var dt = appointment.DateTime > DateTime.Now ? appointment.DateTime : DateTime.Now;
             _appointment = appointment;
             _navigationService = navigationService;
             _unifiedAvailability = unifiedAvailability;
-            _date = DateTime.Now.Date;
+            _date = dt.Date;
             _availableTimes = new List<AvailableTimeViewModel>();
 
             ObservableCollection<object> todaycollection = new ObservableCollection<object>();
-            todaycollection.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Date.Month).Substring(0, 3));
-            if (DateTime.Now.Date.Day < 10)
-                todaycollection.Add("0" + DateTime.Now.Date.Day);
+            todaycollection.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dt.Date.Month).Substring(0, 3));
+            if (dt.Date.Day < 10)
+                todaycollection.Add("0" + dt.Date.Day);
             else
-                todaycollection.Add(DateTime.Now.Date.Day.ToString());
-            todaycollection.Add(DateTime.Now.Date.Year.ToString());
+                todaycollection.Add(dt.Date.Day.ToString());
+            todaycollection.Add(dt.Date.Year.ToString());
             SelectedDate = todaycollection;
         }
                 

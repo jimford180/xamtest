@@ -19,9 +19,10 @@ namespace FBCross.ViewModels.Instance
         private Rest.ICustomer _customerService { get; }
         private Rest.IScheduleBooking _scheduleBookingService { get; }
         private Rest.IFixedTimeBooking _fixedTimeBookingService { get; }
+        private Rest.IWaitListBooking _waitListBookingService{ get; }
         private readonly Rest.IUnifiedAvailability _unifiedAvailability;
 
-        public InstanceDetailsViewModel(IInstanceDetails instanceDetailsService, IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService)
+        public InstanceDetailsViewModel(IInstanceDetails instanceDetailsService, IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService, IWaitListBooking waitListBookingService)
         {
             _instanceDetailsService = instanceDetailsService;
             _navigationService = navigationService;
@@ -29,6 +30,7 @@ namespace FBCross.ViewModels.Instance
             _customerService = customerService;
             _scheduleBookingService = scheduleBookingService;
             _fixedTimeBookingService = fixedTimeBookingService;
+            _waitListBookingService = waitListBookingService;
         }
         public string ServiceName
         {
@@ -63,14 +65,20 @@ namespace FBCross.ViewModels.Instance
 
         private void GoToCurrentBookings()
         {
-            var bookingsViewModel = new FixedTimeBookingsViewModel(this, CurrentBookings, _navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService);
-            _navigationService.Navigate(bookingsViewModel);
+            if (!Loading)
+            {
+                var bookingsViewModel = new FixedTimeBookingsViewModel(this, CurrentBookings, _navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
+                _navigationService.Navigate(bookingsViewModel);
+            }
 
         }
         private void GoToWaitList()
         {
-            var waitListViewModel = new WaitListBookingsViewModel(WaitListBookings);
-            _navigationService.Navigate(waitListViewModel);
+            if (!Loading)
+            {
+                var waitListViewModel = new WaitListBookingsViewModel(this, WaitListBookings, _navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
+                _navigationService.Navigate(waitListViewModel);
+            }
         }
 
         private async void Save()

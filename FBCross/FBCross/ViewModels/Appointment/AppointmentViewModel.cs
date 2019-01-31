@@ -20,13 +20,14 @@ namespace FBCross.ViewModels.Appointment
         private ServiceViewModel _service;
         private EmployeeViewModel _employee;
         private DateTime _dateTime;
-        private bool _isFixedTimeAppointment;
+        private AppointmentViewModelType _type;
         private Customer.Customer _customer;
         private bool _remindByEmail;
         private bool _remindBySms;
         private string _notes;
         private Guid _merchantGuid;
         private Guid? _guid;
+        private int? _waitListId;
         private string _timeZone;
         private string _classInstanceSlug;
         private bool _lockedForFixedTime;
@@ -35,6 +36,7 @@ namespace FBCross.ViewModels.Appointment
         private readonly ICustomer _customerService;
         private readonly IScheduleBooking _scheduleBookingService;
         private readonly IFixedTimeBooking _fixedTimeBookingService;
+        private readonly IWaitListBooking _waitListBookingService;
 
         public ServiceViewModel Service { get => _service; set { _service = value; RaisePropertyChanged(() => Service); RaisePropertyChanged(() => ServiceName); } }
         public string ServiceName
@@ -84,12 +86,17 @@ namespace FBCross.ViewModels.Appointment
             get { return _guid.HasValue ? _guid.Value : Guid.Empty; }
             set { _guid = value; RaisePropertyChanged(() => Guid); }
         }
+        public int? WaitListId
+        {
+            get { return _waitListId; }
+            set { _waitListId = value; RaisePropertyChanged(() => WaitListId); }
+        }
         public string ClassInstanceSlug { get => _classInstanceSlug; set { _classInstanceSlug = value; RaisePropertyChanged(() => ClassInstanceSlug); } }
 
         public bool RemindByEmail { get => _remindByEmail; set { _remindByEmail = value; RaisePropertyChanged(() => RemindByEmail); } }
         public bool RemindBySms { get => _remindBySms; set { _remindBySms = value; RaisePropertyChanged(() => RemindBySms); } }
         public string Notes { get => _notes; set { _notes = value; RaisePropertyChanged(() => Notes); } }
-        public bool IsFixedTimeAppointment { get => _isFixedTimeAppointment; set { _isFixedTimeAppointment = value; RaisePropertyChanged(() => IsFixedTimeAppointment); } }
+        public AppointmentViewModelType Type { get => _type; set { _type = value; RaisePropertyChanged(() => Type); } }
         public string TimeZone { get => _timeZone; set => _timeZone = value; }
 
         public IMvxAsyncCommand ChooseServiceCommand => new MvxAsyncCommand(GoToServiceChoice);
@@ -101,15 +108,26 @@ namespace FBCross.ViewModels.Appointment
 
         private async Task CancelAppointment()
         {
-            if (_guid.HasValue)
+            if ((_guid.HasValue && Type == AppointmentViewModelType.ScheduleBooking) || (_waitListId.HasValue && Type == AppointmentViewModelType.FixedTimeWaitList) || (_guid.HasValue && Type == AppointmentViewModelType.FixedTimeBooking))
             {
                 var confirm = await FormsApp.Current.MainPage.DisplayAlert("Cancel Appointment", "Are you sure you want to cancel this appointment?", "Yes", "No");
                 if (confirm)
                 {
                     Loading = true;
                     var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
-                    var response = await _scheduleBookingService.Delete(_guid.Value, sessionInfo.MerchantGuid, sessionInfo.SessionToken, true, string.Empty);
-                    if (response.IsSuccessful)
+                    bool isSuccessful = false;
+                    switch (Type) {
+                        case AppointmentViewModelType.ScheduleBooking:
+                            isSuccessful = (await _scheduleBookingService.Delete(_guid.Value, sessionInfo.MerchantGuid, sessionInfo.SessionToken, true, string.Empty)).IsSuccessful;
+                            break;
+                        case AppointmentViewModelType.FixedTimeBooking:
+                            isSuccessful = (await _fixedTimeBookingService.Delete(_guid.Value, sessionInfo.MerchantGuid, sessionInfo.SessionToken, true)).IsSuccessful;
+                            break;
+                        case AppointmentViewModelType.FixedTimeWaitList:
+                            isSuccessful = (await _waitListBookingService.Delete(_waitListId.Value, sessionInfo.SessionToken, sessionInfo.MerchantGuid)).IsSuccessful;
+                            break;
+                    }
+                    if (isSuccessful)
                     {
                         await _navigationService.Navigate<RootViewModel>();
                     }
@@ -130,53 +148,75 @@ namespace FBCross.ViewModels.Appointment
             Loading = true;
             var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
             _merchantGuid = sessionInfo.MerchantGuid;
-            if (_isFixedTimeAppointment)
+            switch (_type)
             {
-                
-                if (_guid.HasValue)
-                {
-                    var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingDetail>(this);
-                    var response = await _fixedTimeBookingService.Put(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                    if (response.IsSuccessful)
+                case AppointmentViewModelType.FixedTimeBooking:
+                    if (_guid.HasValue)
                     {
-                        await _navigationService.Navigate<TabbedHomeViewModel>();
+                        var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingDetail>(this);
+                        var response = await _fixedTimeBookingService.Put(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                        }
                     }
-                }
-                else
-                {
-                    var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingRequest>(this);
-                    var response = await _fixedTimeBookingService.Post(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                    if (response.IsSuccessful)
+                    else
                     {
-                        await _navigationService.Navigate<TabbedHomeViewModel>();
+                        var fixedBookingRequest = Mapper.Map<Rest.Dto.BookingRequest>(this);
+                        var response = await _fixedTimeBookingService.Post(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                        }
                     }
-                }
-                
+                    break;
+                case AppointmentViewModelType.ScheduleBooking:
+                    var scheduleBookingRequest = Mapper.Map<Rest.Dto.ScheduleBookingRequest>(this);
+                    if (!string.IsNullOrWhiteSpace(scheduleBookingRequest.TimeZone))
+                        scheduleBookingRequest.TimeZoneNET = true;
+                    if (_guid.HasValue)
+                    {
+                        var response = await _scheduleBookingService.Put(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            FormsApp.CurrentScheduleBookingId = null;
+                            await _navigationService.Navigate<RootViewModel>();
+                        }
+                    }
+                    else
+                    {
+                        var response = await _scheduleBookingService.Post(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            FormsApp.CurrentFixedTimeBooking = null;
+                            await _navigationService.Navigate<RootViewModel>();
+                        }
+                    }
+                    break;
+                case AppointmentViewModelType.FixedTimeWaitList:
+                    if (_waitListId.HasValue)
+                    {
+                        var waitListRequest = Mapper.Map<Rest.Dto.WaitListRequest>(this);
+                        var response = await _waitListBookingService.Put(_waitListId.Value, waitListRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                        }
+                    }
+                    else
+                    {
+                        var waitListRequest = Mapper.Map<Rest.Dto.WaitListRequest>(this);
+                        var response = await _waitListBookingService.Post(waitListRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
+                        if (response.IsSuccessful)
+                        {
+                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                        }
+                    }
+                    break;
             }
-            else
-            {
-                var scheduleBookingRequest = Mapper.Map<Rest.Dto.ScheduleBookingRequest>(this);
-                if (!string.IsNullOrWhiteSpace(scheduleBookingRequest.TimeZone))
-                    scheduleBookingRequest.TimeZoneNET = true;
-                if (_guid.HasValue)
-                {
-                    var response = await _scheduleBookingService.Put(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                    if (response.IsSuccessful)
-                    {
-                        FormsApp.CurrentScheduleBookingId = null;
-                        await _navigationService.Navigate<RootViewModel>();
-                    }
-                }
-                else
-                {
-                    var response = await _scheduleBookingService.Post(scheduleBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
-                    if (response.IsSuccessful)
-                    {
-                        FormsApp.CurrentFixedTimeBooking = null;
-                        await _navigationService.Navigate<RootViewModel>();
-                    }
-                }
-            }
+
+
+
             Loading = false;
         }
 
@@ -206,7 +246,7 @@ namespace FBCross.ViewModels.Appointment
         {
             if (!_lockedForFixedTime)
             {
-                if (_service != null && (IsFixedTimeAppointment || _employee != null))
+                if (_service != null && (Type == AppointmentViewModelType.FixedTimeBooking || _employee != null))
                 {
                     var dateTimeChoice = new ChooseDateTimeViewModel(this, _navigationService, _unifiedAvailability);
                     await _navigationService.Navigate(dateTimeChoice);
@@ -219,13 +259,14 @@ namespace FBCross.ViewModels.Appointment
         }
         public bool LockedForFixedTime { get => _lockedForFixedTime; set => _lockedForFixedTime = value; }
 
-        public AppointmentViewModel(IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService)
+        public AppointmentViewModel(IMvxNavigationService navigationService, IUnifiedAvailability unifiedAvailability, ICustomer customerService, IScheduleBooking scheduleBookingService, IFixedTimeBooking fixedTimeBookingService, IWaitListBooking waitListBookingService)
         {
             _navigationService = navigationService;
             _unifiedAvailability = unifiedAvailability;
             _customerService = customerService;
             _scheduleBookingService = scheduleBookingService;
             _fixedTimeBookingService = fixedTimeBookingService;
+            _waitListBookingService = waitListBookingService;
         }
         public override async void Start()
         {
@@ -239,7 +280,7 @@ namespace FBCross.ViewModels.Appointment
                 {
                     var booking = response.Data;
                     _guid = scheduleBookingGuid;
-                    IsFixedTimeAppointment = false;
+                    Type = AppointmentViewModelType.ScheduleBooking;
                     DateTime = booking.SessionDateTime;
                     TimeZone = booking.TimeZone;
                     Customer = Mapper.Map<Customer.Customer>(booking);

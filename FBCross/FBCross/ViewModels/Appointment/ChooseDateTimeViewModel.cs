@@ -73,7 +73,7 @@ namespace FBCross.ViewModels.Appointment
                 }
                 else
                 {
-                    _appointment.IsFixedTimeAppointment = availabilityResponse.Data.ScheduleType == Rest.Dto.ScheduleType.Fixed;
+                    _appointment.Type = availabilityResponse.Data.ScheduleType == Rest.Dto.ScheduleType.Fixed ? AppointmentViewModelType.FixedTimeBooking : AppointmentViewModelType.ScheduleBooking;
                     if (availabilityResponse.Data.AvailableTimes != null && availabilityResponse.Data.AvailableTimes.Any())
                     {
                         AvailableTimes = availabilityResponse.Data.AvailableTimes.Select(t => Mapper.Map<AvailableTimeViewModel>(t)).ToList();

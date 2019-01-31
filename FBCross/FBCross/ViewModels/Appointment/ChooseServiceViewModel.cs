@@ -24,11 +24,11 @@ namespace FBCross.ViewModels.Appointment
             var schedules = await FormsApp.Database.MasterSchedules.GetEntitiesAsync();
             if (schedules == null || !schedules.Any(s => s.ServiceIds.Contains(arg.Id.ToString())))
             {
-                _appointment.IsFixedTimeAppointment = true;
+                _appointment.Type = AppointmentViewModelType.FixedTimeBooking;
             }
             else
             {
-                _appointment.IsFixedTimeAppointment = false;
+                _appointment.Type = AppointmentViewModelType.ScheduleBooking;
             }
             await _navigationService.Close(this);
         }

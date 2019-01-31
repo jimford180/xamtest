@@ -26,13 +26,13 @@ namespace FBCross
             Mvx.IoCProvider.RegisterType<IFixedTimeBooking, FixedTimeBooking>();
             Mvx.IoCProvider.RegisterType<IScheduleBooking, ScheduleBooking>();
             Mvx.IoCProvider.RegisterType<IActivityFeed, ActivityFeed>();
-
+            Mvx.IoCProvider.RegisterType<IWaitListBooking, WaitListBooking>();
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Rest.Dto.Employee, Data.Employee>();
                 cfg.CreateMap<Rest.Dto.AppointmentType, Data.Service>();
                 cfg.CreateMap<Rest.Dto.BookingDetail, ViewModels.Instance.FixedTimeBookingViewModel>();
-                cfg.CreateMap<Rest.Dto.WaitListDetail, ViewModels.Instance.FixedTimeBookingViewModel>();
+                cfg.CreateMap<Rest.Dto.WaitListDetail, ViewModels.Instance.FixedTimeBookingViewModel>().ForMember(dest => dest.BookingId, opt => opt.MapFrom(src => src.WaitListId.ToString()));
                 cfg.CreateMap<Data.Service, ViewModels.Appointment.ServiceViewModel>();
                 cfg.CreateMap<Data.Employee, ViewModels.Appointment.EmployeeViewModel>();
                 cfg.CreateMap<Rest.Dto.Schedule, Data.MasterSchedule>().ForMember(dest => dest.ServiceIds, opt => opt.MapFrom(src => string.Join(",", src.ServiceIds)));
@@ -45,6 +45,7 @@ namespace FBCross
                 ConfigureAppointmentViewModelToFixedTimeBookingRequest(cfg);
                 cfg.CreateMap<Rest.Dto.ScheduleBookingInfo, ViewModels.Customer.Customer>();
                 cfg.CreateMap<Rest.Dto.BookingDetail, ViewModels.Customer.Customer>().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId));
+                cfg.CreateMap<Rest.Dto.WaitListDetail, ViewModels.Customer.Customer>();
             }
             );
 
@@ -87,6 +88,14 @@ namespace FBCross
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id));
+
+            cfg.CreateMap<ViewModels.Appointment.AppointmentViewModel, Rest.Dto.WaitListRequest>()
+               .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
+               .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Customer.FirstName))
+               .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Customer.LastName))
+               .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
+               .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
+               .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id));
         }
     }
 }

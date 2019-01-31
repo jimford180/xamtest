@@ -23,8 +23,9 @@ namespace FBCross.ViewModels.Instance
         private Rest.ICustomer _customerService { get; }
         private Rest.IScheduleBooking _scheduleBookingService { get; }
         private Rest.IFixedTimeBooking _fixedTimeBookingService { get; }
+        private Rest.IWaitListBooking _waitListBookingService { get; }
 
-        public FixedTimeBookingsViewModel(InstanceDetailsViewModel instanceDetails, List<BookingDetail> bookings, IMvxNavigationService navigationService, Rest.IUnifiedAvailability unifiedAvailability, Rest.ICustomer customerService, Rest.IScheduleBooking scheduleBookingService, Rest.IFixedTimeBooking fixedTimeBookingService)
+        public FixedTimeBookingsViewModel(InstanceDetailsViewModel instanceDetails, List<BookingDetail> bookings, IMvxNavigationService navigationService, Rest.IUnifiedAvailability unifiedAvailability, Rest.ICustomer customerService, Rest.IScheduleBooking scheduleBookingService, Rest.IFixedTimeBooking fixedTimeBookingService, Rest.IWaitListBooking waitListBookingService)
         {
             _bookings = bookings.Select(b => Mapper.Map<FixedTimeBookingViewModel>(b)).ToList();
             _instanceDetails = instanceDetails;
@@ -34,6 +35,7 @@ namespace FBCross.ViewModels.Instance
             _customerService = customerService;
             _scheduleBookingService = scheduleBookingService;
             _fixedTimeBookingService = fixedTimeBookingService;
+            _waitListBookingService = waitListBookingService;
         }
 
         public IMvxAsyncCommand<FixedTimeBookingViewModel> ItemSelectedCommand => new MvxAsyncCommand<FixedTimeBookingViewModel>(ItemSelected);
@@ -41,8 +43,8 @@ namespace FBCross.ViewModels.Instance
 
         private async Task AddBooking()
         {
-            var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService);
-            appointment.IsFixedTimeAppointment = true;
+            var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
+            appointment.Type = AppointmentViewModelType.FixedTimeBooking;
             appointment.DateTime = Convert.ToDateTime(_instanceDetails.DateTime);
             appointment.ClassInstanceSlug = _instanceDetails.Id;
             var services = await FormsApp.Database.Services.GetEntitiesAsync();
@@ -59,9 +61,9 @@ namespace FBCross.ViewModels.Instance
         private async Task ItemSelected(FixedTimeBookingViewModel item)
         {
             var booking = _details.First(d => d.BookingId == item.BookingId);
-            var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService);
+            var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
             appointment.Guid = Guid.Parse(booking.BookingId);
-            appointment.IsFixedTimeAppointment = true;
+            appointment.Type = AppointmentViewModelType.FixedTimeBooking;
             appointment.DateTime = Convert.ToDateTime(_instanceDetails.DateTime);
             appointment.ClassInstanceSlug = _instanceDetails.Id;
             appointment.Customer = Mapper.Map<Customer.Customer>(booking);

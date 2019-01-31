@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FBCross.Rest.Dto;
+using FBCross.Utils;
 using FBCross.ViewModels.Appointment;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
@@ -45,7 +46,7 @@ namespace FBCross.ViewModels.Instance
         {
             var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
             appointment.Type = AppointmentViewModelType.FixedTimeBooking;
-            appointment.DateTime = Convert.ToDateTime(_instanceDetails.DateTime);
+            appointment.DateTime = Convert.ToDateTime(StringHelper.RemoveLetters(_instanceDetails.DateTime));
             appointment.ClassInstanceSlug = _instanceDetails.Id;
             var services = await FormsApp.Database.Services.GetEntitiesAsync();
             appointment.Service = Mapper.Map<ServiceViewModel>(services.First(s => _instanceDetails.ServiceName == s.Name));

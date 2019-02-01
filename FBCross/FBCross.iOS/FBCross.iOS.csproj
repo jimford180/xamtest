@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -153,6 +153,12 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\image-2018-09-10.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\hamburger.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Activity.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -289,7 +295,6 @@
     <PackageReference Include="System.Reflection.Emit" Version="4.3.0">
       <ExcludeAssets>all</ExcludeAssets>
     </PackageReference>
-
     <PackageReference Include="MvvmCross.Forms">
       <Version>6.2.2</Version>
     </PackageReference>

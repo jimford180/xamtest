@@ -9,7 +9,7 @@
 
 <ContentPage.Content>
         <AbsoluteLayout>
-            <Label TextColor="White" Text="SIGN IN" AbsoluteLayout.LayoutBounds=".5,0,1,50" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+            <Label TextColor="White" Text="SIGN IN" AbsoluteLayout.LayoutBounds=".5,0,1,100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             <StackLayout AbsoluteLayout.LayoutBounds=".5,.3,300,400" AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Image Source="imgLogo.png" WidthRequest="250" HorizontalOptions="Center" />
                 <Label Text="Easily accept online bookings from your website." HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,30" TextColor="White"  />

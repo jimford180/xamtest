@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace FBCross.Pages
@@ -17,8 +18,10 @@ namespace FBCross.Pages
     {
 		public LeftMenu ()
 		{
-            Title = "FlexBooker";
+            Title = "Menu";
+            Icon = "hamburger.png";
             InitializeComponent ();
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 		}
 	}
 }

@@ -156,9 +156,6 @@
     <ImageAsset Include="Assets.xcassets\hamburger.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\hamburger.imageset\hamburger.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Activity.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -207,15 +204,6 @@
     <ImageAsset Include="Assets.xcassets\imgPlus.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\plus.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\plus1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\plus2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgPrev.imageset\angle-left1.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -223,9 +211,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgPrev.imageset\angle-left3.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\search.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgToday.imageset\Today.png">
@@ -264,19 +249,17 @@
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\trash.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgTrash.imageset\trash2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\trash3.png">
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\icons8-menu-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\icons8-trash-can-50.png" />
+    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\icons8-search-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

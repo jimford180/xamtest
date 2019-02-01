@@ -1,4 +1,4 @@
-﻿using FBCross.Data;
+using FBCross.Data;
 using MvvmCross.Commands;
 using System;
 using System.Collections.Generic;

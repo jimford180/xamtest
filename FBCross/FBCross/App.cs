@@ -50,6 +50,7 @@ namespace FBCross
             );
 
             RegisterAppStart<RootViewModel>();
+
         }
 
         private static void ConfigureAppointmentViewModelToScheduleBookingRequest(IMapperConfigurationExpression cfg)

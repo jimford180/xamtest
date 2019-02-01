@@ -16,7 +16,7 @@ using Xamarin.Forms.Xaml;
 namespace FBCross.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxTabbedPagePresentation(TabbedPosition.Tab, Title ="Activity", Icon ="activity.png")]
+    [MvxTabbedPagePresentation(TabbedPosition.Tab, Title ="Activity", Icon ="imgActivity.png")]
     public partial class Activity : MvxContentPage<ActivityViewModel>
 	{
 		public Activity()

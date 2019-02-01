@@ -26,6 +26,7 @@ namespace FBCross.iOS
         //
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
+            UINavigationBar.Appearance.TintColor = UIColor.Black;
             new SfCalendarRenderer();
             new SfPickerRenderer();
             SfCheckBoxRenderer.Init();

@@ -20,7 +20,7 @@ namespace FBCross.Pages
 	{
 		public TabbedHomePage ()
 		{
-
+            Icon = "hamburger.png";
             Title = "FlexBooker";
         }
         private bool _firstTime = true;

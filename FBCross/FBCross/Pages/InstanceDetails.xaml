@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <views:MvxContentPage x:TypeArguments="viewModels:InstanceDetailsViewModel"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -7,7 +7,7 @@
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Instance;assembly=FBCross"
     x:Class="FBCross.Pages.InstanceDetails" Title="Edit Event">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="DeleteItem" Order="Primary" Icon="imgTrash"></ToolbarItem>
+        <ToolbarItem Name="DeleteItem" Order="Primary" Icon="imgTrash.png"></ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -51,9 +51,7 @@
                             <Image HorizontalOptions="EndAndExpand"  HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                         </StackLayout>
                     </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
+                     <ViewCell>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                             <StackLayout.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding WaitListCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
@@ -63,6 +61,7 @@
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
+                
             </TableRoot>
         </TableView>
        

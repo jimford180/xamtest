@@ -83,4 +83,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Components\Toolbar.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Components\Toolbar.axml" />
+  </ItemGroup>
 </Project>

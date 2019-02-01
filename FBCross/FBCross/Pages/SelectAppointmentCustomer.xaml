@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <views:MvxContentPage x:TypeArguments="viewModels:ChooseCustomerViewModel"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -9,8 +9,7 @@
     xmlns:syncfusion="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
     xmlns:syncfusioncheck="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     x:Class="FBCross.Pages.SelectAppointmentCustomer" Title="Choose Customer"
-    xmlns:localControls="clr-namespace:FBCross.Controls">
-    
+    xmlns:localControls="clr-namespace:FBCross.Controls"> 
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="stringFieldTemplate">

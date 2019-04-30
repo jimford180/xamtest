@@ -7,12 +7,12 @@
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Appointment;assembly=FBCross"
     x:Class="FBCross.Pages.Appointment" Title="Create Appointment">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="CancelAppointment" Order="Primary" Icon="imgTrash" Command="{Binding CancelAppointmentCommand}"></ToolbarItem>
+        <ToolbarItem Name="CancelAppointment" Text="" Order="Primary" Icon="{Binding DeleteIconName}" Command="{Binding CancelAppointmentCommand}"></ToolbarItem>
         <ToolbarItem Name="SaveAppointment" Order="Primary" Text="Save" Command="{Binding SaveAppointmentCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
-        <StackLayout>
+        <Grid>
             <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
             <TableView Intent="Form">
                 <TableRoot>
@@ -88,6 +88,6 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
-        </StackLayout>        
+        </Grid>        
     </ContentPage.Content>
 </views:MvxContentPage>

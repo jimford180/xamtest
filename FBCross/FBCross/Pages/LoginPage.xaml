@@ -15,7 +15,13 @@
                 <Label Text="Easily accept online bookings from your website." HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,30" TextColor="White"  />
                 <Entry Keyboard="Email" Text="{Binding Email}" Placeholder="EMAIL" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White"></Entry>
                 <Entry IsPassword="True" Text="{Binding Password}" Placeholder="PASSWORD" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" ReturnCommand="{Binding PerformLoginCommand}"></Entry>
-                <Label Text="Forgot Password?" StyleClass="forgotPasswordLink" FontSize="10" TextColor="White" x:Name="forgotPasswordButton"></Label>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Forgot Password?" StyleClass="forgotPasswordLink" FontSize="10" TextColor="White" x:Name="forgotPasswordButton"></Label>
+                </StackLayout>
             </StackLayout>
             <Button AbsoluteLayout.LayoutBounds=".5, 1, 1, 80" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" BackgroundColor="#062942" TextColor="White" Text="SIGN IN" x:Name="loginButton" Command="{Binding PerformLoginCommand}"></Button>
             <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" AbsoluteLayout.LayoutBounds=".5,.5,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"  />

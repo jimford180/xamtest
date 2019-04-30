@@ -84,7 +84,7 @@ namespace FBCross.ViewModels.Appointment
         public Guid Guid
         {
             get { return _guid.HasValue ? _guid.Value : Guid.Empty; }
-            set { _guid = value; RaisePropertyChanged(() => Guid); }
+            set { _guid = value; RaisePropertyChanged(() => Guid); RaisePropertyChanged(() => DeleteIconName); }
         }
         public int? WaitListId
         {
@@ -105,6 +105,20 @@ namespace FBCross.ViewModels.Appointment
         public IMvxAsyncCommand ChangeDateTimeCommand => new MvxAsyncCommand(GoToDateTimeChoice);
         public IMvxAsyncCommand SaveAppointmentCommand => new MvxAsyncCommand(SaveAppointment);
         public IMvxAsyncCommand CancelAppointmentCommand => new MvxAsyncCommand(CancelAppointment);
+
+        public string DeleteIconName {
+            get
+            {
+                if (_guid.HasValue)
+                {
+                    return "imgTrash";
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+        }
 
         private async Task CancelAppointment()
         {
@@ -129,7 +143,7 @@ namespace FBCross.ViewModels.Appointment
                     }
                     if (isSuccessful)
                     {
-                        await _navigationService.Navigate<RootViewModel>();
+                        await _navigationService.Close(this);
                     }
                 }
             }
@@ -138,7 +152,7 @@ namespace FBCross.ViewModels.Appointment
                 var confirm = await FormsApp.Current.MainPage.DisplayAlert("Cancel Appointment", "Are you sure you want to stop making this appointment?", "Yes", "No");
                 if (confirm)
                 {
-                    await _navigationService.Navigate<RootViewModel>();
+                    await _navigationService.Close(this);
                 }
             }
         }
@@ -157,7 +171,7 @@ namespace FBCross.ViewModels.Appointment
                         var response = await _fixedTimeBookingService.Put(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
                         if (response.IsSuccessful)
                         {
-                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     else
@@ -166,7 +180,7 @@ namespace FBCross.ViewModels.Appointment
                         var response = await _fixedTimeBookingService.Post(fixedBookingRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
                         if (response.IsSuccessful)
                         {
-                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     break;
@@ -180,7 +194,7 @@ namespace FBCross.ViewModels.Appointment
                         if (response.IsSuccessful)
                         {
                             FormsApp.CurrentScheduleBookingId = null;
-                            await _navigationService.Navigate<RootViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     else
@@ -189,7 +203,7 @@ namespace FBCross.ViewModels.Appointment
                         if (response.IsSuccessful)
                         {
                             FormsApp.CurrentFixedTimeBooking = null;
-                            await _navigationService.Navigate<RootViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     break;
@@ -200,7 +214,7 @@ namespace FBCross.ViewModels.Appointment
                         var response = await _waitListBookingService.Put(_waitListId.Value, waitListRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
                         if (response.IsSuccessful)
                         {
-                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     else
@@ -209,7 +223,7 @@ namespace FBCross.ViewModels.Appointment
                         var response = await _waitListBookingService.Post(waitListRequest, sessionInfo.SessionToken, sessionInfo.MerchantGuid);
                         if (response.IsSuccessful)
                         {
-                            await _navigationService.Navigate<TabbedHomeViewModel>();
+                            await _navigationService.Close(this);
                         }
                     }
                     break;

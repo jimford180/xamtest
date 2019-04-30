@@ -17,7 +17,9 @@
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Date}" StyleClass="agendaHeader" Margin="0,8,0,0"></Label>
+                            <StackLayout>
+                                <Label Text="{Binding Date}" StyleClass="agendaHeader" VerticalTextAlignment="Center" Margin="5,0,0,0" HeightRequest="44"></Label>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>

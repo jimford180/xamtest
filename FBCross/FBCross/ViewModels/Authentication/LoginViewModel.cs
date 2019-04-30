@@ -29,6 +29,12 @@ namespace FBCross.ViewModels.Authentication
         public string Password { get => _password; set { _password = value; RaisePropertyChanged(() => Password); } }
 
         public IMvxCommand PerformLoginCommand => new MvxCommand(Login);
+        public IMvxCommand ForgotPasswordCommand => new MvxCommand(ForgotPassword);
+
+        private void ForgotPassword()
+        {
+            Device.OpenUri(new Uri("https://www.flexbooker.com/user/ForgotPassword"));
+        }
 
         private async void Login()
         {

@@ -8,10 +8,13 @@
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Month;assembly=FBCross"
     x:Class="FBCross.Pages.Month">
     <ContentPage.Content>
-        <syncfusion:SfCalendar x:Name="calendar" SelectedDate="{Binding SelectedDate}">
+        <StackLayout>
+            <Label Text="Swipe left/right to change months" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            <syncfusion:SfCalendar x:Name="calendar" SelectedDate="{Binding SelectedDate}">
             <!--<syncfusion:SfCalendar.HeaderView>
                 <Label Text="Custom Header View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             </syncfusion:SfCalendar.HeaderView>-->
         </syncfusion:SfCalendar>
+        </StackLayout>
     </ContentPage.Content>
     </views:MvxContentPage>

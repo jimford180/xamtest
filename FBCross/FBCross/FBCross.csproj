@@ -34,6 +34,12 @@
     <Compile Update="Pages\SelectAppointmentCustomer.xaml.cs">
       <DependentUpon>SelectAppointmentCustomer.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\InstanceDetailsTotalSpots.xaml.cs">
+      <DependentUpon>InstanceDetailsTotalSpots.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\InstanceDetailsEmployee.xaml.cs">
+      <DependentUpon>InstanceDetailsEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\SelectAppointmentEmployee.xaml.cs">
       <DependentUpon>SelectAppointmentEmployee.xaml</DependentUpon>
     </Compile>

@@ -5,65 +5,72 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Instance;assembly=FBCross"
-    x:Class="FBCross.Pages.InstanceDetails" Title="Edit Event">
+    x:Class="FBCross.Pages.InstanceDetails" Title="{Binding ServiceName}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="DeleteItem" Order="Primary" Icon="imgTrash.png"></ToolbarItem>
+        <ToolbarItem Name="DeleteItem" Order="Primary" Icon="imgTrash.png" Command="{Binding RemoveSessionCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <TableView Intent="Form">
-            <TableRoot>
-                <TableSection Title="STAFF">
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Picker Title="Select an employee"
-                                    ItemsSource="{Binding AllEmployees}"
-                                    ItemDisplayBinding="{Binding Name}"
-                                    SelectedItem="{Binding Employee}" StyleClass="fieldPicker" HorizontalOptions="Fill" HeightRequest="50"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection Title="DATE &amp; TIME">
-                    <ViewCell>
-                        <Label StyleClass="fieldTextValue" Text="{Binding DateTime}" Margin="10,0,10,0"></Label>
-                    </ViewCell>
-                </TableSection>
-                <TableSection Title="SPOTS TAKEN">
-                    <EntryCell Label="{Binding SpotsTakenText}" Text="{Binding TotalSpots}"></EntryCell>
-                </TableSection>
-                <TableSection Title="SECOND STAFF">
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Picker Title="Select an employee"
-                                    ItemsSource="{Binding AllEmployees}"
-                                    ItemDisplayBinding="{Binding Name}"
-                                    SelectedItem="{Binding SecondEmployee}" StyleClass="fieldPicker" HorizontalOptions="Fill" HeightRequest="50"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding CurrentBookingsCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                            <Label StyleClass="fieldTextValue" Text="Current Bookings" Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
-                            <Image HorizontalOptions="EndAndExpand"  HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
-                        </StackLayout>
-                    </ViewCell>
-                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding WaitListCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                            <Label StyleClass="fieldTextValue" Text="Wait List"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
-                            <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                
-            </TableRoot>
-        </TableView>
-       
+        <Grid>
+            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <Label StyleClass="fieldTextValue" Text="{Binding DateTime}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SpotsTakenCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding SpotsTakenText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseSecondEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding SecondEmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CurrentBookingsCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CurrentBookingsText}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand"  HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding WaitListCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding WaitListText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                </TableRoot>
+            </TableView>
+        </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

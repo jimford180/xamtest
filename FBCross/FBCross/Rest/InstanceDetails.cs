@@ -27,7 +27,7 @@ namespace FBCross.Rest
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
             request.AddQueryParameter("sessionToken", sessionToken);
             request.AddQueryParameter("id", id);
-            request.AddBody(update);
+            request.AddJsonBody(update);
             request.RequestFormat = DataFormat.Json;
             request.Method = Method.PUT;
             return Client.ExecuteTaskAsync<ClassInstanceUpdateResponse>(request);

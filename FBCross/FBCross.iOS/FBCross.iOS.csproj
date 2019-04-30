@@ -256,10 +256,18 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\hamburger.imageset\icons8-menu-filled-50.png" />
-    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\icons8-trash-can-50.png" />
-    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\icons8-search-filled-50.png" />
-    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\icons8-menu-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\icons8-trash-can-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgSearch.imageset\icons8-search-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FBCross.ViewModels.Appointment
+namespace FBCross.ViewModels.Event
 {
     public class ChooseEmployeeViewModel : ViewModelBase
     {
-        private readonly AppointmentViewModel _appointment;
+        private readonly EventViewModel _event;
         private readonly IMvxNavigationService _navigationService;
         private List<EmployeeViewModel> _allEmployees;
 
@@ -21,13 +21,13 @@ namespace FBCross.ViewModels.Appointment
 
         private async Task EmployeeSelected(EmployeeViewModel arg)
         {
-            _appointment.Employee = arg;
+            _event.Employee = arg;
             await _navigationService.Close(this);
         }
         
-        public ChooseEmployeeViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService)
+        public ChooseEmployeeViewModel(EventViewModel appointment, IMvxNavigationService navigationService)
         {
-            _appointment = appointment;
+            _event = appointment;
             _navigationService = navigationService;
             LoadEmployees();
         }

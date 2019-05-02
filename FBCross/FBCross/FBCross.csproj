@@ -28,6 +28,18 @@
     <Compile Update="FormsApp.xaml.cs">
       <DependentUpon>FormsApp.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\SelectAgendaEmployee.xaml.cs">
+      <DependentUpon>SelectAgendaEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\SelectBlockTime.xaml.cs">
+      <DependentUpon>SelectBlockTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\SelectBlockDate.xaml.cs">
+      <DependentUpon>SelectBlockDate.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\SelectAppointmentDateTime.xaml.cs">
       <DependentUpon>SelectAppointmentDateTime.xaml</DependentUpon>
     </Compile>
@@ -39,6 +51,9 @@
     </Compile>
     <Compile Update="Pages\InstanceDetailsEmployee.xaml.cs">
       <DependentUpon>InstanceDetailsEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\SelectBlockEmployee.xaml.cs">
+      <DependentUpon>SelectBlockEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\SelectAppointmentEmployee.xaml.cs">
       <DependentUpon>SelectAppointmentEmployee.xaml</DependentUpon>

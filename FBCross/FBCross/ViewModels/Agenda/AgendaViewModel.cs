@@ -1,7 +1,9 @@
 ﻿using FBCross.Rest;
 using FBCross.ViewModels.Appointment;
+using FBCross.ViewModels.Block;
 using FBCross.ViewModels.Instance;
 using FBCross.ViewModels.Month;
+using FBCross.ViewModels.Shared;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -20,6 +22,7 @@ namespace FBCross.ViewModels.Agenda
 
         private readonly ICalendarFeed _calendarFeedService;
         private readonly IMvxNavigationService _navigationService;
+        private EmployeeViewModel _employee;
 
         public AgendaViewModel(ICalendarFeed calendarFeedService, IMvxNavigationService navigationService)
         {
@@ -31,6 +34,20 @@ namespace FBCross.ViewModels.Agenda
         private async void DateSelected(MonthViewModel obj)
         {
             await LoadData();
+        }
+
+        public EmployeeViewModel Employee { get => _employee; set { _employee = value; RaisePropertyChanged(() => Employee); RaisePropertyChanged(() => EmployeeName); FormsApp.CurrentAgendaEmployee = value; } }
+        public string EmployeeName
+        {
+            get { return _employee == null ? "All Employees" : _employee.Name; }
+        }
+
+        public IMvxAsyncCommand ChooseEmployeeCommand => new MvxAsyncCommand(ChooseEmployee);
+
+        private async Task ChooseEmployee()
+        {
+            var vm = new ChooseEmployeeViewModel(this, _navigationService);
+            await _navigationService.Navigate(vm);
         }
 
         private ObservableCollection<AgendaItemGroup> _items { get; set; }
@@ -54,14 +71,23 @@ namespace FBCross.ViewModels.Agenda
             }
             else
             {
-                FormsApp.CurrentScheduleBookingId = item.Url.Replace("#booking/", string.Empty);
-                return _navigationService.Navigate<AppointmentViewModel>();
+                if (item.Url.ToLower().StartsWith("#removeblock"))
+                {
+                    FormsApp.CurrentBlockId = item.Url.ToLower().Replace("#removeblock/", "");
+                    return _navigationService.Navigate<BlockViewModel>();
+                }
+                else
+                {
+                    FormsApp.CurrentScheduleBookingId = item.Url.Replace("#booking/", string.Empty);
+                    return _navigationService.Navigate<AppointmentViewModel>();
+                }
             }
         }
 
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
+            Employee = FormsApp.CurrentAgendaEmployee;
             await LoadData();
         }
 
@@ -76,7 +102,8 @@ namespace FBCross.ViewModels.Agenda
                 start = FormsApp.SelectedDate;
                 end = start.AddDays(1);
             }
-            var calendarFeedRequest = _calendarFeedService.Get(sessionInfo.MerchantGuid, sessionInfo.SessionToken, start, end);
+            int? employeeId = Employee?.Id;
+            var calendarFeedRequest = _calendarFeedService.Get(sessionInfo.MerchantGuid, sessionInfo.SessionToken, start, end, employeeId);
             var response = await calendarFeedRequest;
             if (Items == null)
             {

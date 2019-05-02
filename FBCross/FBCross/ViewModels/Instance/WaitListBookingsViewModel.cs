@@ -2,6 +2,7 @@
 using FBCross.Rest;
 using FBCross.Rest.Dto;
 using FBCross.ViewModels.Appointment;
+using FBCross.ViewModels.Shared;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
@@ -44,6 +45,7 @@ namespace FBCross.ViewModels.Instance
 
         private async Task AddBooking()
         {
+            FormsApp.CurrentScheduleBookingId = null;
             var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
             appointment.Type = AppointmentViewModelType.FixedTimeWaitList;
             appointment.WaitListId = null;
@@ -62,6 +64,7 @@ namespace FBCross.ViewModels.Instance
 
         private async Task ItemSelected(FixedTimeBookingViewModel item)
         {
+            FormsApp.CurrentScheduleBookingId = null;
             var booking = _details.First(d => d.WaitListId.ToString() == item.BookingId);
             var appointment = new AppointmentViewModel(_navigationService, _unifiedAvailability, _customerService, _scheduleBookingService, _fixedTimeBookingService, _waitListBookingService);
             appointment.WaitListId = booking.WaitListId;

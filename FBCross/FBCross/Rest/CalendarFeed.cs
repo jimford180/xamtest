@@ -11,7 +11,7 @@ namespace FBCross.Rest
 
     public class CalendarFeed : RestBase, ICalendarFeed
     {
-        public Task<IRestResponse<IEnumerable<CalendarEvent>>> Get(Guid merchantGuid, string sessionToken, DateTime start, DateTime end)
+        public Task<IRestResponse<IEnumerable<CalendarEvent>>> Get(Guid merchantGuid, string sessionToken, DateTime start, DateTime end, int? employeeId)
         {
             var request = new RestRequest("calendarFeed");
             request.AddQueryParameter("merchantGuid", merchantGuid.ToString());
@@ -20,6 +20,8 @@ namespace FBCross.Rest
             request.AddQueryParameter("end", end.ToShortDateString());
             request.AddQueryParameter("showUnavailableTimes", "true");
             request.AddQueryParameter("showBlocks", "true");
+            if (employeeId.HasValue)                
+                request.AddQueryParameter("employeeIds", employeeId.Value.ToString());
             request.RequestFormat = DataFormat.Json;
             return Client.ExecuteTaskAsync<IEnumerable<CalendarEvent>>(request);
         }

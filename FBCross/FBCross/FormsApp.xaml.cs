@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using FBCross.Pages;
 using FBCross.Rest.Dto;
+using FBCross.ViewModels.Shared;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace FBCross
@@ -39,7 +40,9 @@ namespace FBCross
         public static DateTime SelectedDate { get; set; }
         public static string CurrentInstanceId { get; set; }
         public static string CurrentScheduleBookingId { get; set; }
+        public static string CurrentBlockId { get; set; }
         public static BookingDetail CurrentFixedTimeBooking { get; set; }
+        public static EmployeeViewModel CurrentAgendaEmployee { get; internal set; }
 
         public FormsApp ()
 		{

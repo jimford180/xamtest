@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FBCross.ViewModels.Appointment
+namespace FBCross.ViewModels.Shared
 {
     public class EmployeeViewModel : ViewModelBase
     {

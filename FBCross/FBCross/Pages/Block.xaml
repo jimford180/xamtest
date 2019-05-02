@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentPage x:TypeArguments="viewModels:BlockViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Block;assembly=FBCross"
+    x:Class="FBCross.Pages.Block" Title="{Binding PageTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="DeleteBlock" Text="" Order="Primary" Icon="{Binding DeleteIconName}" Command="{Binding DeleteBlockCommand}"></ToolbarItem>
+        <ToolbarItem Name="SaveBlock" Order="Primary" Text="Save" Command="{Binding SaveBlockCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <Grid>
+            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="Title">
+                        <EntryCell Text="{Binding Title}" Placeholder="Enter a title (optional)">
+                        </EntryCell>
+                    </TableSection>
+                    <TableSection Title="Employee">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Starts">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseStartDateCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding StartDateText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseStartTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding StartTimeText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Ends">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseEndDateCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EndDateText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChooseEndTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EndTimeText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Details">
+                        <SwitchCell On="{Binding InformationalOnly}" Text="Informational Only?"></SwitchCell>
+                        <SwitchCell On="{Binding VisibleToCustomers}" Text="Visible To Customers"></SwitchCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </Grid>        
+    </ContentPage.Content>
+</views:MvxContentPage>

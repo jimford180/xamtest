@@ -12,6 +12,7 @@ using AutoMapper;
 using FBCross.ViewModels.Navigation;
 using Xamarin.Forms;
 using System.Linq;
+using FBCross.ViewModels.Shared;
 
 namespace FBCross.ViewModels.Appointment
 {
@@ -37,6 +38,8 @@ namespace FBCross.ViewModels.Appointment
         private readonly IScheduleBooking _scheduleBookingService;
         private readonly IFixedTimeBooking _fixedTimeBookingService;
         private readonly IWaitListBooking _waitListBookingService;
+
+        public string PageTitle { get => _guid.HasValue ? "Edit Appointment" : "Create Appointment"; }
 
         public ServiceViewModel Service { get => _service; set { _service = value; RaisePropertyChanged(() => Service); RaisePropertyChanged(() => ServiceName); } }
         public string ServiceName

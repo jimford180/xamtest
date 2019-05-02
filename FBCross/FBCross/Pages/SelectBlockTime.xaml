@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:ChooseTimeViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+   xmlns:local="clr-namespace:FBCross.Controls"
+    xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Block;assembly=FBCross"
+    x:Class="FBCross.Pages.SelectBlockTime" Title="{Binding PageTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Done" Order="Primary" Text="DONE" Command="{Binding DoneCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <local:CustomTimePicker x:Name="time" ColumnHeaderHeight="50" ItemHeight="45" PickerMode="Default" PickerWidth="300" SelectedItem="{Binding SelectedTime}" />
+        </StackLayout>
+    </ContentPage.Content>
+    </views:MvxContentPage>

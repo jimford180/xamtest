@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FBCross.ViewModels.Appointment
+namespace FBCross.ViewModels.Event
 {
     public class ChooseServiceViewModel : ViewModelBase
     {
-        private readonly AppointmentViewModel _appointment;
+        private readonly EventViewModel _event;
         private readonly IMvxNavigationService _navigationService;
         private List<ServiceViewModel> _allServices;
 
@@ -21,22 +21,13 @@ namespace FBCross.ViewModels.Appointment
 
         private async Task ServiceSelected(ServiceViewModel arg)
         {
-            _appointment.Service = arg;
-            var schedules = await FormsApp.Database.MasterSchedules.GetEntitiesAsync();
-            if (schedules == null || !schedules.Any(s => s.ServiceIds.Contains(arg.Id.ToString())))
-            {
-                _appointment.Type = AppointmentViewModelType.FixedTimeBooking;
-            }
-            else
-            {
-                _appointment.Type = AppointmentViewModelType.ScheduleBooking;
-            }
+            _event.Service = arg;
             await _navigationService.Close(this);
         }
         
-        public ChooseServiceViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService)
+        public ChooseServiceViewModel(EventViewModel eventModel, IMvxNavigationService navigationService)
         {
-            _appointment = appointment;
+            _event = eventModel;
             _navigationService = navigationService;
             LoadServices();
         }

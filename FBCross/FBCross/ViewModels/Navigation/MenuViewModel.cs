@@ -1,5 +1,7 @@
 ﻿using FBCross.ViewModels.Appointment;
 using FBCross.ViewModels.Authentication;
+using FBCross.ViewModels.Block;
+using FBCross.ViewModels.Event;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -23,6 +25,8 @@ namespace FBCross.ViewModels.Navigation
             {
                 new MenuItem{ Name = "Home", PageType=PageType.Home },
                 new MenuItem{ Name = "New Appointment", PageType=PageType.NewAppointment },
+                //new MenuItem{ Name = "New Event", PageType=PageType.NewEvent},
+                new MenuItem{ Name = "New Block", PageType=PageType.NewBlock},
                 new MenuItem{ Name = "Logout", PageType=PageType.Logout }
             };
         }
@@ -50,6 +54,13 @@ namespace FBCross.ViewModels.Navigation
                 case PageType.NewAppointment:
                     FormsApp.CurrentScheduleBookingId = null;
                     await _navigationService.Navigate<AppointmentViewModel>();
+                    break;
+                case PageType.NewEvent:
+                    await _navigationService.Navigate<EventViewModel>();
+                    break;
+                case PageType.NewBlock:
+                    FormsApp.CurrentBlockId = null;
+                    await _navigationService.Navigate<BlockViewModel>();
                     break;
                 case PageType.Logout:
                     await FormsApp.Logout();

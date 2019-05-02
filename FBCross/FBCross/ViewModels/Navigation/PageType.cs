@@ -8,6 +8,8 @@ namespace FBCross.ViewModels.Navigation
     {
         Home, 
         NewAppointment,
+        NewEvent,
+        NewBlock,
         Logout,
     }
 }

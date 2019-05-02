@@ -30,6 +30,12 @@ namespace FBCross.ViewModels.Authentication
 
         public IMvxCommand PerformLoginCommand => new MvxCommand(Login);
         public IMvxCommand ForgotPasswordCommand => new MvxCommand(ForgotPassword);
+        public IMvxCommand SignupCommand => new MvxCommand(Signup);
+
+        private void Signup()
+        {
+            Device.OpenUri(new Uri("https://www.flexbooker.com/"));
+        }
 
         private void ForgotPassword()
         {

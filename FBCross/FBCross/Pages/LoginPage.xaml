@@ -12,7 +12,7 @@
             <Label TextColor="White" Text="SIGN IN" AbsoluteLayout.LayoutBounds=".5,0,1,100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
             <StackLayout AbsoluteLayout.LayoutBounds=".5,.3,300,400" AbsoluteLayout.LayoutFlags="PositionProportional">
                 <Image Source="imgLogo.png" WidthRequest="250" HorizontalOptions="Center" />
-                <Label Text="Easily accept online bookings from your website." HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,30" TextColor="White"  />
+                <Label Text="Easily accept online bookings from your website." HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,40" TextColor="White"  />
                 <Entry Keyboard="Email" Text="{Binding Email}" Placeholder="EMAIL" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White"></Entry>
                 <Entry IsPassword="True" Text="{Binding Password}" Placeholder="PASSWORD" PlaceholderColor="White" BackgroundColor="Transparent" TextColor="White" ReturnCommand="{Binding PerformLoginCommand}"></Entry>
                 
@@ -20,7 +20,13 @@
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                     </StackLayout.GestureRecognizers>
-                    <Label Text="Forgot Password?" StyleClass="forgotPasswordLink" FontSize="10" TextColor="White" x:Name="forgotPasswordButton"></Label>
+                    <Label Text="Forgot Password?" StyleClass="forgotPasswordLink" FontSize="14" TextColor="White" x:Name="forgotPasswordButton" Margin="0,15" TextDecorations="Underline"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignupCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Need an account? Sign up for your free 30 day trial here." StyleClass="forgotPasswordLink" FontSize="14" TextColor="White" x:Name="freeTrialButton" Margin="0,15" TextDecorations="Underline"></Label>
                 </StackLayout>
             </StackLayout>
             <Button AbsoluteLayout.LayoutBounds=".5, 1, 1, 80" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" BackgroundColor="#062942" TextColor="White" Text="SIGN IN" x:Name="loginButton" Command="{Binding PerformLoginCommand}"></Button>

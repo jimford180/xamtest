@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FBCross.ViewModels.Appointment
+namespace FBCross.ViewModels.Block
 {
     public class ChooseEmployeeViewModel : ViewModelBase
     {
-        private readonly AppointmentViewModel _appointment;
+        private readonly BlockViewModel _appointment;
         private readonly IMvxNavigationService _navigationService;
         private List<EmployeeViewModel> _allEmployees;
 
@@ -25,7 +25,7 @@ namespace FBCross.ViewModels.Appointment
             await _navigationService.Close(this);
         }
         
-        public ChooseEmployeeViewModel(AppointmentViewModel appointment, IMvxNavigationService navigationService)
+        public ChooseEmployeeViewModel(BlockViewModel appointment, IMvxNavigationService navigationService)
         {
             _appointment = appointment;
             _navigationService = navigationService;
@@ -35,7 +35,8 @@ namespace FBCross.ViewModels.Appointment
         private async void LoadEmployees()
         {
             var services = await FormsApp.Database.Employees.GetEntitiesAsync();
-            AllEmployees = services.Select(e => Mapper.Map<EmployeeViewModel>(e)).ToList();
+            AllEmployees = new List<EmployeeViewModel> { new EmployeeViewModel { Id = 0, Name = "All Employees" } };
+            AllEmployees.AddRange(services.Select(e => Mapper.Map<EmployeeViewModel>(e)).ToList());
         }
     }
 }

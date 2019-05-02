@@ -9,40 +9,57 @@
     <ContentPage.Content>
         <Grid>
             <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
-            <views:MvxListView x:Name="GroupedAgendaView"
+            <StackLayout>
+                <TableView Intent="Form" VerticalOptions="Start" HeightRequest="44">
+                    <TableRoot>
+                        <TableSection>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                    </StackLayout.GestureRecognizers>
+                                    <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                    <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+                <views:MvxListView x:Name="GroupedAgendaView" VerticalOptions="Fill"
             ItemsSource="{mvx:MvxBind Items}"
             IsGroupingEnabled="True"
             GroupDisplayBinding="{mvx:MvxBind Date}"
             ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}">
-                <ListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Date}" StyleClass="agendaHeader" VerticalTextAlignment="Center" Margin="5,0,0,0" HeightRequest="44"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.GroupHeaderTemplate>
-                <!--Custom View Cells-->
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" StyleClass="agendaCell">
-                                <StackLayout StyleClass="agendaTimeCell">
-                                    <Label Text="{mvx:MvxBind StartTime}" 
-                    StyleClass="smallTime"/>
-                                    <Label Text="{mvx:MvxBind EndTime}" 
-                    StyleClass="smallTime" />
-                                </StackLayout>
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
                                 <StackLayout>
-                                    <Label Text="{mvx:MvxBind Title}" 
-                   StyleClass="agendaTitle" />
+                                    <Label Text="{Binding Date}" StyleClass="agendaHeader" VerticalTextAlignment="Center" Margin="5,0,0,0" HeightRequest="44"></Label>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </views:MvxListView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                    <!--Custom View Cells-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" StyleClass="agendaCell">
+                                    <StackLayout StyleClass="agendaTimeCell">
+                                        <Label Text="{mvx:MvxBind StartTime}" 
+                    StyleClass="smallTime"/>
+                                        <Label Text="{mvx:MvxBind EndTime}" 
+                    StyleClass="smallTime" />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label Text="{mvx:MvxBind Title}" 
+                   StyleClass="agendaTitle" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </views:MvxListView>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

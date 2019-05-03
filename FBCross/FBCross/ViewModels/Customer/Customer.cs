@@ -12,6 +12,7 @@ namespace FBCross.ViewModels.Customer
         public string Phone { get => _phone; set { _phone = value; RaisePropertyChanged(() => Phone); RaisePropertyChanged(() => ContactSummary); } }
         public string Notes { get => _notes; set { _notes = value; RaisePropertyChanged(() => Notes); } }
         public int Id { get => _id; set { _id = value; RaisePropertyChanged(() => Id); } }
+        public List<UnifiedField> CustomFields { get => _customFields; set { _customFields = value; } }
         public string FullName
         {
             get { return string.Format("{0} {1}", FirstName, LastName); }
@@ -27,5 +28,6 @@ namespace FBCross.ViewModels.Customer
         private string _email;
         private string _phone;
         private string _notes;
+        private List<UnifiedField> _customFields;
     }
 }

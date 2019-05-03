@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FBCross.Rest;
+using FBCross.Rest.Dto;
 using FBCross.ViewModels.Agenda;
 using FBCross.ViewModels.Authentication;
 using FBCross.ViewModels.Navigation;
@@ -7,6 +8,7 @@ using MvvmCross;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace FBCross
@@ -20,14 +22,14 @@ namespace FBCross
             Mvx.IoCProvider.RegisterType<ICalendarFeed, CalendarFeed>();
             Mvx.IoCProvider.RegisterType<IInstanceDetails, InstanceDetails>();
             Mvx.IoCProvider.RegisterType<ISessionAuth, SessionAuth>();
-            Mvx.IoCProvider.RegisterType<IMerchantState, MerchantState>();
+            Mvx.IoCProvider.RegisterType<IMerchantState, Rest.MerchantState>();
             Mvx.IoCProvider.RegisterType<IUnifiedAvailability, UnifiedAvailability>();
-            Mvx.IoCProvider.RegisterType<ICustomer, Customer>();
+            Mvx.IoCProvider.RegisterType<ICustomer, Rest.Customer>();
             Mvx.IoCProvider.RegisterType<IFixedTimeBooking, FixedTimeBooking>();
             Mvx.IoCProvider.RegisterType<IScheduleBooking, ScheduleBooking>();
             Mvx.IoCProvider.RegisterType<IActivityFeed, ActivityFeed>();
             Mvx.IoCProvider.RegisterType<IWaitListBooking, WaitListBooking>();
-            Mvx.IoCProvider.RegisterType<IHoliday, Holiday>();
+            Mvx.IoCProvider.RegisterType<IHoliday, Rest.Holiday>();
 
             Mapper.Initialize(cfg =>
             {
@@ -82,7 +84,12 @@ namespace FBCross
                             .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
                             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
                             .ForMember(dest => dest.ServiceGuidsCsv, opt => opt.MapFrom(src => src.Service.ServiceGuid))
-                            .ForMember(dest => dest.SessionDateTime, opt => opt.MapFrom(src => src.DateTime.ToString()));
+                            .ForMember(dest => dest.SessionDateTime, opt => opt.MapFrom(src => src.DateTime.ToString()))
+                            .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                            {
+                                MerchantFieldId = cf.FieldId.Value,
+                                Value = cf.Value
+                            }).ToList()));
         }
         private static void ConfigureAppointmentViewModelToFixedTimeBookingRequest(IMapperConfigurationExpression cfg)
         {
@@ -93,7 +100,12 @@ namespace FBCross
                 .ForMember(dest => dest.GymGuid, opt => opt.MapFrom(src => src.MerchantGuid))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
-                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id));
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
+                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                {
+                    MerchantFieldId = cf.FieldId.Value,
+                    Value = cf.Value
+                }).ToList()));
 
             cfg.CreateMap<ViewModels.Appointment.AppointmentViewModel, Rest.Dto.BookingDetail>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
@@ -103,7 +115,12 @@ namespace FBCross
                 .ForMember(dest => dest.ClassSlug, opt => opt.MapFrom(src => src.ClassInstanceSlug))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
-                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id));
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
+                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                {
+                    MerchantFieldId = cf.FieldId.Value,
+                    Value = cf.Value
+                }).ToList()));
 
             cfg.CreateMap<ViewModels.Appointment.AppointmentViewModel, Rest.Dto.WaitListRequest>()
                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
@@ -111,7 +128,12 @@ namespace FBCross
                .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.Customer.LastName))
                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
-               .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id));
+               .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
+               .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+               {
+                   MerchantFieldId = cf.FieldId.Value,
+                   Value = cf.Value
+               }).ToList()));
         }
     }
 }

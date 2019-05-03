@@ -66,6 +66,7 @@ namespace FBCross.ViewModels.Navigation
                 var services = response.Data.Services.Select(s => Mapper.Map<Data.Service>(s));
                 var masterClasses = response.Data.Events.Select(e => Mapper.Map<Data.MasterClass>(e));
                 var masterSchedules = response.Data.Schedules.Select(s => Mapper.Map<Data.MasterSchedule>(s));
+                FormsApp.MerchantFieldRules = response.Data.FieldRules;
                 await FormsApp.Database.Employees.RemoveAll();
                 await FormsApp.Database.Employees.CreateManyAsync(employees);
                 await FormsApp.Database.Services.RemoveAll();

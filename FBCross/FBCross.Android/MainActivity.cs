@@ -11,7 +11,7 @@ using MvvmCross.Forms.Platforms.Android.Core;
 
 namespace FBCross.Droid
 {
-    [Activity(Label = "FBCross", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "FBCross", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : MvxFormsAppCompatActivity<MvxFormsAndroidSetup<App, FormsApp>, App, FormsApp>
     {
         protected override void OnCreate(Bundle bundle)

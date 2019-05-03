@@ -43,6 +43,7 @@ namespace FBCross
         public static string CurrentBlockId { get; set; }
         public static BookingDetail CurrentFixedTimeBooking { get; set; }
         public static EmployeeViewModel CurrentAgendaEmployee { get; internal set; }
+        public static MerchantFieldRules MerchantFieldRules { get; internal set; }
 
         public FormsApp ()
 		{

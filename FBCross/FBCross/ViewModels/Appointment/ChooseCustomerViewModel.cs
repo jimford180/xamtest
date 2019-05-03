@@ -21,9 +21,35 @@ namespace FBCross.ViewModels.Appointment
         private List<UnifiedField> _fields;
 
         public IMvxAsyncCommand<Customer.Customer> CustomerSelectedCommand => new MvxAsyncCommand<Customer.Customer>(CustomerSelected);
-        public ICommand SearchCustomersCommand => new Command(SearchCustomers);
+        public ICommand SearchCustomersCommand => new MvxAsyncCommand(SearchCustomers);
+        public ICommand SaveCustomerCommand => new MvxAsyncCommand(SaveCustomer);
 
-        private async void SearchCustomers()
+        public string SaveCustomerText { get { return ShowSaveButton ? "SAVE" : ""; } }
+
+        private async Task SaveCustomer()
+        {
+            if (Fields.Where(f => f.Required).All(f => !string.IsNullOrWhiteSpace(f.Value)))
+            {
+                _appointment.Customer = new Customer.Customer
+                {
+                    FirstName = Fields.Single(f => f.Type == FieldType.FirstName).Value,
+                    LastName = Fields.Single(f => f.Type == FieldType.LastName).Value,
+                    Email = Fields.Single(f => f.Type == FieldType.Email).Value,
+                    Phone = Fields.Single(f => f.Type == FieldType.Phone).Value,
+                    Notes = Fields.Single(f => f.Type == FieldType.Notes).Value,
+                    CustomFields = Fields.Where(f => f.Type == FieldType.Custom).ToList()
+                };
+                await _navigationService.Close(this);
+            }
+            else
+            {
+                var missingFields = Fields.Where(f => f.Required && string.IsNullOrWhiteSpace(f.Value));
+                var msg = $"The following fields are required: {string.Join(", ", missingFields.Select(f => f.Label))}";
+                await FormsApp.Current.MainPage.DisplayAlert("Missing Required Fields", msg, "OK");
+            }
+        }
+
+        private async Task SearchCustomers()
         {
             if (!string.IsNullOrEmpty(_searchTerm))
             {
@@ -55,8 +81,17 @@ namespace FBCross.ViewModels.Appointment
 
         private async Task CustomerSelected(Customer.Customer arg)
         {
-            _appointment.Customer = arg;
-            await _navigationService.Close(this);
+            //Populate the fields
+            Fields.Single(f => f.Type == FieldType.FirstName).Value = arg.FirstName;
+            Fields.Single(f => f.Type == FieldType.LastName).Value = arg.LastName;
+            Fields.Single(f => f.Type == FieldType.Email).Value = arg.Email;
+            Fields.Single(f => f.Type == FieldType.Phone).Value = arg.Phone;
+            Fields.Single(f => f.Type == FieldType.Notes).Value = arg.Notes;
+            
+            ShowCustomerForm = true;
+            ShowNoCustomerWarning = false;
+            ShowAddButton = false;
+            ShowSaveButton = true;
         }
 
 
@@ -65,7 +100,7 @@ namespace FBCross.ViewModels.Appointment
         public bool ShowCustomerForm { get => _showCustomerForm; set { _showCustomerForm = value; RaisePropertyChanged(() => ShowCustomerForm); RaisePropertyChanged(() => ShowSearchForm); } }
         public bool ShowSearchForm { get => !_showCustomerForm; }
         public bool ShowAddButton { get => _showAddButton; set { _showAddButton = value; RaisePropertyChanged(() => ShowAddButton); } }
-        public bool ShowSaveButton { get => _showSaveButton; set { _showSaveButton = value; RaisePropertyChanged(() => ShowSaveButton); } }
+        public bool ShowSaveButton { get => _showSaveButton; set { _showSaveButton = value; RaisePropertyChanged(() => ShowSaveButton); RaisePropertyChanged(() => SaveCustomerText); } }
         public bool ShowNoCustomerWarning { get => _showNoCustomerWarning; set { _showNoCustomerWarning = value; RaisePropertyChanged(() => ShowNoCustomerWarning); } }
 
         public List<Customer.Customer> Customers { get => _customers; set { _customers = value; RaisePropertyChanged(() => Customers); } }
@@ -90,18 +125,16 @@ namespace FBCross.ViewModels.Appointment
             ShowNoCustomerWarning = false;
             ShowCustomerForm = false;
             ShowSaveButton = false;
+            var fieldRules = FormsApp.MerchantFieldRules;
             Fields = new List<UnifiedField>
             {
-                new UnifiedField(FieldType.FirstName, null, string.Empty, "First Name", Rest.Dto.CustomFieldType.TextField),
-                new UnifiedField(FieldType.LastName, null, string.Empty, "Last Name", Rest.Dto.CustomFieldType.TextField),
-                new UnifiedField(FieldType.Email, null, string.Empty, "Email Address", Rest.Dto.CustomFieldType.TextField),
-                new UnifiedField(FieldType.Phone, null, string.Empty, "Phone", Rest.Dto.CustomFieldType.TextField),
-                new UnifiedField(FieldType.Notes, null, string.Empty, "Customer Notes", Rest.Dto.CustomFieldType.LargeTextField),
-                new UnifiedField(FieldType.Custom, 1, string.Empty, "Custom Field 1", Rest.Dto.CustomFieldType.NumberField),
-                new UnifiedField(FieldType.Custom, 2, string.Empty, "Dropdown 1", Rest.Dto.CustomFieldType.DropDown, new List<string>{ "One", "Two", "Five"}),
-                new UnifiedField(FieldType.Custom, 3, string.Empty, "Date", Rest.Dto.CustomFieldType.DateField),
-                new UnifiedField(FieldType.Custom, 4, string.Empty, "Checkboxes", Rest.Dto.CustomFieldType.MultiCheckbox, new List<string> {"Blue", "Green", "Yellow" })
+                new UnifiedField(FieldType.FirstName, null, string.Empty, "First Name", Rest.Dto.CustomFieldType.TextField, fieldRules.StandardFieldRules.FirstNameRequired),
+                new UnifiedField(FieldType.LastName, null, string.Empty, "Last Name", Rest.Dto.CustomFieldType.TextField, fieldRules.StandardFieldRules.LastNameRequired),
+                new UnifiedField(FieldType.Email, null, string.Empty, "Email Address", Rest.Dto.CustomFieldType.TextField, fieldRules.StandardFieldRules.EmailRequired),
+                new UnifiedField(FieldType.Phone, null, string.Empty, "Phone", Rest.Dto.CustomFieldType.TextField, fieldRules.StandardFieldRules.PhoneRequired),
+                new UnifiedField(FieldType.Notes, null, string.Empty, "Customer Notes", Rest.Dto.CustomFieldType.LargeTextField, false),
             };
+            Fields.AddRange(fieldRules.CustomFields.Select(f => new UnifiedField(f)));
         }
 
        

@@ -284,6 +284,7 @@ namespace FBCross.ViewModels.Appointment
             _scheduleBookingService = scheduleBookingService;
             _fixedTimeBookingService = fixedTimeBookingService;
             _waitListBookingService = waitListBookingService;
+            _remindByEmail = true;
         }
         public override async void Start()
         {

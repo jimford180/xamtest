@@ -15,11 +15,14 @@ namespace FBCross.ViewModels.Customer
         private const string _chooseOneText = "Choose one...";
         private string _value;
         private bool _isPickerOpen;
+        private bool _required;
 
         public FieldType Type { get; set; }
         public int? FieldId { get; set; }
         public string Value { get => _value; set { _value = value; RaisePropertyChanged(() => Value); RaisePropertyChanged(() => LabelValue); RaisePropertyChanged(() => LabelColor); } }
         public string Label { get; set; }
+        public bool Required { get => _required; set { _required = value; RaisePropertyChanged(() => Required); } }
+
         public CustomFieldType FieldType { get; set; }
         public ObservableCollection<string> DropdownOptions { get; set; }
         public ObservableCollection<CheckboxListItem> CheckBoxItems { get ;set; }
@@ -43,7 +46,7 @@ namespace FBCross.ViewModels.Customer
                 {
                     return Value;
                 }
-                return Label;
+                return Label + (_required ? "*" : "");
             }
         }
         public string LabelColor
@@ -85,6 +88,7 @@ namespace FBCross.ViewModels.Customer
             }
         }
         private ObservableCollection<object> _selectedDate;
+        private CustomField f;
 
         public ObservableCollection<object> SelectedDate
         {
@@ -108,13 +112,14 @@ namespace FBCross.ViewModels.Customer
         {
 
         }
-        public UnifiedField(FieldType type, int? fieldId, string value, string label, CustomFieldType fieldType, List<string> dropdownOptions = null)
+        public UnifiedField(FieldType type, int? fieldId, string value, string label, CustomFieldType fieldType, bool required, List<string> dropdownOptions = null)
         {
             Type = type;
             FieldId = fieldId;
             Value = value;
             Label = label;
             FieldType = fieldType;
+            Required = required;
             if (dropdownOptions != null && dropdownOptions.Any())
             {
                 var optionsWithLabel = new List<string> { _chooseOneText };
@@ -126,6 +131,16 @@ namespace FBCross.ViewModels.Customer
                     CheckBoxItems = new ObservableCollection<CheckboxListItem>(dropdownOptions.Select(i => new CheckboxListItem(i, () => { UpdateValueForCheckboxItems(); })));
                 }
             }
+        }
+
+        public UnifiedField(CustomField f)
+        {
+            Type = ViewModels.Customer.FieldType.Custom;
+            FieldId = f.Id;
+            Value = string.Empty;
+            Label = f.Label;
+            FieldType = f.FieldType;
+            Required = f.IsRequired;
         }
     }
     public enum FieldType

@@ -112,7 +112,7 @@ namespace FBCross.ViewModels.Agenda
             if (response.IsSuccessful && response.Data != null)
             {
                 Items.Clear();
-                foreach (var group in AgendaItemGroup.FromCalendarFeedResponse(response.Data))
+                foreach (var group in AgendaItemGroup.FromCalendarFeedResponse(response.Data, start, end))
                 {
                     Items.Add(group);
                 }

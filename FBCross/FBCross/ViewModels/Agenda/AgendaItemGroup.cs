@@ -19,16 +19,30 @@ namespace FBCross.ViewModels.Agenda
             Date = date;
         }
 
-        internal static ObservableCollection<AgendaItemGroup> FromCalendarFeedResponse(IEnumerable<CalendarEvent> data)
+        internal static ObservableCollection<AgendaItemGroup> FromCalendarFeedResponse(IEnumerable<CalendarEvent> data, DateTime startDate, DateTime endDate)
         {
-            return new ObservableCollection<AgendaItemGroup>(data.GroupBy(g => g.start.Date).Select(g => new AgendaItemGroup(g.Key.ToString("D"), g.Select(e => new AgendaItem
+            var set = new ObservableCollection<AgendaItemGroup>();
+            while (startDate <= endDate)
             {
-                Employee = e.title,
-                StartTime = e.start.ToString("h:mm tt"),
-                EndTime = e.end.ToString("h:mm tt"),
-                Title = e.title,
-                Url = e.url
-            }))));
+                var group = new AgendaItemGroup(startDate.ToString("D"), data.Where(d => d.start.Date == startDate).Select(e => new AgendaItem
+                {
+                    Employee = e.title,
+                    StartTime = e.start.ToString("h:mm tt"),
+                    EndTime = e.end.ToString("h:mm tt"),
+                    Title = e.title,
+                    Url = e.url
+                }));
+                if (!group.Items.Any())
+                {
+                    group.Items.Add(new AgendaItem
+                    {
+                        Title = "No events on this day"
+                    });
+                }
+                set.Add(group);
+                startDate = startDate.AddDays(1);
+            }
+            return set;
         }
     }
 }

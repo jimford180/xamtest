@@ -8,9 +8,8 @@
     x:Class="FBCross.Pages.Agenda">
     <ContentPage.Content>
         <Grid>
-            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
-            <StackLayout>
-                <TableView Intent="Form" VerticalOptions="Start" HeightRequest="40">
+                        <StackLayout>
+                <TableView Intent="Form" VerticalOptions="Start" HeightRequest="50">
                     <TableRoot>
                         <TableSection>
                             <ViewCell>
@@ -60,6 +59,9 @@
                     </ListView.ItemTemplate>
                 </views:MvxListView>
             </StackLayout>
+            <Frame Padding="50,30,50,30" HasShadow="true" BackgroundColor="#80000000" Grid.Row="0" Grid.Column="0" IsVisible="{Binding Loading}" VerticalOptions="Center" HorizontalOptions="Center">
+            <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
+        </Frame>
         </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

@@ -13,7 +13,7 @@
     <ContentPage.Content>
 
         <Grid>
-            <ActivityIndicator IsVisible="{Binding Loading}" IsRunning="{Binding Loading}" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center"  />
+            
             <TableView Intent="Form">
                 <TableRoot>
                     <TableSection Title="Title">
@@ -77,6 +77,9 @@
                     </TableSection>
                 </TableRoot>
             </TableView>
+            <Frame Padding="50,30,50,30" HasShadow="true" BackgroundColor="#80000000" Grid.Row="0" Grid.Column="0" IsVisible="{Binding Loading}" VerticalOptions="Center" HorizontalOptions="Center">
+            <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
+        </Frame>
         </Grid>        
     </ContentPage.Content>
 </views:MvxContentPage>

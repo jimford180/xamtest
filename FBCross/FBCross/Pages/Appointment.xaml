@@ -22,7 +22,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChooseServiceCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding ServiceName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding ServiceName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -31,7 +31,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -42,43 +42,43 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeDateTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding Date}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding Date}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Label StyleClass="fieldTextValue" Text="{Binding Time}" HorizontalOptions="EndAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
                             </StackLayout>
                         </ViewCell>
                     </TableSection>
                     <TableSection Title="Customer">
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="StartAndExpand"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
 
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="StartAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
                             </StackLayout>
                         </ViewCell>
                     </TableSection>

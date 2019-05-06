@@ -23,6 +23,7 @@ namespace FBCross.Pages
 			InitializeComponent ();
             this.Resources.Add(StyleSheet.FromAssemblyResource(IntrospectionExtensions.GetTypeInfo(typeof(Agenda)).Assembly,
             "FBCross.Styles.global.css"));
+
         }
 	}
 }

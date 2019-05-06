@@ -8,32 +8,31 @@
     x:Class="FBCross.Pages.Agenda">
     <ContentPage.Content>
         <Grid>
-                        <StackLayout>
-                <TableView Intent="Form" VerticalOptions="Start" HeightRequest="50">
-                    <TableRoot>
-                        <TableSection>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                    <StackLayout.GestureRecognizers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions=" StartAndExpand" Grid.Row="0" Grid.Column="0">
+                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                     </StackLayout.GestureRecognizers>
                                     <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
                                     <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                                 </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                    </TableRoot>
-                </TableView>
-                <views:MvxListView x:Name="GroupedAgendaView" VerticalOptions="Fill"
+                
+                <views:MvxListView x:Name="GroupedAgendaView" VerticalOptions="Fill" 
             ItemsSource="{mvx:MvxBind Items}"
             IsGroupingEnabled="True"
             GroupDisplayBinding="{mvx:MvxBind Date}"
-            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}">
+            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}" Grid.Row="1" Grid.Column="0">
                     <ListView.GroupHeaderTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout>
-                                    <Label Text="{Binding Date}" StyleClass="agendaHeader" VerticalTextAlignment="Center" Margin="5,0,0,0" HeightRequest="44"></Label>
+                                    <Label Text="{Binding Date}" StyleClass="agendaHeader" VerticalTextAlignment="Center" Margin="0" HeightRequest="44"></Label>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -58,10 +57,10 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </views:MvxListView>
-            </StackLayout>
-            <Frame Padding="50,30,50,30" HasShadow="true" BackgroundColor="#80000000" Grid.Row="0" Grid.Column="0" IsVisible="{Binding Loading}" VerticalOptions="Center" HorizontalOptions="Center">
-            <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
-        </Frame>
+           
+            <Frame Padding="50,30,50,30" HasShadow="true" BackgroundColor="#80000000" Grid.Row="1" Grid.Column="0" IsVisible="{Binding Loading}" VerticalOptions="Center" HorizontalOptions="Center">
+                <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
+            </Frame>
         </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

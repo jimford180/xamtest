@@ -24,7 +24,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SpotsTakenCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding SpotsTakenText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding SpotsTakenText}"  VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -33,7 +33,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -42,7 +42,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ChooseSecondEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding SecondEmployeeName}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding SecondEmployeeName}"  VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -54,7 +54,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding CurrentBookingsCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CurrentBookingsText}" Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding CurrentBookingsText}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand"  HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>
@@ -63,7 +63,7 @@
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding WaitListCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding WaitListText}"  Margin="10,5,10,0" FontSize="18" HorizontalOptions="Start"></Label>
+                                <Label StyleClass="fieldTextValue" Text="{Binding WaitListText}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
                                 <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
                             </StackLayout>
                         </ViewCell>

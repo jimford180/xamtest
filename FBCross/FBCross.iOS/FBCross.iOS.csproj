@@ -256,9 +256,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\hamburger.imageset\icons8-menu-filled-50.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\imgTrash.imageset\icons8-trash-can-50.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -268,6 +265,19 @@
     <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\imgMenu.png" />
+    <ImageAsset Include="Assets.xcassets\Image-3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1125x2436.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2436x1125.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1242x2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default750x1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2208x1242.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default320x480.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960-1.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -296,5 +306,8 @@
       <Project>{D5C298D5-954B-4E14-B68F-DA47697F9EC0}</Project>
       <Name>FBCross</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\imgMenu.imageset\" />
   </ItemGroup>
 </Project>

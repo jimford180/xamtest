@@ -12,11 +12,11 @@ namespace FBCross.ViewModels.Agenda
         public string Date { get; set; }
         public AgendaItemGroup(string date) : base()
         {
-            Date = date;
+            Date = " " + date;
         }
         public AgendaItemGroup(string date, IEnumerable<AgendaItem> source) : base(source)
         {
-            Date = date;
+            Date = " " + date;
         }
 
         internal static ObservableCollection<AgendaItemGroup> FromCalendarFeedResponse(IEnumerable<CalendarEvent> data, DateTime startDate, DateTime endDate)

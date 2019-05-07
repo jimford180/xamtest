@@ -64,6 +64,10 @@ namespace FBCross.ViewModels.Agenda
 
         private Task ItemSelected(AgendaItem item)
         {
+            if (string.IsNullOrEmpty(item.Url))
+            {
+                return Task.CompletedTask;
+            }
             if (item.Url.StartsWith("#instance"))
             {
                 FormsApp.CurrentInstanceId = item.Url.Replace("#instance/", string.Empty);
@@ -96,11 +100,11 @@ namespace FBCross.ViewModels.Agenda
             Loading = true;
             var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
             var start = DateTime.Now.Date;
-            var end = DateTime.Now.Date.AddDays(8).AddMinutes(-1);
+            var end = DateTime.Now.Date.AddDays(8);
             if (FormsApp.SelectedDate != null && FormsApp.SelectedDate != DateTime.MinValue)
             {
-                start = FormsApp.SelectedDate;
-                end = start.AddDays(1).AddMinutes(-1);
+                start = FormsApp.SelectedDate.Date;
+                end = start.AddDays(1);
             }
             int? employeeId = Employee?.Id;
             var calendarFeedRequest = _calendarFeedService.Get(sessionInfo.MerchantGuid, sessionInfo.SessionToken, start, end, employeeId);

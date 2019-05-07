@@ -22,7 +22,7 @@ namespace FBCross.ViewModels.Agenda
         internal static ObservableCollection<AgendaItemGroup> FromCalendarFeedResponse(IEnumerable<CalendarEvent> data, DateTime startDate, DateTime endDate)
         {
             var set = new ObservableCollection<AgendaItemGroup>();
-            while (startDate <= endDate)
+            while (startDate < endDate)
             {
                 var group = new AgendaItemGroup(startDate.ToString("D"), data.Where(d => d.start.Date == startDate).Select(e => new AgendaItem
                 {

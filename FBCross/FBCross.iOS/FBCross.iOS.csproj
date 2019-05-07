@@ -265,19 +265,45 @@
     <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\hamburger.imageset\imgMenu.png" />
-    <ImageAsset Include="Assets.xcassets\Image-3.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1125x2436.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2436x1125.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1242x2208.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default750x1334.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2208x1242.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default320x480.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960-1.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136-1.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\imgMenu.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Image-3.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1125x2436.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2436x1125.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1242x2208.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default750x1334.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default2208x1242.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default320x480.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x960-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default640x1136-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

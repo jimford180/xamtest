@@ -28,6 +28,7 @@ namespace FBCross.ViewModels.Activity
         {
             if (item.BookingType == 1)
             {
+                FormsApp.CurrentScheduleBookingId = item.ClassSessionSlug;
                 return _navigationService.Navigate<AppointmentViewModel>();
             }
             else

@@ -7707,155 +7707,146 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0a0061
 			public const int hint_pressed_alpha_material_light = 2131361889;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int intercom_app_bar_shadow_height = 2131361968;
-			
 			// aapt resource value: 0x7f0a00ad
-			public const int intercom_article_dismiss_button_margin_bottom = 2131361965;
+			public const int intercom_app_bar_shadow_height = 2131361965;
 			
 			// aapt resource value: 0x7f0a00ae
-			public const int intercom_article_dismiss_button_margin_top = 2131361966;
+			public const int intercom_avatar_size = 2131361966;
 			
 			// aapt resource value: 0x7f0a00af
-			public const int intercom_article_margin_top = 2131361967;
+			public const int intercom_cell_content_padding = 2131361967;
+			
+			// aapt resource value: 0x7f0a00b0
+			public const int intercom_cell_horizontal_padding = 2131361968;
 			
 			// aapt resource value: 0x7f0a00b1
-			public const int intercom_avatar_size = 2131361969;
+			public const int intercom_cell_padding_bottom = 2131361969;
 			
 			// aapt resource value: 0x7f0a00b2
-			public const int intercom_cell_content_padding = 2131361970;
+			public const int intercom_cell_padding_top = 2131361970;
 			
 			// aapt resource value: 0x7f0a00b3
-			public const int intercom_cell_horizontal_padding = 2131361971;
+			public const int intercom_chat_full_top_margin = 2131361971;
 			
 			// aapt resource value: 0x7f0a00b4
-			public const int intercom_cell_padding_bottom = 2131361972;
+			public const int intercom_chat_overlay_padding_right = 2131361972;
 			
 			// aapt resource value: 0x7f0a00b5
-			public const int intercom_cell_padding_top = 2131361973;
+			public const int intercom_chat_overlay_text_margin_left = 2131361973;
 			
 			// aapt resource value: 0x7f0a00b6
-			public const int intercom_chat_full_top_margin = 2131361974;
+			public const int intercom_chat_overlay_text_padding_left = 2131361974;
 			
 			// aapt resource value: 0x7f0a00b7
-			public const int intercom_chat_overlay_padding_right = 2131361975;
+			public const int intercom_chat_overlay_text_padding_right = 2131361975;
 			
 			// aapt resource value: 0x7f0a00b8
-			public const int intercom_chat_overlay_text_margin_left = 2131361976;
+			public const int intercom_chat_overlay_width = 2131361976;
 			
 			// aapt resource value: 0x7f0a00b9
-			public const int intercom_chat_overlay_text_padding_left = 2131361977;
+			public const int intercom_close_velocity = 2131361977;
 			
 			// aapt resource value: 0x7f0a00ba
-			public const int intercom_chat_overlay_text_padding_right = 2131361978;
+			public const int intercom_composer_fab = 2131361978;
 			
 			// aapt resource value: 0x7f0a00bb
-			public const int intercom_chat_overlay_width = 2131361979;
+			public const int intercom_composer_height = 2131361979;
 			
 			// aapt resource value: 0x7f0a00bc
-			public const int intercom_close_velocity = 2131361980;
+			public const int intercom_composer_shadow_height = 2131361980;
 			
 			// aapt resource value: 0x7f0a00bd
-			public const int intercom_composer_fab = 2131361981;
+			public const int intercom_container_card_avatar_size = 2131361981;
 			
 			// aapt resource value: 0x7f0a00be
-			public const int intercom_composer_height = 2131361982;
+			public const int intercom_conversation_row_icon_spacer = 2131361982;
 			
 			// aapt resource value: 0x7f0a00bf
-			public const int intercom_composer_shadow_height = 2131361983;
+			public const int intercom_conversation_row_margin = 2131361983;
 			
 			// aapt resource value: 0x7f0a00c0
-			public const int intercom_container_card_avatar_size = 2131361984;
+			public const int intercom_faded_alpha_is_typing = 2131361984;
 			
 			// aapt resource value: 0x7f0a00c1
-			public const int intercom_conversation_row_icon_spacer = 2131361985;
+			public const int intercom_faded_is_typing_duration = 2131361985;
 			
 			// aapt resource value: 0x7f0a00c2
-			public const int intercom_conversation_row_margin = 2131361986;
+			public const int intercom_full_alpha_is_typing = 2131361986;
 			
 			// aapt resource value: 0x7f0a00c3
-			public const int intercom_faded_alpha_is_typing = 2131361987;
+			public const int intercom_image_rounded_corners = 2131361987;
 			
 			// aapt resource value: 0x7f0a00c4
-			public const int intercom_faded_is_typing_duration = 2131361988;
+			public const int intercom_inbox_row_height = 2131361988;
 			
 			// aapt resource value: 0x7f0a00c5
-			public const int intercom_full_alpha_is_typing = 2131361989;
+			public const int intercom_launcher_height = 2131361989;
 			
 			// aapt resource value: 0x7f0a00c6
-			public const int intercom_image_rounded_corners = 2131361990;
+			public const int intercom_launcher_padding_bottom = 2131361990;
 			
 			// aapt resource value: 0x7f0a00c7
-			public const int intercom_inbox_row_height = 2131361991;
+			public const int intercom_launcher_padding_right = 2131361991;
 			
 			// aapt resource value: 0x7f0a00c8
-			public const int intercom_launcher_height = 2131361992;
+			public const int intercom_link_height = 2131361992;
 			
 			// aapt resource value: 0x7f0a00c9
-			public const int intercom_launcher_padding_bottom = 2131361993;
+			public const int intercom_link_padding = 2131361993;
 			
 			// aapt resource value: 0x7f0a00ca
-			public const int intercom_launcher_padding_right = 2131361994;
+			public const int intercom_link_reaction_height = 2131361994;
 			
 			// aapt resource value: 0x7f0a00cb
-			public const int intercom_link_height = 2131361995;
+			public const int intercom_list_indentation = 2131361995;
 			
 			// aapt resource value: 0x7f0a00cc
-			public const int intercom_link_padding = 2131361996;
+			public const int intercom_local_image_upload_size = 2131361996;
 			
 			// aapt resource value: 0x7f0a00cd
-			public const int intercom_link_reaction_height = 2131361997;
+			public const int intercom_note_cell_padding = 2131361997;
 			
 			// aapt resource value: 0x7f0a00ce
-			public const int intercom_list_indentation = 2131361998;
+			public const int intercom_note_layout_margin = 2131361998;
 			
 			// aapt resource value: 0x7f0a00cf
-			public const int intercom_local_image_upload_size = 2131361999;
+			public const int intercom_notification_preview_height = 2131361999;
 			
 			// aapt resource value: 0x7f0a00d0
-			public const int intercom_note_cell_padding = 2131362000;
+			public const int intercom_open_velocity = 2131362000;
 			
 			// aapt resource value: 0x7f0a00d1
-			public const int intercom_note_layout_margin = 2131362001;
+			public const int intercom_post_cell_padding = 2131362001;
 			
 			// aapt resource value: 0x7f0a00d2
-			public const int intercom_notification_preview_height = 2131362002;
+			public const int intercom_preview_chathead_avatar_diameter = 2131362002;
 			
 			// aapt resource value: 0x7f0a00d3
-			public const int intercom_open_velocity = 2131362003;
+			public const int intercom_reaction_offset = 2131362003;
 			
 			// aapt resource value: 0x7f0a00d4
-			public const int intercom_post_cell_padding = 2131362004;
+			public const int intercom_reaction_size = 2131362004;
 			
 			// aapt resource value: 0x7f0a00d5
-			public const int intercom_preview_chathead_avatar_diameter = 2131362005;
+			public const int intercom_scaled_down_is_typing = 2131362005;
 			
 			// aapt resource value: 0x7f0a00d6
-			public const int intercom_reaction_offset = 2131362006;
+			public const int intercom_scaled_up_is_typing = 2131362006;
 			
 			// aapt resource value: 0x7f0a00d7
-			public const int intercom_reaction_size = 2131362007;
+			public const int intercom_social_button_dimen = 2131362007;
 			
 			// aapt resource value: 0x7f0a00d8
-			public const int intercom_scaled_down_is_typing = 2131362008;
+			public const int intercom_toolbar_height = 2131362008;
 			
 			// aapt resource value: 0x7f0a00d9
-			public const int intercom_scaled_up_is_typing = 2131362009;
+			public const int intercom_toolbar_image_background_alpha = 2131362009;
 			
 			// aapt resource value: 0x7f0a00da
-			public const int intercom_social_button_dimen = 2131362010;
+			public const int intercom_two_pane_conversation_percentage = 2131362010;
 			
 			// aapt resource value: 0x7f0a00db
-			public const int intercom_toolbar_height = 2131362011;
-			
-			// aapt resource value: 0x7f0a00dc
-			public const int intercom_toolbar_image_background_alpha = 2131362012;
-			
-			// aapt resource value: 0x7f0a00dd
-			public const int intercom_two_pane_conversation_percentage = 2131362013;
-			
-			// aapt resource value: 0x7f0a00de
-			public const int intercom_two_pane_inbox_percentage = 2131362014;
+			public const int intercom_two_pane_inbox_percentage = 2131362011;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int item_touch_helper_max_drag_scroll_per_frame = 2131361795;
@@ -9263,8 +9254,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b00bd
 			public const int attachment_size = 2131427517;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int author = 2131427504;
+			// aapt resource value: 0x7f0b00b1
+			public const int author = 2131427505;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int auto = 2131427398;
@@ -9275,8 +9266,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b010b
 			public const int avatarView = 2131427595;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int avatar_view = 2131427503;
+			// aapt resource value: 0x7f0b00b0
+			public const int avatar_view = 2131427504;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int beginning = 2131427377;
@@ -9410,8 +9401,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0071
 			public const int default_activity_button = 2131427441;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int description = 2131427502;
+			// aapt resource value: 0x7f0b00af
+			public const int description = 2131427503;
 			
 			// aapt resource value: 0x7f0b00a1
 			public const int design_bottom_sheet = 2131427489;
@@ -9431,8 +9422,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0022
 			public const int disableHome = 2131427362;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int dismiss = 2131427512;
+			// aapt resource value: 0x7f0b00ac
+			public const int dismiss = 2131427500;
 			
 			// aapt resource value: 0x7f0b00d0
 			public const int dot1 = 2131427536;
@@ -9680,17 +9671,17 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0018
 			public const int line3 = 2131427352;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int link_composer_container = 2131427506;
+			// aapt resource value: 0x7f0b00b3
+			public const int link_composer_container = 2131427507;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int link_container = 2131427501;
+			// aapt resource value: 0x7f0b00ae
+			public const int link_container = 2131427502;
 			
 			// aapt resource value: 0x7f0b00aa
 			public const int link_root = 2131427498;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int link_title_bar = 2131427509;
+			// aapt resource value: 0x7f0b00b6
+			public const int link_title_bar = 2131427510;
 			
 			// aapt resource value: 0x7f0b00ab
 			public const int link_view = 2131427499;
@@ -9704,8 +9695,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0072
 			public const int list_item = 2131427442;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int loading_view = 2131427511;
+			// aapt resource value: 0x7f0b00b8
+			public const int loading_view = 2131427512;
 			
 			// aapt resource value: 0x7f0b00b9
 			public const int loading_wheel = 2131427513;
@@ -9848,9 +9839,6 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0148
 			public const int notification_main_column_container = 2131427656;
 			
-			// aapt resource value: 0x7f0b00fc
-			public const int notification_pill = 2131427580;
-			
 			// aapt resource value: 0x7f0b0106
 			public const int notification_root = 2131427590;
 			
@@ -9887,6 +9875,9 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0108
 			public const int preview_name = 2131427592;
 			
+			// aapt resource value: 0x7f0b00fc
+			public const int preview_pill = 2131427580;
+			
 			// aapt resource value: 0x7f0b0109
 			public const int preview_summary = 2131427593;
 			
@@ -9911,11 +9902,11 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0064
 			public const int rangeSelection = 2131427428;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int reaction_input_view = 2131427508;
+			// aapt resource value: 0x7f0b00b5
+			public const int reaction_input_view = 2131427509;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int reaction_text = 2131427507;
+			// aapt resource value: 0x7f0b00b4
+			public const int reaction_text = 2131427508;
 			
 			// aapt resource value: 0x7f0b004c
 			public const int right = 2131427404;
@@ -9956,8 +9947,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0079
 			public const int scrollView = 2131427449;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int scroll_view = 2131427500;
+			// aapt resource value: 0x7f0b00ad
+			public const int scroll_view = 2131427501;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int scrollable = 2131427415;
@@ -10094,8 +10085,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0082
 			public const int titleDividerNoCustom = 2131427458;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int title_bar_text = 2131427510;
+			// aapt resource value: 0x7f0b00b7
+			public const int title_bar_text = 2131427511;
 			
 			// aapt resource value: 0x7f0b0080
 			public const int title_template = 2131427456;
@@ -10142,8 +10133,8 @@ namespace FBCross.Droid
 			// aapt resource value: 0x7f0b0009
 			public const int up = 2131427337;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int updated = 2131427505;
+			// aapt resource value: 0x7f0b00b2
+			public const int updated = 2131427506;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int useLogo = 2131427368;

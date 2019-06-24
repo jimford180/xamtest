@@ -55,8 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="IntercomSDK.Droid">
-      <Version>3.0.22</Version>
+    <PackageReference Include="Intercom.Sdk.Base">
+      <Version>3.0.15</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
       <Version>6.2.2</Version>

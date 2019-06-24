@@ -8,7 +8,6 @@ using Android.Widget;
 using Android.OS;
 using MvvmCross.Forms.Platforms.Android.Views;
 using MvvmCross.Forms.Platforms.Android.Core;
-using IO.Intercom.Android.Sdk;
 
 namespace FBCross.Droid
 {
@@ -26,7 +25,7 @@ namespace FBCross.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             //LoadApplication(new App());
 
-            Intercom.Initialize(this.Application, "android_sdk-bec55dc8fc4abbcba258f5132cad4d4cfc91f997", "zyx82osk");
+            IntercomSdk.Intercom.Initialize(this.Application, "android_sdk-bec55dc8fc4abbcba258f5132cad4d4cfc91f997", "zyx82osk");
         }
     }
 }

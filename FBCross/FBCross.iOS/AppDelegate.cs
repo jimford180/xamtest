@@ -30,6 +30,7 @@ namespace FBCross.iOS
             new SfCalendarRenderer();
             new SfPickerRenderer();
             SfCheckBoxRenderer.Init();
+            Intercom.SetApiKey("ios_sdk-b3c61968e38ab16d11f4dd50972d09c67c6f38aa", "zyx82osk");
             var result = base.FinishedLaunching(uiApplication, launchOptions);
             return result;
         }

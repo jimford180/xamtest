@@ -18,6 +18,7 @@ namespace FBCross
         static FBDatabase database;
         private static Guid _merchantGuid;
         private static string _sessionToken;
+        private static string _email;
 
         public static FBDatabase Database
         {
@@ -36,6 +37,7 @@ namespace FBCross
             await Database.Sessions.RemoveAll();
             _merchantGuid = Guid.Empty;
             _sessionToken = null;
+            _email = null;
         }
         public static DateTime SelectedDate { get; set; }
         public static string CurrentInstanceId { get; set; }
@@ -54,15 +56,16 @@ namespace FBCross
         public async static Task<SessionInformation> GetSessionTokenAndMerchantGuid()
         {
             var allTokens = await Database.Sessions.GetEntitiesAsync();
-            if (_merchantGuid == null || _sessionToken == null)
+            if (_merchantGuid == null || _sessionToken == null || _email == null)
             {
                 if (allTokens.Any() && (allTokens.Any(t => t.IsCurrent) || allTokens.Count == 1))
                 {
                     _merchantGuid = allTokens.OrderByDescending(t => t.IsCurrent).First().MerchantGuid;
                     _sessionToken = allTokens.OrderByDescending(t => t.IsCurrent).First().SessionToken;
+                    _email = allTokens.OrderByDescending(t => t.IsCurrent).First().Email;
                 }
             }
-            var info = new SessionInformation { MerchantGuid = _merchantGuid, SessionToken = _sessionToken };
+            var info = new SessionInformation { MerchantGuid = _merchantGuid, SessionToken = _sessionToken, Email = _email };
             return info;
         }
 

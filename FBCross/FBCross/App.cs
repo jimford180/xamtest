@@ -30,6 +30,7 @@ namespace FBCross
             Mvx.IoCProvider.RegisterType<IActivityFeed, ActivityFeed>();
             Mvx.IoCProvider.RegisterType<IWaitListBooking, WaitListBooking>();
             Mvx.IoCProvider.RegisterType<IHoliday, Rest.Holiday>();
+            Mvx.IoCProvider.RegisterType<IForgotPassword, ForgotPassword>();
 
             Mapper.Initialize(cfg =>
             {

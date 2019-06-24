@@ -39,7 +39,7 @@ namespace FBCross.ViewModels.Authentication
 
         private void ForgotPassword()
         {
-            Device.OpenUri(new Uri("https://www.flexbooker.com/user/ForgotPassword"));
+            _navigationService.Navigate<ForgotPasswordViewModel>();
         }
 
         private async void Login()
@@ -53,6 +53,7 @@ namespace FBCross.ViewModels.Authentication
                 await FormsApp.Logout();
                 foreach (var session in loginResult.Data)
                 {
+                    session.Email = Email;
                     await FormsApp.Database.Sessions.CreateEntityAsync(session);
                 }
                 if (loginResult.Data.Count() > 1)

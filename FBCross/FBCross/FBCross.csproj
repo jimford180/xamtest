@@ -31,6 +31,9 @@
     <Compile Update="Pages\Block.xaml.cs">
       <DependentUpon>Block.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\SelectAgendaEmployee.xaml.cs">
       <DependentUpon>SelectAgendaEmployee.xaml</DependentUpon>
     </Compile>

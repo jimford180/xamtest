@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Xamarin.Forms;
+using FBCross.Dependency;
 
 namespace FBCross.ViewModels.Navigation
 {
@@ -50,8 +52,13 @@ namespace FBCross.ViewModels.Navigation
 
         private async Task InitializeViewModels()
         {
-            await _navigationService.Navigate<MenuViewModel>();
-            await _navigationService.Navigate<TabbedHomeViewModel>();
+            var sessionInfo = await FormsApp.GetSessionTokenAndMerchantGuid();
+            if (!string.IsNullOrWhiteSpace(sessionInfo.Email))
+            {
+                DependencyService.Get<IIntercom>().RegisterLoggedInUser(sessionInfo.Email);
+                await _navigationService.Navigate<MenuViewModel>();
+                await _navigationService.Navigate<TabbedHomeViewModel>();
+            }
         }
 
         public override async void Start()

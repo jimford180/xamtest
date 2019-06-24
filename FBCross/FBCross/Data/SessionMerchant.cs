@@ -12,5 +12,6 @@ namespace FBCross.Data
         public string MerchantName { get; set; }
         public string SessionToken { get; set; }
         public bool IsCurrent { get; set; }
+        public string Email { get; set; }
     }
 }

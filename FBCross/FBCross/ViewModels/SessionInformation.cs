@@ -8,5 +8,6 @@ namespace FBCross.ViewModels
     {
         public string SessionToken { get; set; }
         public Guid MerchantGuid { get; set; }
+        public string Email { get; set; }
     }
 }

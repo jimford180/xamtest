@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBCross.Android", "FBCross\FBCross.Android\FBCross.Android.csproj", "{DBB08169-6F32-4F39-B96C-1AFFBE695820}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBCross.iOS", "FBCross\FBCross.iOS\FBCross.iOS.csproj", "{210E3C17-2352-44B7-B25A-38C6F8D7A559}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FBCross", "FBCross\FBCross\FBCross.csproj", "{D5C298D5-954B-4E14-B68F-DA47697F9EC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FBCross", "FBCross\FBCross\FBCross.csproj", "{D5C298D5-954B-4E14-B68F-DA47697F9EC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

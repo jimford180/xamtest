@@ -9,9 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Binding.Intercom.Android;
+using Binding.Intercom.Android.Identity;
 using FBCross.Dependency;
-using IntercomSdk;
-using IntercomSdk.Identity;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FBCross.Droid.IntercomAndroid))]

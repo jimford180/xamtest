@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -151,9 +151,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-84@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\image-2018-09-10.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    
     <ImageAsset Include="Assets.xcassets\hamburger.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -250,9 +248,7 @@
     <ImageAsset Include="Assets.xcassets\imgActivity.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\imgTrash.imageset\trash2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
@@ -266,9 +262,7 @@
     <ImageAsset Include="Assets.xcassets\imgPlus.imageset\icons8-plus-math-filled-50.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\hamburger.imageset\imgMenu.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    
     <ImageAsset Include="Assets.xcassets\Image-3.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

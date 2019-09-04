@@ -19,7 +19,7 @@ namespace FBCross.Pages
 		public LeftMenu ()
 		{
             Title = "Menu";
-            Icon = "hamburger.png";
+            //Icon = "hamburger.png";
             InitializeComponent ();
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 		}

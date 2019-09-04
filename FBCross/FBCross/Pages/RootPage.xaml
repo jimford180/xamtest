@@ -5,6 +5,5 @@
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
     xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
     xmlns:viewModels="clr-namespace:FBCross.ViewModels.Navigation"
-    x:Class="FBCross.Pages.RootPage"
-    Icon="hamburger.png">
+    x:Class="FBCross.Pages.RootPage">
 </views:MvxMasterDetailPage>

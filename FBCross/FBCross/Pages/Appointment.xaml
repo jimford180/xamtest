@@ -13,84 +13,77 @@
     <ContentPage.Content>
 
         <Grid>
-            
-            <TableView Intent="Form">
-                <TableRoot>
-                    <TableSection>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChooseServiceCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding ServiceName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
-                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
-                                <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                    <TableSection Title="DATE AND TIME">
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChangeDateTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding Date}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
-                                <Label StyleClass="fieldTextValue" Text="{Binding Time}" HorizontalOptions="EndAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                    <TableSection Title="Customer">
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
+            <ScrollView>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="SERVICE" StyleClass="appointmentHeader"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChooseServiceCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding ServiceName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
+                        <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                    </StackLayout>
+                    <Label StyleClass="separator"></Label>
+                    <Label Text="EMPLOYEE" StyleClass="appointmentHeader"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChooseEmployeeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding EmployeeName}"  VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
+                        <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                    </StackLayout>
+                    <Label StyleClass="separator"></Label>
+                    <Label Text="DATE AND TIME" StyleClass="appointmentHeader"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeDateTimeCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding Date}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
+                        <Label StyleClass="fieldTextValue" Text="{Binding Time}" HorizontalOptions="EndAndExpand" Margin="10,5,10,0" FontSize="18"></Label>
+                    </StackLayout>
+                    <Label StyleClass="separator"></Label>
+                    <Label Text="CUSTOMER" StyleClass="appointmentHeader"></Label>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding CustomerName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding CustomerEmail}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding CustomerPhone}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeCustomerCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label MinimumHeightRequest="60" StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" FontSize="18"></Label>
+                    </StackLayout>
+                    <Label StyleClass="separator"></Label>
+                    <Label Text="APPOINTMENT NOTES" StyleClass="appointmentHeader"></Label>
+                    <Editor Text="{Binding Notes}" AutoSize="TextChanges" VerticalOptions="FillAndExpand" Keyboard="Chat" Margin="10,0,0,0" FontSize="18"></Editor>
+                    <TableView Intent="Form">
+                        <TableRoot>
+                            <TableSection>
+                                <SwitchCell On="{Binding RemindByEmail}" Text="Remind By Email"></SwitchCell>
+                                <SwitchCell On="{Binding RemindBySms}" Text="Remind By Sms"></SwitchCell>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </ScrollView>
 
-                                <Label StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                    <TableSection>
-                        <SwitchCell On="{Binding RemindByEmail}" Text="Remind By Email"></SwitchCell>
-                        <SwitchCell On="{Binding RemindBySms}" Text="Remind By Sms"></SwitchCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
             <Frame Padding="50,30,50,30" HasShadow="true" BackgroundColor="#80000000" Grid.Row="0" Grid.Column="0" IsVisible="{Binding Loading}" VerticalOptions="Center" HorizontalOptions="Center">
-            <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
-        </Frame>
-        </Grid>        
+                <ActivityIndicator Color="White" VerticalOptions="Center" HorizontalOptions="Center" x:Name="actInd" IsRunning="{Binding Loading}" IsVisible="{Binding Loading}" />
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </views:MvxContentPage>

@@ -46,4 +46,8 @@
 .fieldPicker {
     font-size: 14;
     color: #000000;
+    overflow: scroll;
+}
+.appointmentHeader{
+    margin-left: 10;
 }

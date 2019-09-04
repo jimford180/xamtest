@@ -50,7 +50,7 @@ namespace FBCross
                 cfg.CreateMap<ViewModels.Appointment.AppointmentViewModel, Rest.Dto.BookingRequest>();
                 ConfigureAppointmentViewModelToScheduleBookingRequest(cfg);
                 ConfigureAppointmentViewModelToFixedTimeBookingRequest(cfg);
-                cfg.CreateMap<Rest.Dto.ScheduleBookingInfo, ViewModels.Customer.Customer>();
+                cfg.CreateMap<Rest.Dto.ScheduleBookingInfo, ViewModels.Customer.Customer>().ForMember(dest => dest.Notes, opt => opt.MapFrom(f => f.CustomerNotes));
                 cfg.CreateMap<Rest.Dto.BookingDetail, ViewModels.Customer.Customer>().ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId));
                 cfg.CreateMap<Rest.Dto.WaitListDetail, ViewModels.Customer.Customer>();
 

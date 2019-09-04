@@ -308,6 +308,7 @@ namespace FBCross.ViewModels.Appointment
                     Employee = Mapper.Map<EmployeeViewModel>(employees.First(s => s.Id == booking.EmployeeId));
                     RemindByEmail = booking.RemindByEmail;
                     RemindBySms = booking.RemindBySms;
+                    Notes = booking.Notes;
                 }
                 Loading = false;
             }

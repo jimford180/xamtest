@@ -86,7 +86,7 @@ namespace FBCross
                             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
                             .ForMember(dest => dest.ServiceGuidsCsv, opt => opt.MapFrom(src => src.Service.ServiceGuid))
                             .ForMember(dest => dest.SessionDateTime, opt => opt.MapFrom(src => src.DateTime.ToString()))
-                            .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                            .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Fields.Select(cf => new CustomBookingField
                             {
                                 MerchantFieldId = cf.FieldId.Value,
                                 Value = cf.Value
@@ -102,7 +102,7 @@ namespace FBCross
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
-                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Fields.Select(cf => new CustomBookingField
                 {
                     MerchantFieldId = cf.FieldId.Value,
                     Value = cf.Value
@@ -117,7 +117,7 @@ namespace FBCross
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                 .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
                 .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
-                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+                .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Fields.Select(cf => new CustomBookingField
                 {
                     MerchantFieldId = cf.FieldId.Value,
                     Value = cf.Value
@@ -130,7 +130,7 @@ namespace FBCross
                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Customer.Email))
                .ForMember(dest => dest.Phone, opt => opt.MapFrom(src => src.Customer.Phone))
                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Customer.Id))
-               .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Customer.CustomFields.Select(cf => new CustomBookingField
+               .ForMember(dest => dest.CustomBookingFields, opt => opt.MapFrom(src => src.Fields.Select(cf => new CustomBookingField
                {
                    MerchantFieldId = cf.FieldId.Value,
                    Value = cf.Value

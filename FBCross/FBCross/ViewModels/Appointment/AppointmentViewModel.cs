@@ -38,6 +38,8 @@ namespace FBCross.ViewModels.Appointment
         private readonly IScheduleBooking _scheduleBookingService;
         private readonly IFixedTimeBooking _fixedTimeBookingService;
         private readonly IWaitListBooking _waitListBookingService;
+        private List<UnifiedField> _fields;
+        public List<UnifiedField> Fields { get => _fields; set { _fields = value; RaisePropertyChanged(() => Fields); } }
 
         public string PageTitle { get => _guid.HasValue ? "Edit Appointment" : "Create Appointment"; }
 
@@ -285,6 +287,8 @@ namespace FBCross.ViewModels.Appointment
             _fixedTimeBookingService = fixedTimeBookingService;
             _waitListBookingService = waitListBookingService;
             _remindByEmail = true;
+            var fieldRules = FormsApp.MerchantFieldRules;
+            Fields = fieldRules.CustomFields.Select(f => new UnifiedField(f)).ToList();
         }
         public override async void Start()
         {
@@ -309,6 +313,14 @@ namespace FBCross.ViewModels.Appointment
                     RemindByEmail = booking.RemindByEmail;
                     RemindBySms = booking.RemindBySms;
                     Notes = booking.Notes;
+                    foreach (var field in booking.CustomBookingFields)
+                    {
+                        var matchingField = Fields.FirstOrDefault(f => f.FieldId == field.MerchantFieldId);
+                        if (matchingField != null)
+                        {
+                            matchingField.Value = field.Value;
+                        }
+                    }
                 }
                 Loading = false;
             }

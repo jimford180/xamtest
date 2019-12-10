@@ -85,7 +85,16 @@
 
         <Grid>
             <ScrollView>
-                <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                    <Label Text="LOCATION" StyleClass="appointmentHeader" IsVisible="{Binding ShowLocation}"></Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding ShowLocation}">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChooseLocationCommand}" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        <Label StyleClass="fieldTextValue" Text="{Binding LocationName}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="18" HorizontalOptions="Start"></Label>
+                        <Image HorizontalOptions="EndAndExpand" HeightRequest="15" Margin="0,0,15,0" Source="imgNext"></Image>
+                    </StackLayout>
+                    <Label StyleClass="separator" IsVisible="{Binding ShowLocation}"></Label>
                     <Label Text="SERVICE" StyleClass="appointmentHeader"></Label>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <StackLayout.GestureRecognizers>
@@ -139,13 +148,10 @@
                         <Label MinimumHeightRequest="60" StyleClass="fieldTextValue" Text="{Binding CustomerNotes}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" FontSize="18"></Label>
                     </StackLayout>
                     <Label StyleClass="separator"></Label>
+                    
                     <Label Text="APPOINTMENT NOTES" StyleClass="appointmentHeader"></Label>
-                    <views:MvxListView x:Name="FieldsList" IsVisible="{Binding ShowCustomerForm}"
-                ItemsSource="{Binding Fields}" ItemTemplate="{StaticResource customFieldTemplateSelector}" VerticalOptions="FillAndExpand" HasUnevenRows="True">
-
-                    </views:MvxListView>
                     <Editor Text="{Binding Notes}" AutoSize="TextChanges" VerticalOptions="FillAndExpand" Keyboard="Chat" Margin="10,0,0,0" FontSize="18"></Editor>
-                    <TableView Intent="Form">
+                    <TableView Intent="Form" HeightRequest="90">
                         <TableRoot>
                             <TableSection>
                                 <SwitchCell On="{Binding RemindByEmail}" Text="Remind By Email"></SwitchCell>
@@ -153,6 +159,12 @@
                             </TableSection>
                         </TableRoot>
                     </TableView>
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                        <views:MvxListView x:Name="FieldsList" IsVisible="{Binding ShowCustomerForm}"
+                ItemsSource="{Binding Fields}" ItemTemplate="{StaticResource customFieldTemplateSelector}" HasUnevenRows="True">
+                        </views:MvxListView>
+                    </StackLayout>
+                    <Label StyleClass="separator"></Label>
                 </StackLayout>
             </ScrollView>
 

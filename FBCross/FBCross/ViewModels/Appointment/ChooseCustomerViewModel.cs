@@ -39,6 +39,7 @@ namespace FBCross.ViewModels.Appointment
                     Notes = Fields.Single(f => f.Type == FieldType.Notes).Value,
                     CustomFields = Fields.Where(f => f.Type == FieldType.Custom).ToList()
                 };
+                CopyCustomFieldsFromCustomerToAppointment();
                 await _navigationService.Close(this);
             }
             else
@@ -46,6 +47,20 @@ namespace FBCross.ViewModels.Appointment
                 var missingFields = Fields.Where(f => f.Required && string.IsNullOrWhiteSpace(f.Value));
                 var msg = $"The following fields are required: {string.Join(", ", missingFields.Select(f => f.Label))}";
                 await FormsApp.Current.MainPage.DisplayAlert("Missing Required Fields", msg, "OK");
+            }
+        }
+
+        private void CopyCustomFieldsFromCustomerToAppointment()
+        {
+            if (_appointment != null && _appointment.Customer != null && _appointment.Customer.CustomFields != null && _appointment.Fields != null) {
+                foreach (var customerField in _appointment.Customer.CustomFields)
+                {
+                    var matchingField = _appointment.Fields.FirstOrDefault(g => g.FieldId == customerField.FieldId);
+                    if (matchingField != null)
+                    {
+                        matchingField.Value = customerField.Value;
+                    }
+                }
             }
         }
 

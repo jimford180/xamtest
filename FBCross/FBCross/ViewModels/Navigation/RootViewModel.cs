@@ -73,6 +73,7 @@ namespace FBCross.ViewModels.Navigation
                 var services = response.Data.Services.Select(s => Mapper.Map<Data.Service>(s));
                 var masterClasses = response.Data.Events.Select(e => Mapper.Map<Data.MasterClass>(e));
                 var masterSchedules = response.Data.Schedules.Select(s => Mapper.Map<Data.MasterSchedule>(s));
+                var locations = response.Data.Locations.Select(l => Mapper.Map<Data.Location>(l));
                 FormsApp.MerchantFieldRules = response.Data.FieldRules;
                 await FormsApp.Database.Employees.RemoveAll();
                 await FormsApp.Database.Employees.CreateManyAsync(employees);
@@ -82,6 +83,8 @@ namespace FBCross.ViewModels.Navigation
                 await FormsApp.Database.MasterClasses.CreateManyAsync(masterClasses);
                 await FormsApp.Database.MasterSchedules.RemoveAll();
                 await FormsApp.Database.MasterSchedules.CreateManyAsync(masterSchedules);
+                await FormsApp.Database.Locations.RemoveAll();
+                await FormsApp.Database.Locations.CreateManyAsync(locations);
             }
 
             Loading = false;

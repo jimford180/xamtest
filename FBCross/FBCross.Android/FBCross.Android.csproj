@@ -54,6 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AWSSDK.CognitoIdentity">
+      <Version>3.3.100.70</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.CognitoSync">
+      <Version>3.3.100.70</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.SimpleNotificationService">
+      <Version>3.3.101.59</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross">
       <Version>6.2.2</Version>
     </PackageReference>

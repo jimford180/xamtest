@@ -32,12 +32,14 @@ namespace FBCross.ViewModels.Appointment
         private string _timeZone;
         private string _classInstanceSlug;
         private bool _lockedForFixedTime;
+        private bool _showLocation;
         private readonly IMvxNavigationService _navigationService;
         private readonly IUnifiedAvailability _unifiedAvailability;
         private readonly ICustomer _customerService;
         private readonly IScheduleBooking _scheduleBookingService;
         private readonly IFixedTimeBooking _fixedTimeBookingService;
         private readonly IWaitListBooking _waitListBookingService;
+        private LocationViewModel _location;
         private List<UnifiedField> _fields;
         public List<UnifiedField> Fields { get => _fields; set { _fields = value; RaisePropertyChanged(() => Fields); } }
 
@@ -54,6 +56,15 @@ namespace FBCross.ViewModels.Appointment
         {
             get { return _employee == null ? "Select Employee" : _employee.Name; }
         }
+
+        
+        public LocationViewModel Location { get => _location; set { _location = value; RaisePropertyChanged(() => Location); RaisePropertyChanged(() => LocationName); } }
+        public string LocationName
+        {
+            get { return _location == null ? "Select Location" : _location.Name; }
+        }
+
+        public bool ShowLocation { get => _showLocation; set { _showLocation = value; RaisePropertyChanged(() => ShowLocation); } }
 
         public DateTime DateTime { get => _dateTime; set { _dateTime = value; RaisePropertyChanged(() => DateTime); RaisePropertyChanged(() => Date); RaisePropertyChanged(() => Time); } }
         public string Date
@@ -104,6 +115,7 @@ namespace FBCross.ViewModels.Appointment
         public AppointmentViewModelType Type { get => _type; set { _type = value; RaisePropertyChanged(() => Type); } }
         public string TimeZone { get => _timeZone; set => _timeZone = value; }
 
+        public IMvxAsyncCommand ChooseLocationCommand => new MvxAsyncCommand(GoToLocationChoice);
         public IMvxAsyncCommand ChooseServiceCommand => new MvxAsyncCommand(GoToServiceChoice);
         public IMvxAsyncCommand ChooseEmployeeCommand => new MvxAsyncCommand(GoToEmployeeChoice);
         public IMvxAsyncCommand ChangeCustomerCommand => new MvxAsyncCommand(GoToCustomerChoice);
@@ -247,6 +259,14 @@ namespace FBCross.ViewModels.Appointment
                 await _navigationService.Navigate(serviceChoice);
             }
         }
+        private async Task GoToLocationChoice()
+        {
+            if (!_lockedForFixedTime)
+            {
+                var locationChoice = new ChooseLocationViewModel(this, _navigationService);
+                await _navigationService.Navigate(locationChoice);
+            }
+        }
 
         private async Task GoToEmployeeChoice()
         {
@@ -293,6 +313,7 @@ namespace FBCross.ViewModels.Appointment
         public override async void Start()
         {
             Guid scheduleBookingGuid;
+            var locations = await FormsApp.Database.Locations.GetEntitiesAsync();
             if (FormsApp.CurrentScheduleBookingId != null && Guid.TryParse(FormsApp.CurrentScheduleBookingId, out scheduleBookingGuid))
             {
                 Loading = true;
@@ -310,6 +331,7 @@ namespace FBCross.ViewModels.Appointment
                     Service = Mapper.Map<ServiceViewModel>(services.First(s => booking.ServiceIds.Contains(s.Id)));
                     var employees = await FormsApp.Database.Employees.GetEntitiesAsync();
                     Employee = Mapper.Map<EmployeeViewModel>(employees.First(s => s.Id == booking.EmployeeId));
+                    Location = Mapper.Map<LocationViewModel>(locations.FirstOrDefault(s => s.Id == booking.LocationId));
                     RemindByEmail = booking.RemindByEmail;
                     RemindBySms = booking.RemindBySms;
                     Notes = booking.Notes;
@@ -323,7 +345,10 @@ namespace FBCross.ViewModels.Appointment
                     }
                 }
                 Loading = false;
+                
             }
+            
+            ShowLocation = locations.Count > 1 && _type == AppointmentViewModelType.ScheduleBooking;
 
         }
     }

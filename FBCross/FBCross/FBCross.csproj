@@ -37,6 +37,9 @@
     <Compile Update="Pages\SelectAgendaEmployee.xaml.cs">
       <DependentUpon>SelectAgendaEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\SelectAppointmentLocation.xaml.cs">
+      <DependentUpon>SelectAppointmentLocation.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\SelectBlockTime.xaml.cs">
       <DependentUpon>SelectBlockTime.xaml</DependentUpon>
     </Compile>

@@ -348,6 +348,7 @@ namespace FBCross.ViewModels.Appointment
                 
             }
             
+            
             ShowLocation = locations.Count > 1 && _type == AppointmentViewModelType.ScheduleBooking;
 
         }

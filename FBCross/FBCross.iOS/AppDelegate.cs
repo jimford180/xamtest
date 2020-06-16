@@ -8,6 +8,7 @@ using MvvmCross.Forms.Platforms.Ios.Core;
 using Syncfusion.SfCalendar.XForms.iOS;
 using Syncfusion.SfPicker.XForms.iOS;
 using Syncfusion.XForms.iOS.Buttons;
+using Syncfusion.ListView.XForms.iOS;
 
 namespace FBCross.iOS
 {
@@ -29,6 +30,7 @@ namespace FBCross.iOS
             UINavigationBar.Appearance.TintColor = UIColor.Black;
             new SfCalendarRenderer();
             new SfPickerRenderer();
+            SfListViewRenderer.Init();
             SfCheckBoxRenderer.Init();
             Intercom.SetApiKey("ios_sdk-b3c61968e38ab16d11f4dd50972d09c67c6f38aa", "zyx82osk");
             var result = base.FinishedLaunching(uiApplication, launchOptions);

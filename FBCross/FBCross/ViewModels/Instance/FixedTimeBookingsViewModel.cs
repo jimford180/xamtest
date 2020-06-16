@@ -81,6 +81,19 @@ namespace FBCross.ViewModels.Instance
             appointment.LockedForFixedTime = true;
             appointment.RemindByEmail = booking.RemindByEmail;
             appointment.RemindBySms = booking.RemindBySms;
+
+            if (appointment.Fields != null && appointment.Fields.Any() && booking.CustomBookingFields != null && booking.CustomBookingFields.Any())
+            {
+                foreach (var field in booking.CustomBookingFields)
+                {
+                    var matchingField = appointment.Fields.FirstOrDefault(f => f.FieldId == field.MerchantFieldId);
+                    if (matchingField != null)
+                    {
+                        matchingField.Value = field.Value;
+                    }
+                }
+            }
+
             await _navigationService.Navigate(appointment);
         }
     }

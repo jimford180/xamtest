@@ -75,6 +75,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfCalendar.Android">
       <Version>16.3.0.29</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView">
+      <Version>16.3.0.29</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPicker.Android">
       <Version>16.3.0.29</Version>
     </PackageReference>
@@ -170,4 +173,9 @@
     <AndroidResource Include="Resources\drawable\splashscreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarFBCrossAndroidHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

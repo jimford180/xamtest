@@ -13,11 +13,17 @@
         <views:MvxListView x:Name="GroupedAgendaView"
             ItemsSource="{mvx:MvxBind Bookings}"
             IsGroupingEnabled="False"
-            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}">
+            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}" RowHeight="85">
             <!--Custom View Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding TopLineText}" Detail="{Binding BottomLineText}" />
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label FontSize="16" Text="{mvx:MvxBind TopLineText}" />
+                            <Label Text="{mvx:MvxBind SecondLineText}" />
+                            <Label Text="{mvx:MvxBind ThirdLineText}" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </views:MvxListView>

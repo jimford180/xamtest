@@ -36,7 +36,8 @@ namespace FBCross
             {
                 cfg.CreateMap<Rest.Dto.Employee, Data.Employee>();
                 cfg.CreateMap<Rest.Dto.AppointmentType, Data.Service>();
-                cfg.CreateMap<Rest.Dto.BookingDetail, ViewModels.Instance.FixedTimeBookingViewModel>();
+                cfg.CreateMap<Rest.Dto.BookingDetail, ViewModels.Instance.FixedTimeBookingViewModel>()
+                .ForMember(m => m.CustomFieldValues, opt => opt.MapFrom(f => f.CustomBookingFields == null ? new List<string>() : f.CustomBookingFields.Select(v => v.Value).ToList()));
                 cfg.CreateMap<Rest.Dto.WaitListDetail, ViewModels.Instance.FixedTimeBookingViewModel>().ForMember(dest => dest.BookingId, opt => opt.MapFrom(src => src.WaitListId.ToString()));
                 cfg.CreateMap<Data.Service, ViewModels.Shared.ServiceViewModel>();
                 cfg.CreateMap<Data.Employee, ViewModels.Shared.EmployeeViewModel>();

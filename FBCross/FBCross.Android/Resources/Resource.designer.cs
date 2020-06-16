@@ -15,7 +15,7 @@ namespace FBCross.Droid
 {
 	
 	
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
 	public partial class Resource
 	{
 		
@@ -5311,6 +5311,9 @@ namespace FBCross.Droid
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.Drawable.Icon = global::FBCross.Droid.Resource.Drawable.Icon;
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.String.sfcalendar_inlineviewalldaytext = global::FBCross.Droid.Resource.String.sfcalendar_inlineviewalldaytext;
 			global::Syncfusion.SfCalendar.XForms.Droid.Resource.String.sfcalendar_inlineviewnoappointmenttext = global::FBCross.Droid.Resource.String.sfcalendar_inlineviewnoappointmenttext;
+			global::Syncfusion.ListView.XForms.Android.Resource.String.ApplicationName = global::FBCross.Droid.Resource.String.ApplicationName;
+			global::Syncfusion.ListView.XForms.Android.Resource.String.Hello = global::FBCross.Droid.Resource.String.Hello;
+			global::Syncfusion.ListView.XForms.Android.Resource.String.Load_More = global::FBCross.Droid.Resource.String.Load_More;
 			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBackgroundColor = global::FBCross.Droid.Resource.Attribute.pickerBackgroundColor;
 			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerBorderColor = global::FBCross.Droid.Resource.Attribute.pickerBorderColor;
 			global::Com.Syncfusion.SfPicker.Resource.Attribute.pickerColumnHeaderBackgroundColor = global::FBCross.Droid.Resource.Attribute.pickerColumnHeaderBackgroundColor;
@@ -11628,512 +11631,515 @@ namespace FBCross.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F0E0002
-			public const int abc_action_bar_home_description = 2131623938;
-			
 			// aapt resource value: 0x7F0E0003
-			public const int abc_action_bar_up_description = 2131623939;
+			public const int abc_action_bar_home_description = 2131623939;
 			
 			// aapt resource value: 0x7F0E0004
-			public const int abc_action_menu_overflow_description = 2131623940;
+			public const int abc_action_bar_up_description = 2131623940;
 			
 			// aapt resource value: 0x7F0E0005
-			public const int abc_action_mode_done = 2131623941;
-			
-			// aapt resource value: 0x7F0E0007
-			public const int abc_activitychooserview_choose_application = 2131623943;
+			public const int abc_action_menu_overflow_description = 2131623941;
 			
 			// aapt resource value: 0x7F0E0006
-			public const int abc_activity_chooser_view_see_all = 2131623942;
+			public const int abc_action_mode_done = 2131623942;
 			
 			// aapt resource value: 0x7F0E0008
-			public const int abc_capital_off = 2131623944;
+			public const int abc_activitychooserview_choose_application = 2131623944;
+			
+			// aapt resource value: 0x7F0E0007
+			public const int abc_activity_chooser_view_see_all = 2131623943;
 			
 			// aapt resource value: 0x7F0E0009
-			public const int abc_capital_on = 2131623945;
+			public const int abc_capital_off = 2131623945;
 			
 			// aapt resource value: 0x7F0E000A
-			public const int abc_font_family_body_1_material = 2131623946;
+			public const int abc_capital_on = 2131623946;
 			
 			// aapt resource value: 0x7F0E000B
-			public const int abc_font_family_body_2_material = 2131623947;
+			public const int abc_font_family_body_1_material = 2131623947;
 			
 			// aapt resource value: 0x7F0E000C
-			public const int abc_font_family_button_material = 2131623948;
+			public const int abc_font_family_body_2_material = 2131623948;
 			
 			// aapt resource value: 0x7F0E000D
-			public const int abc_font_family_caption_material = 2131623949;
+			public const int abc_font_family_button_material = 2131623949;
 			
 			// aapt resource value: 0x7F0E000E
-			public const int abc_font_family_display_1_material = 2131623950;
+			public const int abc_font_family_caption_material = 2131623950;
 			
 			// aapt resource value: 0x7F0E000F
-			public const int abc_font_family_display_2_material = 2131623951;
+			public const int abc_font_family_display_1_material = 2131623951;
 			
 			// aapt resource value: 0x7F0E0010
-			public const int abc_font_family_display_3_material = 2131623952;
+			public const int abc_font_family_display_2_material = 2131623952;
 			
 			// aapt resource value: 0x7F0E0011
-			public const int abc_font_family_display_4_material = 2131623953;
+			public const int abc_font_family_display_3_material = 2131623953;
 			
 			// aapt resource value: 0x7F0E0012
-			public const int abc_font_family_headline_material = 2131623954;
+			public const int abc_font_family_display_4_material = 2131623954;
 			
 			// aapt resource value: 0x7F0E0013
-			public const int abc_font_family_menu_material = 2131623955;
+			public const int abc_font_family_headline_material = 2131623955;
 			
 			// aapt resource value: 0x7F0E0014
-			public const int abc_font_family_subhead_material = 2131623956;
+			public const int abc_font_family_menu_material = 2131623956;
 			
 			// aapt resource value: 0x7F0E0015
-			public const int abc_font_family_title_material = 2131623957;
-			
-			// aapt resource value: 0x7F0E0017
-			public const int abc_searchview_description_clear = 2131623959;
-			
-			// aapt resource value: 0x7F0E0018
-			public const int abc_searchview_description_query = 2131623960;
-			
-			// aapt resource value: 0x7F0E0019
-			public const int abc_searchview_description_search = 2131623961;
-			
-			// aapt resource value: 0x7F0E001A
-			public const int abc_searchview_description_submit = 2131623962;
-			
-			// aapt resource value: 0x7F0E001B
-			public const int abc_searchview_description_voice = 2131623963;
+			public const int abc_font_family_subhead_material = 2131623957;
 			
 			// aapt resource value: 0x7F0E0016
-			public const int abc_search_hint = 2131623958;
+			public const int abc_font_family_title_material = 2131623958;
+			
+			// aapt resource value: 0x7F0E0018
+			public const int abc_searchview_description_clear = 2131623960;
+			
+			// aapt resource value: 0x7F0E0019
+			public const int abc_searchview_description_query = 2131623961;
+			
+			// aapt resource value: 0x7F0E001A
+			public const int abc_searchview_description_search = 2131623962;
+			
+			// aapt resource value: 0x7F0E001B
+			public const int abc_searchview_description_submit = 2131623963;
 			
 			// aapt resource value: 0x7F0E001C
-			public const int abc_shareactionprovider_share_with = 2131623964;
+			public const int abc_searchview_description_voice = 2131623964;
+			
+			// aapt resource value: 0x7F0E0017
+			public const int abc_search_hint = 2131623959;
 			
 			// aapt resource value: 0x7F0E001D
-			public const int abc_shareactionprovider_share_with_application = 2131623965;
+			public const int abc_shareactionprovider_share_with = 2131623965;
 			
 			// aapt resource value: 0x7F0E001E
-			public const int abc_toolbar_collapse_description = 2131623966;
+			public const int abc_shareactionprovider_share_with_application = 2131623966;
 			
 			// aapt resource value: 0x7F0E001F
-			public const int appbar_scrolling_view_behavior = 2131623967;
+			public const int abc_toolbar_collapse_description = 2131623967;
+			
+			// aapt resource value: 0x7F0E0020
+			public const int appbar_scrolling_view_behavior = 2131623968;
 			
 			// aapt resource value: 0x7F0E0000
 			public const int ApplicationName = 2131623936;
 			
-			// aapt resource value: 0x7F0E0020
-			public const int bottom_sheet_behavior = 2131623968;
-			
 			// aapt resource value: 0x7F0E0021
-			public const int character_counter_pattern = 2131623969;
+			public const int bottom_sheet_behavior = 2131623969;
 			
 			// aapt resource value: 0x7F0E0022
-			public const int fab_scroll_shrink_grow_autohide_behavior = 2131623970;
+			public const int character_counter_pattern = 2131623970;
+			
+			// aapt resource value: 0x7F0E0023
+			public const int fab_scroll_shrink_grow_autohide_behavior = 2131623971;
 			
 			// aapt resource value: 0x7F0E0001
 			public const int Hello = 2131623937;
 			
-			// aapt resource value: 0x7F0E0023
-			public const int intercom_access_photos = 2131623971;
-			
 			// aapt resource value: 0x7F0E0024
-			public const int intercom_active_15m_ago = 2131623972;
+			public const int intercom_access_photos = 2131623972;
 			
 			// aapt resource value: 0x7F0E0025
-			public const int intercom_active_day_ago = 2131623973;
+			public const int intercom_active_15m_ago = 2131623973;
 			
 			// aapt resource value: 0x7F0E0026
-			public const int intercom_active_hour_ago = 2131623974;
+			public const int intercom_active_day_ago = 2131623974;
 			
 			// aapt resource value: 0x7F0E0027
-			public const int intercom_active_minute_ago = 2131623975;
+			public const int intercom_active_hour_ago = 2131623975;
 			
 			// aapt resource value: 0x7F0E0028
-			public const int intercom_active_state = 2131623976;
+			public const int intercom_active_minute_ago = 2131623976;
 			
 			// aapt resource value: 0x7F0E0029
-			public const int intercom_active_week_ago = 2131623977;
+			public const int intercom_active_state = 2131623977;
 			
 			// aapt resource value: 0x7F0E002A
-			public const int intercom_allow_access = 2131623978;
+			public const int intercom_active_week_ago = 2131623978;
 			
 			// aapt resource value: 0x7F0E002B
-			public const int intercom_allow_storage_access = 2131623979;
+			public const int intercom_allow_access = 2131623979;
 			
 			// aapt resource value: 0x7F0E002C
-			public const int intercom_also_in_this_conversation = 2131623980;
+			public const int intercom_allow_storage_access = 2131623980;
 			
 			// aapt resource value: 0x7F0E002D
-			public const int intercom_android_activated_message = 2131623981;
+			public const int intercom_also_in_this_conversation = 2131623981;
 			
 			// aapt resource value: 0x7F0E002E
-			public const int intercom_app_settings = 2131623982;
+			public const int intercom_android_activated_message = 2131623982;
 			
 			// aapt resource value: 0x7F0E002F
-			public const int intercom_article_load_error = 2131623983;
+			public const int intercom_app_settings = 2131623983;
 			
 			// aapt resource value: 0x7F0E0030
-			public const int intercom_article_question = 2131623984;
+			public const int intercom_article_load_error = 2131623984;
 			
 			// aapt resource value: 0x7F0E0031
-			public const int intercom_article_response = 2131623985;
+			public const int intercom_article_question = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int intercom_asked_about = 2131623986;
+			public const int intercom_article_response = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int intercom_away_state = 2131623987;
+			public const int intercom_asked_about = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int intercom_cancel = 2131623988;
+			public const int intercom_away_state = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int intercom_close = 2131623989;
+			public const int intercom_cancel = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int intercom_composer_send = 2131623990;
+			public const int intercom_close = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int intercom_composer_send_button_content_description = 2131623991;
+			public const int intercom_composer_send = 2131623991;
 			
 			// aapt resource value: 0x7F0E0038
-			public const int intercom_composer_tap_to_send = 2131623992;
+			public const int intercom_composer_send_button_content_description = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int intercom_congratulations = 2131623993;
+			public const int intercom_composer_tap_to_send = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int intercom_connected = 2131623994;
+			public const int intercom_congratulations = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int intercom_conversations = 2131623995;
+			public const int intercom_connected = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int intercom_conversations_with_app = 2131623996;
+			public const int intercom_conversations = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int intercom_copied_to_clipboard = 2131623997;
+			public const int intercom_conversations_with_app = 2131623997;
 			
 			// aapt resource value: 0x7F0E003E
-			public const int intercom_couldnt_complete_action = 2131623998;
+			public const int intercom_copied_to_clipboard = 2131623998;
 			
 			// aapt resource value: 0x7F0E003F
-			public const int intercom_couldnt_load_apps = 2131623999;
+			public const int intercom_couldnt_complete_action = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int intercom_couldnt_load_content = 2131624000;
+			public const int intercom_couldnt_load_apps = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int intercom_couldnt_load_messenger = 2131624001;
+			public const int intercom_couldnt_load_content = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int intercom_delivered = 2131624002;
+			public const int intercom_couldnt_load_messenger = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int intercom_dismiss = 2131624003;
+			public const int intercom_delivered = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int intercom_empty_conversations = 2131624004;
+			public const int intercom_dismiss = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int intercom_error_loading_conversation = 2131624005;
+			public const int intercom_empty_conversations = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int intercom_facebook_like = 2131624006;
+			public const int intercom_error_loading_conversation = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int intercom_failed_delivery = 2131624007;
+			public const int intercom_facebook_like = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int intercom_failed_to_load_conversation = 2131624008;
+			public const int intercom_failed_delivery = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int intercom_failed_to_send = 2131624009;
+			public const int intercom_failed_to_load_conversation = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int intercom_file_access_failed = 2131624010;
+			public const int intercom_failed_to_send = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int intercom_file_too_big = 2131624011;
+			public const int intercom_file_access_failed = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int intercom_gcm_sender_id = 2131624012;
-			
-			// aapt resource value: 0x7F0E004E
-			public const int intercom_gifs_load_error = 2131624014;
+			public const int intercom_file_too_big = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int intercom_gif_attribution = 2131624013;
+			public const int intercom_gcm_sender_id = 2131624013;
 			
 			// aapt resource value: 0x7F0E004F
-			public const int intercom_give_it_another_try = 2131624015;
+			public const int intercom_gifs_load_error = 2131624015;
+			
+			// aapt resource value: 0x7F0E004E
+			public const int intercom_gif_attribution = 2131624014;
 			
 			// aapt resource value: 0x7F0E0050
-			public const int intercom_go_to_device_settings = 2131624016;
+			public const int intercom_give_it_another_try = 2131624016;
 			
 			// aapt resource value: 0x7F0E0051
-			public const int intercom_image_attached = 2131624017;
+			public const int intercom_go_to_device_settings = 2131624017;
 			
 			// aapt resource value: 0x7F0E0052
-			public const int intercom_inbox_error_state_title = 2131624018;
+			public const int intercom_image_attached = 2131624018;
 			
 			// aapt resource value: 0x7F0E0053
-			public const int intercom_message_failed_try_again = 2131624019;
+			public const int intercom_inbox_error_state_title = 2131624019;
 			
 			// aapt resource value: 0x7F0E0054
-			public const int intercom_message_seen = 2131624020;
+			public const int intercom_message_failed_try_again = 2131624020;
 			
 			// aapt resource value: 0x7F0E0055
-			public const int intercom_message_state_sending = 2131624021;
+			public const int intercom_message_seen = 2131624021;
 			
 			// aapt resource value: 0x7F0E0056
-			public const int intercom_message_unseen = 2131624022;
+			public const int intercom_message_state_sending = 2131624022;
 			
 			// aapt resource value: 0x7F0E0057
-			public const int intercom_name_and_1_other = 2131624023;
+			public const int intercom_message_unseen = 2131624023;
 			
 			// aapt resource value: 0x7F0E0058
-			public const int intercom_name_and_x_others = 2131624024;
+			public const int intercom_name_and_1_other = 2131624024;
 			
 			// aapt resource value: 0x7F0E0059
-			public const int intercom_new_conversation = 2131624025;
+			public const int intercom_name_and_x_others = 2131624025;
 			
 			// aapt resource value: 0x7F0E005A
-			public const int intercom_new_message = 2131624026;
+			public const int intercom_new_conversation = 2131624026;
 			
 			// aapt resource value: 0x7F0E005B
-			public const int intercom_new_messages = 2131624027;
+			public const int intercom_new_message = 2131624027;
 			
 			// aapt resource value: 0x7F0E005C
-			public const int intercom_new_notifications = 2131624028;
-			
-			// aapt resource value: 0x7F0E0064
-			public const int intercom_notification_channel_actions_description = 2131624036;
-			
-			// aapt resource value: 0x7F0E0065
-			public const int intercom_notification_channel_actions_title = 2131624037;
-			
-			// aapt resource value: 0x7F0E0066
-			public const int intercom_notification_channel_chat_replies_description = 2131624038;
-			
-			// aapt resource value: 0x7F0E0067
-			public const int intercom_notification_channel_chat_replies_title = 2131624039;
-			
-			// aapt resource value: 0x7F0E0068
-			public const int intercom_notification_channel_new_chats_description = 2131624040;
-			
-			// aapt resource value: 0x7F0E0069
-			public const int intercom_notification_channel_new_chats_title = 2131624041;
-			
-			// aapt resource value: 0x7F0E0063
-			public const int intercom_not_now = 2131624035;
+			public const int intercom_new_messages = 2131624028;
 			
 			// aapt resource value: 0x7F0E005D
-			public const int intercom_no_conversations = 2131624029;
+			public const int intercom_new_notifications = 2131624029;
 			
-			// aapt resource value: 0x7F0E005E
-			public const int intercom_no_gifs_found = 2131624030;
+			// aapt resource value: 0x7F0E0065
+			public const int intercom_notification_channel_actions_description = 2131624037;
 			
-			// aapt resource value: 0x7F0E005F
-			public const int intercom_no_gifs_matching_query = 2131624031;
+			// aapt resource value: 0x7F0E0066
+			public const int intercom_notification_channel_actions_title = 2131624038;
 			
-			// aapt resource value: 0x7F0E0060
-			public const int intercom_no_network_connection = 2131624032;
+			// aapt resource value: 0x7F0E0067
+			public const int intercom_notification_channel_chat_replies_description = 2131624039;
 			
-			// aapt resource value: 0x7F0E0061
-			public const int intercom_no_photos = 2131624033;
+			// aapt resource value: 0x7F0E0068
+			public const int intercom_notification_channel_chat_replies_title = 2131624040;
 			
-			// aapt resource value: 0x7F0E0062
-			public const int intercom_no_photos_on_device = 2131624034;
+			// aapt resource value: 0x7F0E0069
+			public const int intercom_notification_channel_new_chats_description = 2131624041;
 			
 			// aapt resource value: 0x7F0E006A
-			public const int intercom_one_new_message = 2131624042;
+			public const int intercom_notification_channel_new_chats_title = 2131624042;
+			
+			// aapt resource value: 0x7F0E0064
+			public const int intercom_not_now = 2131624036;
+			
+			// aapt resource value: 0x7F0E005E
+			public const int intercom_no_conversations = 2131624030;
+			
+			// aapt resource value: 0x7F0E005F
+			public const int intercom_no_gifs_found = 2131624031;
+			
+			// aapt resource value: 0x7F0E0060
+			public const int intercom_no_gifs_matching_query = 2131624032;
+			
+			// aapt resource value: 0x7F0E0061
+			public const int intercom_no_network_connection = 2131624033;
+			
+			// aapt resource value: 0x7F0E0062
+			public const int intercom_no_photos = 2131624034;
+			
+			// aapt resource value: 0x7F0E0063
+			public const int intercom_no_photos_on_device = 2131624035;
 			
 			// aapt resource value: 0x7F0E006B
-			public const int intercom_photo_access_denied = 2131624043;
+			public const int intercom_one_new_message = 2131624043;
 			
 			// aapt resource value: 0x7F0E006C
-			public const int intercom_plus_x_more = 2131624044;
+			public const int intercom_photo_access_denied = 2131624044;
 			
 			// aapt resource value: 0x7F0E006D
-			public const int intercom_profile_location = 2131624045;
+			public const int intercom_plus_x_more = 2131624045;
 			
 			// aapt resource value: 0x7F0E006E
-			public const int intercom_rate_your_conversation = 2131624046;
+			public const int intercom_profile_location = 2131624046;
 			
 			// aapt resource value: 0x7F0E006F
-			public const int intercom_reload = 2131624047;
+			public const int intercom_rate_your_conversation = 2131624047;
 			
 			// aapt resource value: 0x7F0E0070
-			public const int intercom_reply_from_admin = 2131624048;
+			public const int intercom_reload = 2131624048;
 			
 			// aapt resource value: 0x7F0E0071
-			public const int intercom_reply_to_conversation = 2131624049;
+			public const int intercom_reply_from_admin = 2131624049;
 			
 			// aapt resource value: 0x7F0E0072
-			public const int intercom_retry = 2131624050;
+			public const int intercom_reply_to_conversation = 2131624050;
 			
 			// aapt resource value: 0x7F0E0073
-			public const int intercom_search_gif = 2131624051;
+			public const int intercom_retry = 2131624051;
 			
 			// aapt resource value: 0x7F0E0074
-			public const int intercom_see_all = 2131624052;
+			public const int intercom_search_gif = 2131624052;
 			
 			// aapt resource value: 0x7F0E0075
-			public const int intercom_see_past_conversations = 2131624053;
+			public const int intercom_see_all = 2131624053;
 			
 			// aapt resource value: 0x7F0E0076
-			public const int intercom_send = 2131624054;
+			public const int intercom_see_past_conversations = 2131624054;
 			
 			// aapt resource value: 0x7F0E0077
-			public const int intercom_start_a_conversation = 2131624055;
+			public const int intercom_send = 2131624055;
 			
 			// aapt resource value: 0x7F0E0078
-			public const int intercom_start_conversation = 2131624056;
+			public const int intercom_start_a_conversation = 2131624056;
 			
 			// aapt resource value: 0x7F0E0079
-			public const int intercom_storage_access_request = 2131624057;
+			public const int intercom_start_conversation = 2131624057;
 			
 			// aapt resource value: 0x7F0E007A
-			public const int intercom_tap_to_send_image = 2131624058;
+			public const int intercom_storage_access_request = 2131624058;
 			
 			// aapt resource value: 0x7F0E007B
-			public const int intercom_teammate_from_company = 2131624059;
+			public const int intercom_tap_to_send_image = 2131624059;
 			
 			// aapt resource value: 0x7F0E007C
-			public const int intercom_tell_us_more = 2131624060;
+			public const int intercom_teammate_from_company = 2131624060;
 			
 			// aapt resource value: 0x7F0E007D
-			public const int intercom_thanks_for_letting_us_know = 2131624061;
+			public const int intercom_tell_us_more = 2131624061;
 			
 			// aapt resource value: 0x7F0E007E
-			public const int intercom_time_day_ago = 2131624062;
+			public const int intercom_thanks_for_letting_us_know = 2131624062;
 			
 			// aapt resource value: 0x7F0E007F
-			public const int intercom_time_hour_ago = 2131624063;
+			public const int intercom_time_day_ago = 2131624063;
 			
 			// aapt resource value: 0x7F0E0080
-			public const int intercom_time_just_now = 2131624064;
+			public const int intercom_time_hour_ago = 2131624064;
 			
 			// aapt resource value: 0x7F0E0081
-			public const int intercom_time_minute_ago = 2131624065;
+			public const int intercom_time_just_now = 2131624065;
 			
 			// aapt resource value: 0x7F0E0082
-			public const int intercom_time_week_ago = 2131624066;
+			public const int intercom_time_minute_ago = 2131624066;
 			
 			// aapt resource value: 0x7F0E0083
-			public const int intercom_try_again = 2131624067;
+			public const int intercom_time_week_ago = 2131624067;
 			
 			// aapt resource value: 0x7F0E0084
-			public const int intercom_try_again_minute = 2131624068;
+			public const int intercom_try_again = 2131624068;
 			
 			// aapt resource value: 0x7F0E0085
-			public const int intercom_twitter_follow = 2131624069;
+			public const int intercom_try_again_minute = 2131624069;
 			
 			// aapt resource value: 0x7F0E0086
-			public const int intercom_we_run_on_intercom = 2131624070;
+			public const int intercom_twitter_follow = 2131624070;
 			
 			// aapt resource value: 0x7F0E0087
-			public const int intercom_you = 2131624071;
-			
-			// aapt resource value: 0x7F0E0089
-			public const int intercom_your_conversations = 2131624073;
+			public const int intercom_we_run_on_intercom = 2131624071;
 			
 			// aapt resource value: 0x7F0E0088
-			public const int intercom_you_rated_the_conversation = 2131624072;
+			public const int intercom_you = 2131624072;
 			
 			// aapt resource value: 0x7F0E008A
-			public const int mr_button_content_description = 2131624074;
+			public const int intercom_your_conversations = 2131624074;
+			
+			// aapt resource value: 0x7F0E0089
+			public const int intercom_you_rated_the_conversation = 2131624073;
+			
+			// aapt resource value: 0x7F0E0002
+			public const int Load_More = 2131623938;
 			
 			// aapt resource value: 0x7F0E008B
-			public const int mr_cast_button_connected = 2131624075;
+			public const int mr_button_content_description = 2131624075;
 			
 			// aapt resource value: 0x7F0E008C
-			public const int mr_cast_button_connecting = 2131624076;
+			public const int mr_cast_button_connected = 2131624076;
 			
 			// aapt resource value: 0x7F0E008D
-			public const int mr_cast_button_disconnected = 2131624077;
+			public const int mr_cast_button_connecting = 2131624077;
 			
 			// aapt resource value: 0x7F0E008E
-			public const int mr_chooser_searching = 2131624078;
+			public const int mr_cast_button_disconnected = 2131624078;
 			
 			// aapt resource value: 0x7F0E008F
-			public const int mr_chooser_title = 2131624079;
+			public const int mr_chooser_searching = 2131624079;
 			
 			// aapt resource value: 0x7F0E0090
-			public const int mr_controller_album_art = 2131624080;
+			public const int mr_chooser_title = 2131624080;
 			
 			// aapt resource value: 0x7F0E0091
-			public const int mr_controller_casting_screen = 2131624081;
+			public const int mr_controller_album_art = 2131624081;
 			
 			// aapt resource value: 0x7F0E0092
-			public const int mr_controller_close_description = 2131624082;
+			public const int mr_controller_casting_screen = 2131624082;
 			
 			// aapt resource value: 0x7F0E0093
-			public const int mr_controller_collapse_group = 2131624083;
+			public const int mr_controller_close_description = 2131624083;
 			
 			// aapt resource value: 0x7F0E0094
-			public const int mr_controller_disconnect = 2131624084;
+			public const int mr_controller_collapse_group = 2131624084;
 			
 			// aapt resource value: 0x7F0E0095
-			public const int mr_controller_expand_group = 2131624085;
+			public const int mr_controller_disconnect = 2131624085;
 			
 			// aapt resource value: 0x7F0E0096
-			public const int mr_controller_no_info_available = 2131624086;
+			public const int mr_controller_expand_group = 2131624086;
 			
 			// aapt resource value: 0x7F0E0097
-			public const int mr_controller_no_media_selected = 2131624087;
+			public const int mr_controller_no_info_available = 2131624087;
 			
 			// aapt resource value: 0x7F0E0098
-			public const int mr_controller_pause = 2131624088;
+			public const int mr_controller_no_media_selected = 2131624088;
 			
 			// aapt resource value: 0x7F0E0099
-			public const int mr_controller_play = 2131624089;
+			public const int mr_controller_pause = 2131624089;
 			
 			// aapt resource value: 0x7F0E009A
-			public const int mr_controller_stop = 2131624090;
+			public const int mr_controller_play = 2131624090;
 			
 			// aapt resource value: 0x7F0E009B
-			public const int mr_controller_stop_casting = 2131624091;
+			public const int mr_controller_stop = 2131624091;
 			
 			// aapt resource value: 0x7F0E009C
-			public const int mr_controller_volume_slider = 2131624092;
+			public const int mr_controller_stop_casting = 2131624092;
 			
 			// aapt resource value: 0x7F0E009D
-			public const int mr_system_route_name = 2131624093;
+			public const int mr_controller_volume_slider = 2131624093;
 			
 			// aapt resource value: 0x7F0E009E
-			public const int mr_user_route_category_name = 2131624094;
+			public const int mr_system_route_name = 2131624094;
 			
 			// aapt resource value: 0x7F0E009F
-			public const int password_toggle_content_description = 2131624095;
+			public const int mr_user_route_category_name = 2131624095;
 			
 			// aapt resource value: 0x7F0E00A0
-			public const int path_password_eye = 2131624096;
+			public const int password_toggle_content_description = 2131624096;
 			
 			// aapt resource value: 0x7F0E00A1
-			public const int path_password_eye_mask_strike_through = 2131624097;
+			public const int path_password_eye = 2131624097;
 			
 			// aapt resource value: 0x7F0E00A2
-			public const int path_password_eye_mask_visible = 2131624098;
+			public const int path_password_eye_mask_strike_through = 2131624098;
 			
 			// aapt resource value: 0x7F0E00A3
-			public const int path_password_strike_through = 2131624099;
+			public const int path_password_eye_mask_visible = 2131624099;
 			
 			// aapt resource value: 0x7F0E00A4
-			public const int search_menu_title = 2131624100;
+			public const int path_password_strike_through = 2131624100;
 			
 			// aapt resource value: 0x7F0E00A5
-			public const int sfcalendar_inlineviewalldaytext = 2131624101;
+			public const int search_menu_title = 2131624101;
 			
 			// aapt resource value: 0x7F0E00A6
-			public const int sfcalendar_inlineviewnoappointmenttext = 2131624102;
+			public const int sfcalendar_inlineviewalldaytext = 2131624102;
 			
 			// aapt resource value: 0x7F0E00A7
-			public const int status_bar_notification_info_overflow = 2131624103;
+			public const int sfcalendar_inlineviewnoappointmenttext = 2131624103;
 			
 			// aapt resource value: 0x7F0E00A8
-			public const int view_scroll_translation_autohide_behavior = 2131624104;
+			public const int status_bar_notification_info_overflow = 2131624104;
+			
+			// aapt resource value: 0x7F0E00A9
+			public const int view_scroll_translation_autohide_behavior = 2131624105;
 			
 			static String()
 			{

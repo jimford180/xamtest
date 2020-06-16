@@ -27,8 +27,12 @@ namespace FBCross.ViewModels.Authentication
         public string Email { get => _email; set { _email = value; RaisePropertyChanged(() => Email); } }
 
         public IMvxCommand SubmitCommand => new MvxCommand(Submit);
+        public IMvxCommand BackToLoginCommand => new MvxCommand(BackToLogin);
 
-
+        private async void BackToLogin()
+        {
+            await _navigationService.Navigate<LoginViewModel>();
+        }
         private async void Submit()
         {
             Loading = true;

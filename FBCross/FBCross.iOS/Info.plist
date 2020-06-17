@@ -30,12 +30,14 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.91</string>
 	<key>CFBundleVersion</key>
-	<string>2.2</string>
+	<string>23</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>FBCross</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow users to upload screenshots to our support team.</string>
 </dict>
 </plist>

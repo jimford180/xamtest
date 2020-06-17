@@ -74,6 +74,9 @@
     <Compile Update="Pages\InstanceDetailsWaitListBookings.xaml.cs">
       <DependentUpon>InstanceDetailsWaitListBookings.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\InstanceDetailsCurrentBookings.xaml.cs">
+      <DependentUpon>InstanceDetailsCurrentBookings.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\MerchantSelectionPage.xaml.cs">
       <DependentUpon>MerchantSelectionPage.xaml</DependentUpon>
     </Compile>

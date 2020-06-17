@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage x:TypeArguments="viewModels:FixedTimeBookingsViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:mvx="clr-namespace:MvvmCross.Forms.Bindings;assembly=MvvmCross.Forms"
+    xmlns:viewModels="clr-namespace:FBCross.ViewModels.Instance;assembly=FBCross"
+    x:Class="FBCross.Pages.InstanceDetailsCurrentBookings" Title="Current Bookings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="imgPlus" Command="{Binding AddBookingCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <views:MvxListView x:Name="GroupedAgendaView"
+            ItemsSource="{mvx:MvxBind Bookings}"
+            IsGroupingEnabled="False"
+            ItemClick="{mvx:MvxBind ItemSelectedCommand}" SelectedItem="{mvx:MvxBind ItemSelectedCommand}" RowHeight="85">
+            <!--Custom View Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label FontSize="16" Text="{mvx:MvxBind TopLineText}" />
+                            <Label Text="{mvx:MvxBind SecondLineText}" />
+                            <Label Text="{mvx:MvxBind ThirdLineText}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </views:MvxListView>
+    </ContentPage.Content>
+</views:MvxContentPage>

@@ -183,7 +183,7 @@ namespace FBCross.ViewModels.Instance
                 RequiresPayment = response.Data.RequiresPayment;
                 NoShowFee = response.Data.NoShowFee;
                 Price = response.Data.Price;
-                CurrentBookings = response.Data.Bookings;
+                CurrentBookings = response.Data.Bookings.Where(c => !c.Cancelled).ToList();
                 WaitListBookings = response.Data.WaitListParties;
                 Id = response.Data.Id;
                 CurrentBookingsText = $"Current Bookings ({CurrentBookings.Count})";

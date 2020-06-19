@@ -27,8 +27,8 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Development: Andrew Ford (9YTZ66H7XY)</CodesignKey>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Andrew Ford (9YTZ66H7XY)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -40,7 +40,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Andrew Ford (9YTZ66H7XY)</CodesignKey>
+    <CodesignKey>Apple Development: Andrew Ford (9YTZ66H7XY)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,7 +52,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer: Andrew Ford (9YTZ66H7XY)</CodesignKey>
+    <CodesignKey>Apple Development: Andrew Ford (9YTZ66H7XY)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
@@ -65,9 +65,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: FlexBooker LLC (737EU3LETA)</CodesignKey>
+    <CodesignKey>Apple Development: Andrew Ford (9YTZ66H7XY)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>iOS Team Store Provisioning Profile: com.flexbooker.FBCross</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -79,7 +79,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Andrew Ford (9YTZ66H7XY)</CodesignKey>
+    <CodesignKey>Apple Development: Andrew Ford (9YTZ66H7XY)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -90,8 +90,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Andrew Ford (9YTZ66H7XY)</CodesignKey>
+    <CodesignKey>Apple Distribution: FlexBooker LLC (737EU3LETA)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
@@ -104,10 +103,6 @@
     <BundleResource Include="Resources\Font Awesome 5 Brands-Regular-400.otf" />
     <BundleResource Include="Resources\Font Awesome 5 Free-Regular-400.otf" />
     <BundleResource Include="Resources\Font Awesome 5 Free-Solid-900.otf" />
-    <Compile Include="InstanceDetailsCurrentBookings.xaml.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
-      <DependentUpon>InstanceDetailsCurrentBookings.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\app.png">
@@ -275,6 +270,23 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-1.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-2.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-3.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-4.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-5.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-6.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-7.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-8.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-9.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-10.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-11.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-12.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-13.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-14.png" />
+    <ImageAsset Include="Assets.xcassets\hamburger.imageset\iconfinder_Hamburger_Round_657905-15.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default1242x2688.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -312,12 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\imgMenu.imageset\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="InstanceDetailsCurrentBookings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
